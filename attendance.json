@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OrangeHRM Open Source : REST API v2 docs",
+    "title": "Attendance",
     "version": "2.5.0",
     "description": "This page contans documentation on how to use OrangeHRM via API calls.\n\n ## OrangeHRM Starter Application \n\n ### Getting started\n * Download the latest version of OrangeHRM Starter [here](https://sourceforge.net/projects/orangehrm/files/latest/download) \n\n # Authorization \n\n Include authorization documentation here \n\n # Technincal Overview \n\n Include technical overview here"
   },
