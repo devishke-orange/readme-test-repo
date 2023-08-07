@@ -9552,6 +9552,14 @@
                 "operationId": "a1d7004b55eed019486345e8e0c7a6bb",
                 "parameters": [
                     {
+                        "in": "path",
+                        "required": true,
+                        "name": "empNumber",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
                         "name": "model",
                         "in": "query",
                         "required": false,
@@ -11251,6 +11259,14 @@
                 ],
                 "operationId": "b0e2437232a1773597cf307d055893bb",
                 "parameters": [
+                    {
+                        "in": "path",
+                        "required": true,
+                        "name": "leaveRequestId",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
                     {
                         "name": "model",
                         "in": "query",
@@ -18169,6 +18185,37 @@
                     "Pim/Employee Attachment"
                 ],
                 "operationId": "bee3f2019fd322a8ec95f77e9c746927",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "required": true,
+                        "name": "empNumber",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "required": true,
+                        "name": "screen",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "personal",
+                                "contact",
+                                "emergency",
+                                "dependents",
+                                "immigration",
+                                "qualifications",
+                                "tax",
+                                "salary",
+                                "job",
+                                "report-to",
+                                "membership"
+                            ]
+                        }
+                    }
+                ],
                 "requestBody": {
                     "$ref": "#/components/requestBodies/DeleteRequestBody"
                 },
@@ -19316,14 +19363,6 @@
                         "in": "path",
                         "required": true,
                         "name": "empNumber",
-                        "schema": {
-                            "type": "integer"
-                        }
-                    },
-                    {
-                        "in": "path",
-                        "required": true,
-                        "name": "id",
                         "schema": {
                             "type": "integer"
                         }
