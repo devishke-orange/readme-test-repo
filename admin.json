@@ -950,7 +950,7 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Get ALl I18N Group",
+        "summary": "Get All I18N Group",
         "operationId": "get-all-i18n-group",
         "parameters": [
           {
@@ -1009,8 +1009,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Retrieve all I18N languages",
-        "operationId": "getAllI18NLanguage",
+        "summary": "Get All I18N Language",
+        "operationId": "get-all-i18n-language",
         "parameters": [
           {
             "name": "activeOnly",
@@ -1314,8 +1314,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Retrieve a job category",
-        "operationId": "getOneJobCategory",
+        "summary": "Get One Job Category",
+        "operationId": "get-one-job-category",
         "parameters": [
           {
             "in": "path",
@@ -1354,8 +1354,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Update a job category",
-        "operationId": "putJobCategory",
+        "summary": "Update Job Category",
+        "operationId": "update-job-category",
         "parameters": [
           {
             "in": "path",
@@ -1413,8 +1413,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Retrieve all job categories",
-        "operationId": "getAllJobCateogry",
+        "summary": "Get All Job Cateogry",
+        "operationId": "get-all-job-category",
         "parameters": [
           {
             "name": "sortField",
@@ -1470,8 +1470,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Create a job category",
-        "operationId": "postJobCategory",
+        "summary": "Create Job Category",
+        "operationId": "create-job-category",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1531,7 +1531,7 @@
         "tags": [
           "Admin/Job Specification"
         ],
-        "summary": "Get One Job Specification",
+        "summary": "Get Job Specification",
         "operationId": "get-one-job-specification",
         "parameters": [
           {
@@ -1830,7 +1830,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "operationId": "efbc3a36f29394ce293400d227f3883c",
+        "summary": "Get One Language",
+        "operationId": "get-one-language",
         "parameters": [
           {
             "in": "path",
@@ -1869,7 +1870,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "operationId": "7d5eb8220959e25bd895346ed31068bf",
+        "summary": "Update Language",
+        "operationId": "update-language",
         "parameters": [
           {
             "in": "path",
@@ -1927,7 +1929,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "operationId": "82915d82dc6a5aca2421cd7ad22bc60c",
+        "summary": "Get All Language",
+        "operationId": "get-all-language",
         "parameters": [
           {
             "name": "sortField",
@@ -1983,7 +1986,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "operationId": "3e4731a11a28ec8532e199ad673f8e4e",
+        "summary": "Create Language",
+        "operationId": "create-language",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2026,7 +2030,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "operationId": "20aed869185a5db7ee735aa9e544d10e",
+        "summary": "Delete Language",
+        "operationId": "delete-language",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2042,7 +2047,8 @@
         "tags": [
           "Admin/License"
         ],
-        "operationId": "3cc48a00e57d30d63d309c902079b64b",
+        "summary": "Get One License",
+        "operationId": "get-one-license",
         "parameters": [
           {
             "in": "path",
@@ -2081,7 +2087,8 @@
         "tags": [
           "Admin/License"
         ],
-        "operationId": "287bddda16b605109dca1e2659325d28",
+        "summary": "Update License",
+        "operationId": "update-license",
         "parameters": [
           {
             "in": "path",
@@ -2139,7 +2146,8 @@
         "tags": [
           "Admin/License"
         ],
-        "operationId": "03a53a07a34349951de251029e6242b8",
+        "summary": "Get All License",
+        "operationId": "get-all-license",
         "parameters": [
           {
             "name": "sortField",
@@ -2195,7 +2203,8 @@
         "tags": [
           "Admin/License"
         ],
-        "operationId": "ad27ef2269c3ac527b9f2f2494ecd546",
+        "summary": "Create License",
+        "operationId": "create-license",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2238,7 +2247,8 @@
         "tags": [
           "Admin/License"
         ],
-        "operationId": "8c350ac92f3881e427db011bf0dfffd4",
+        "summary": "Delete License",
+        "operationId": "delete-license",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2249,12 +2259,13 @@
         }
       }
     },
-    "/api/v2/admin/localization}": {
+    "/api/v2/admin/localization": {
       "get": {
         "tags": [
           "Admin/Localization"
         ],
-        "operationId": "ea6f5e958e45a9c47a0736b51decc17c",
+        "summary": "Get One Localization",
+        "operationId": "get-one-localization",
         "responses": {
           "200": {
             "description": "Success",
@@ -2277,12 +2288,15 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/v2/admin/localization}": {
       "put": {
         "tags": [
           "Admin/Localization"
         ],
-        "operationId": "bc22ac38f8c49150e2451247110c6907",
+        "summary": "Update Localization",
+        "operationId": "update-localization",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2336,7 +2350,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "operationId": "05b1f68377fa7c71dcd6a9e28c297e80",
+        "summary": "Get One Location",
+        "operationId": "get-one-location",
         "parameters": [
           {
             "in": "path",
@@ -2375,7 +2390,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "operationId": "2f81ff665f2d45318e1e3ed3b54d52d3",
+        "summary": "Update Location",
+        "operationId": "update-location",
         "parameters": [
           {
             "in": "path",
@@ -2458,7 +2474,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "operationId": "8343268f4bc99ff087c8e06a60f21802",
+        "summary": "Get All Location",
+        "operationId": "get-all-location",
         "parameters": [
           {
             "name": "name",
@@ -2543,7 +2560,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "operationId": "384fc8a42ecd062f71d593dd195d41e0",
+        "summary": "Create Location",
+        "operationId": "create-location",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2611,7 +2629,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "operationId": "95f675fa221c6baa4bcf6f47817c9c5a",
+        "summary": "Delete Location",
+        "operationId": "delete-location",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2627,7 +2646,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "operationId": "8fec1da1220b1a293fa1310beea0d71f",
+        "summary": "Get One Membership",
+        "operationId": "get-one-membership",
         "parameters": [
           {
             "in": "path",
@@ -2666,7 +2686,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "operationId": "6860412ce055b9a8a92b0ccd281272e6",
+        "summary": "Update Membership",
+        "operationId": "update-membership",
         "parameters": [
           {
             "in": "path",
@@ -2724,7 +2745,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "operationId": "a7967eeab860bbc0e18516d26bef99b8",
+        "summary": "Get All Membership",
+        "operationId": "get-all-membership",
         "parameters": [
           {
             "name": "sortField",
@@ -2780,7 +2802,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "operationId": "c2d8f805a26e637ccda6af6897dff214",
+        "summary": "Create Membership",
+        "operationId": "create-membership",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2823,7 +2846,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "operationId": "b5c130f5d3cf67bb980f5e63d7d60b0b",
+        "summary": "Delete Membership",
+        "operationId": "delete-membership",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2839,7 +2863,8 @@
         "tags": [
           "Admin/Modules"
         ],
-        "operationId": "38d0d082395a6e77e8ffef58845b7110",
+        "summary": "Get All Module",
+        "operationId": "get-all-module",
         "responses": {
           "200": {
             "description": "Success",
@@ -2899,7 +2924,8 @@
         "tags": [
           "Admin/Modules"
         ],
-        "operationId": "23ce02051b453df978b66cd6389dd361",
+        "summary": "Update Module",
+        "operationId": "Update Module",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2976,7 +3002,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "operationId": "ab18b3af5d863a2258efc91eeaaa9aba",
+        "summary": "Get One Nationality",
+        "operationId": "get-one-nationality",
         "parameters": [
           {
             "in": "path",
@@ -3015,7 +3042,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "operationId": "616f50e3df42de2b20f2427a85d2de2a",
+        "summary": "Update Nationality",
+        "operationId": "update-nationality",
         "parameters": [
           {
             "in": "path",
@@ -3073,7 +3101,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "operationId": "2cac0a9d8cb989886ceaec815295aabb",
+        "summary": "Get All Nationality",
+        "operationId": "get-all-nationality",
         "parameters": [
           {
             "name": "sortField",
@@ -3129,7 +3158,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "operationId": "5201e7b8b111fcd438add84606af38e7",
+        "summary": "Create Nationality",
+        "operationId": "create-natonality",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3175,7 +3205,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "operationId": "4b43ff21d6c082714adaab2e3037bfb8",
+        "summary": "Delete Nationality",
+        "operationId": "delete-nationality",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -3191,7 +3222,8 @@
         "tags": [
           "Admin/Organization"
         ],
-        "operationId": "bf1a12357bc78b091cc5d38c166811ff",
+        "summary": "Get One Organization",
+        "operationId": "get-one-organization",
         "responses": {
           "200": {
             "description": "Success",
@@ -3220,7 +3252,8 @@
         "tags": [
           "Admin/Organization"
         ],
-        "operationId": "bcd6907fb598a41cc0dec22b8b4a65cf",
+        "summary": "Update Organization",
+        "operationId": "update-organization",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3301,7 +3334,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "9f59035e6709252faf9d4712d9cb4247",
+        "summary": "Get All Pay Grade",
+        "operationId": "get-all-pay-grade",
         "parameters": [
           {
             "name": "sortField",
@@ -3357,7 +3391,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "810953d540747a0027f6ff91bd47b194",
+        "summary": "Create Pay Grade",
+        "operationId": "create-pay-group",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3400,7 +3435,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "a4b3ad25e08dd8b085c22baaa0de5a28",
+        "summary": "Delete Pay Grade",
+        "operationId": "delete-pay-grade",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -3416,7 +3452,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "170dbfdd60d49a054557ec042be38c4e",
+        "summary": "Get One Pay Grade",
+        "operationId": "get-one-pay-grade",
         "parameters": [
           {
             "in": "path",
@@ -3455,7 +3492,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "9e8817ae3271b79174e16c1a8f2cd156",
+        "summary": "Update Pay Grade",
+        "operationId": "update-pay-grade",
         "parameters": [
           {
             "in": "path",
@@ -3510,7 +3548,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "c93ff912dc0e9263048cc11e643a5f5d",
+        "summary": "Get All Pay Grade Allowed Currencies",
+        "operationId": "get-all-pay-grade-allowed-currencies",
         "parameters": [
           {
             "in": "path",
@@ -3576,7 +3615,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "377952c5c93772527d760e3c47085e5d",
+        "summary": "Get One Pay Grade Currency",
+        "operationId": "get-one-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3623,7 +3663,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "013acf48c1b924527141c384b761167e",
+        "summary": "Update Pay Grade Currency",
+        "operationId": "update-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3694,7 +3735,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "c54f78c918d1cd1fb87c045a3673926b",
+        "summary": "Get All Pay Grade Currency",
+        "operationId": "get-all-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3758,7 +3800,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "c0a7f7732bd38fb7d722ba64dc1399d8",
+        "summary": "Create Pay Grade Currency",
+        "operationId": "create-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3819,7 +3862,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "operationId": "848b7d545f55f29a1ba74a8ac4fc62ca",
+        "summary": "Delete Pay Grade Currency",
+        "operationId": "delete-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3845,7 +3889,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "operationId": "83d6677eee6bfc686f9acb4872f5889c",
+        "summary": "Get One Skill",
+        "operationId": "get-one-skill",
         "parameters": [
           {
             "in": "path",
@@ -3884,7 +3929,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "operationId": "564ed77b38de06b4d78c9c51f6516ba5",
+        "summary": "Update Skill",
+        "operationId": "update-skill",
         "parameters": [
           {
             "in": "path",
@@ -3945,7 +3991,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "operationId": "125defa22276818a6b3ea797e99cb7c5",
+        "summary": "Get All Skill",
+        "operationId": "get-all-skill",
         "parameters": [
           {
             "name": "sortField",
@@ -4002,7 +4049,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "operationId": "2918a048a7d51be1c718fe5dcb53a5a6",
+        "summary": "Create Skill",
+        "operationId": "create-skill",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4048,7 +4096,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "operationId": "d27e8b09e607aa8751393f73669d137e",
+        "summary": "Delete Skill",
+        "operationId": "delete-skill",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4064,7 +4113,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "operationId": "067b39fbf4833d3cb747d53bb16e438e",
+        "summary": "Get One Subunit",
+        "operationId": "get-one-subunit",
         "parameters": [
           {
             "in": "path",
@@ -4103,7 +4153,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "operationId": "112597bf60c032f1b0107e1b057d3926",
+        "summary": "Update Subunit",
+        "operationId": "update-subunit",
         "parameters": [
           {
             "in": "path",
@@ -4165,7 +4216,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "operationId": "0e5bb485356998f6b247a258b6b4651e",
+        "summary": "Get All Subunit",
+        "operationId": "get-all-subunit",
         "parameters": [
           {
             "name": "depth",
@@ -4226,7 +4278,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "operationId": "a57fb2a76f4b226b1d87e1c5db65a6dc",
+        "summary": "Create Subunit",
+        "operationId": "create-subunit",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4282,7 +4335,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "operationId": "6c85492f4ed7e1339b150cd7e2234e5e",
+        "summary": "Delete Subunit",
+        "operationId": "delete-subunit",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4313,7 +4367,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "2432cc3f752543898c0c12d9ee64b1cc",
+        "summary": "Get One User",
+        "operationId": "get-one-user",
         "parameters": [
           {
             "in": "path",
@@ -4352,7 +4407,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "4f36fa0fdd47fd67ca3eb1d428898faa",
+        "summary": "Update User",
+        "operationId": "update-user",
         "parameters": [
           {
             "in": "path",
@@ -4426,7 +4482,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "fd0464032fd7005532330d3c03a5bb6a",
+        "summary": "Get All User",
+        "operationId": "get-all-user",
         "parameters": [
           {
             "name": "username",
@@ -4519,7 +4576,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "a1957bb7a442629afbcad22cbda16afe",
+        "summary": "Create User",
+        "operationId": "create-user",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4578,7 +4636,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "4d3220dc7c7e0f827f005851ea92a424",
+        "summary": "Delete User",
+        "operationId": "delete-user",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4594,7 +4653,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "operationId": "fc7310f41edc135e34680b25d1bcfda4",
+        "summary": "Get One Username Validation",
+        "operationId": "get-one-username-validation",
         "parameters": [
           {
             "name": "userName",
@@ -4642,7 +4702,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "3e7f3fff5888739f7336207f74eecff8",
+        "summary": "Get All WorkShift",
+        "operationId": "get-all-workfshift",
         "parameters": [
           {
             "name": "sortField",
@@ -4698,7 +4759,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "360d73130fdb3339fb45859619b4b093",
+        "summary": "Create Work Shift",
+        "operationId": "create-work-shift",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4759,7 +4821,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "ea4d9c8999e4f3838dcb3ab95085fad5",
+        "summary": "Delete Work Shift",
+        "operationId": "delete-work-shift",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4775,7 +4838,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "ad2ede99f57470efc95ecf870dfbb090",
+        "summary": "Get One Work Shift",
+        "operationId": "get-one-work-shift",
         "parameters": [
           {
             "in": "path",
@@ -4814,7 +4878,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "ea5a21109a895f90885efd2b9396a341",
+        "summary": "Update Work Shift",
+        "operationId": "update-work-shift",
         "parameters": [
           {
             "in": "path",
@@ -4887,7 +4952,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "operationId": "9c6068119ef4da94926eb8a2eaa5e26b",
+        "summary": "Get All Employee Work Shift",
+        "operationId": "get-all-employee-work-shift",
         "parameters": [
           {
             "name": "nameOrId",
