@@ -1,4 +1,4 @@
-name: Admin API Update
+name: ReadMe API Update
 
 on:
   push:
@@ -6,22 +6,33 @@ on:
       - main
 
 jobs:
-  rdme-openapi:
+  update-admin:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Install dependencies ✅
         run: |
           sudo apt install jq
           npm install -g rdme
 
-      - name: Reduce orangehrm-v2.json
+      - name: Extract unique tags from JSON
         run: |
-          cat orangehrm-v2.json | jq .paths[][]?.tags[] | sed 's/"/--tag "/' | grep Admin/ | uniq |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out admin.json /' > admin-command.sh
-          chmod +x admin-command.sh
-          ./admin-command.sh
+          cat orangehrm-v2.json | jq .paths[][]?.tags[] | uniq | sort > tag-list.txt
 
-      - name: Run `openapi` command 🚀
-        run: rdme openapi admin.json --key=${{ secrets.README_API_KEY }} --id=64d0718293b2de000be27fec
+      - name: Update APIs for Admin module
+        run: |
+          cat tag-list.txt | grep Admin/ |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
+          chmod +x reduce-command.sh
+          ./reduce-command.sh
+          sed -i 's/OrangeHRM Open Source : REST API v2 docs/Admin/' reduced.json
+          rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d0718293b2de000be27fec
+
+      - name: Update APIs for Attendance module
+        run: |
+          cat tag-list.txt | grep Attendance/ |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
+          chmod +x reduce-command.sh
+          ./reduce-command.sh
+          sed -i 's/OrangeHRM Open Source : REST API v2 docs/Attendance/' reduced.json
+          rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d071b7d9dad80042b406e2
