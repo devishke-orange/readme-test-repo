@@ -2,8 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Admin",
-    "version": "2.5.0",
-    "description": "This page contans documentation on how to use OrangeHRM via API calls.\n\n ## OrangeHRM Starter Application \n\n ### Getting started\n * Download the latest version of OrangeHRM Starter [here](https://sourceforge.net/projects/orangehrm/files/latest/download) \n\n # Authorization \n\n Include authorization documentation here \n\n # Technincal Overview \n\n Include technical overview here"
+    "version": "2.5.0"
   },
   "servers": [
     {
@@ -21,7 +20,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "operationId": "85d2fb1521689313e1903de8a061a5c5",
+        "summary": "Retrieve an education record",
+        "operationId": "getOneEducation",
         "parameters": [
           {
             "in": "path",
@@ -60,7 +60,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "operationId": "6769e5a43e5da9f99ec2b0af3c0cfcfe",
+        "summary": "Update an education record",
+        "operationId": "putEducation",
         "parameters": [
           {
             "in": "path",
@@ -118,7 +119,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "operationId": "bbc76573c4c93471da0f0f965c06c221",
+        "summary": "Retrieve all education records",
+        "operationId": "getAllEducation",
         "parameters": [
           {
             "name": "sortField",
@@ -174,7 +176,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "operationId": "c766cd3bf4c9fbc024211a9163b21fc2",
+        "summary": "Create an education record",
+        "operationId": "postEducation",
         "requestBody": {
           "content": {
             "application/json": {
@@ -217,7 +220,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "operationId": "6aa0615d708abfa41c03d8baff1e1444",
+        "summary": "Delete education records",
+        "operationId": "deleteEducation",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -228,12 +232,12 @@
         }
       }
     },
-    "/api/v2/admin/email-configuration": {
+    "/api/v2/admin/ldap-config": {
       "get": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/LDAP Config"
         ],
-        "operationId": "510d84c0525e60b623cd290f6def32c1",
+        "operationId": "6e11269b7bc96b38fffc459e578549a9",
         "responses": {
           "200": {
             "description": "Success",
@@ -242,7 +246,7 @@
                 "schema": {
                   "properties": {
                     "data": {
-                      "$ref": "#/components/schemas/Admin-EmailConfigurationModel"
+                      "$ref": "#/components/schemas/LDAP-LDAPConfigModel"
                     },
                     "meta": {
                       "type": "object"
@@ -252,2019 +256,154 @@
                 }
               }
             }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
           }
         }
       },
       "put": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/LDAP Config"
         ],
-        "operationId": "78e7a202917547d3a627fadc8190561c",
+        "operationId": "d8435e417c92f4493c483ad446fb8f08",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "required": [
-                  "name"
+                  "userLookupSettings",
+                  "dataMapping",
+                  "mergeLDAPUsersWithExistingSystemUsers",
+                  "syncInterval"
                 ],
                 "properties": {
-                  "mailType": {
-                    "type": "string"
+                  "enable": {
+                    "type": "boolean"
                   },
-                  "sentAs": {
-                    "type": "string"
+                  "hostname": {
+                    "type": "string",
+                    "maxLength": 255
                   },
-                  "smtpHost": {
-                    "type": "string"
-                  },
-                  "smtpPort": {
+                  "port": {
                     "type": "integer"
                   },
-                  "smtpUsername": {
-                    "type": "string"
-                  },
-                  "smtpPassword": {
-                    "type": "string"
-                  },
-                  "smtpAuthType": {
-                    "type": "string"
-                  },
-                  "smtpSecurityType": {
-                    "type": "string"
-                  },
-                  "testEmailAddress": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LanguageModel"
-                    },
-                    "meta": {
-                      "properties": {
-                        "testEmailStatus": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/email-subscriptions/{emailSubscriptionId}/subscribers": {
-      "get": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "73565b0f61c6f9538a2a4d5871f26d7e",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "emailSubscriptionId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "emailSubscriber.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-EmailSubscriberModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        },
-                        "name": {
-                          "description": "Name of the subscription",
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "52b59990a3a4fa8f5a72bca80073330a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "emailSubscriptionId",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "email"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmailSubscriberModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "df98edd6a567b57edc67ba695b6ce151",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "emailSubscriptionId",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/email-subscriptions/{emailSubscriptionId}/subscribers/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "bc01f9130f327a4c22f0551aa0df5ec2",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "emailSubscriptionId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmailSubscriberModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "dc15fa496254ffeef0b33f41203212fc",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "emailSubscriptionId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "email"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmailSubscriberModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/email-subscriptions": {
-      "get": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "fadff6b98a2052ab9e62389162630c86",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "emailSubscription.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-EmailSubscriptionModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/email-subscriptions/{id}": {
-      "put": {
-        "tags": [
-          "Admin/Email Configuration"
-        ],
-        "operationId": "70c25099ae3c169d508e6c38bbb66f9d",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "enabled"
-                ],
-                "properties": {
-                  "enabled": {
-                    "type": "boolean"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmailSubscriptionModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/employment-statuses/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Employment Status"
-        ],
-        "operationId": "429181da6be791afc1d382af56ae2a95",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmploymentStatusModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Employment Status"
-        ],
-        "operationId": "9da2a594f23eca19951698c93a7026fb",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmploymentStatusModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/employment-statuses": {
-      "get": {
-        "tags": [
-          "Admin/Employment Status"
-        ],
-        "operationId": "a3e2a01cc4b944e0474fc2abc25e0bb2",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "es.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-EmploymentStatusModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Employment Status"
-        ],
-        "operationId": "83b4b42188a5e15c866f9b2af5158b65",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-EmploymentStatusModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Employment Status"
-        ],
-        "operationId": "d16a616af8009c9aedb6179f24f3ee5c",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/i18n/groups": {
-      "get": {
-        "tags": [
-          "Admin/I18N"
-        ],
-        "operationId": "198ea5e0e7b39ee04163d6a87ffe16ee",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "g.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-I18NGroupModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/i18n/languages": {
-      "get": {
-        "tags": [
-          "Admin/I18N"
-        ],
-        "operationId": "12c63d85495f1193419f52a307b1c512",
-        "parameters": [
-          {
-            "name": "activeOnly",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "l.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-I18NLanguageModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/i18n/languages/{id}": {
-      "put": {
-        "tags": [
-          "Admin/I18N"
-        ],
-        "operationId": "08050308207a8bfa27f4f9b2a02de18d",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "Empty body as the language is enabled without any parameters",
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-I18NLanguageModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/i18n/languages/{languageId}/translations": {
-      "get": {
-        "tags": [
-          "Admin/I18N"
-        ],
-        "operationId": "4e82d18cc6f8e7a63280eaf673eec03a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "languageId",
-            "schema": {
-              "description": "a valid group id of I18N-Language",
-              "type": "integer"
-            }
-          },
-          {
-            "name": "sourceText",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "translatedText",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "groupId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "description": "a valid group id of I18N-Group",
-              "type": "integer"
-            }
-          },
-          {
-            "name": "onlyTranslated",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "langString.value"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "properties": {
-                          "langStringId": {
-                            "type": "integer"
-                          },
-                          "source": {
-                            "type": "boolean"
-                          },
-                          "note": {
-                            "type": "boolean"
-                          },
-                          "target": {
-                            "type": "boolean"
-                          },
-                          "module": {
-                            "type": "boolean"
-                          }
-                        },
-                        "type": "object"
-                      },
-                      "example": "langStringId: 59, note: null, source: \"Add Currency\", target: \"Valuta toevoegen\" "
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/i18n/languages/{languageId}/translations/bulk": {
-      "put": {
-        "tags": [
-          "Admin/I18N"
-        ],
-        "operationId": "54776f7e3f429fb67e4508a6d3dbf45a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "languageId",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "data": {
-                    "type": "array",
-                    "items": {
-                      "properties": {
-                        "langStringId": {
-                          "type": "integer"
-                        },
-                        "translatedValue": {
-                          "type": "string"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LanguageModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/job-categories/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Job Category"
-        ],
-        "operationId": "92267b8fe6e6bc81d24464248c7766fc",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobCategoryModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Job Category"
-        ],
-        "operationId": "528e73f88e7f52d445a6adaeaaaea786",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobCategoryModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/job-categories": {
-      "get": {
-        "tags": [
-          "Admin/Job Category"
-        ],
-        "operationId": "e011a05a39e71bc00a1d66280e9a8dd4",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "jc.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-JobCategoryModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Job Category"
-        ],
-        "operationId": "d95ec4f8edafb4e0420e77a5e4a2a8ec",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobCategoryModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Job Category"
-        ],
-        "operationId": "d90359cf5c343f7b410adeeefcbd66a4",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/job-titles/{id}/specification": {
-      "get": {
-        "tags": [
-          "Admin/Job Specification"
-        ],
-        "operationId": "8a8bc04de6565fb7376792cdfc59808a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobSpecificationModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/job-titles/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Job Title"
-        ],
-        "operationId": "82901db4e3011d9b1dd042af9c32a69a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobTitleModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Job Title"
-        ],
-        "operationId": "8c13143230f39306e333baf642ba15aa",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "title"
-                ],
-                "properties": {
-                  "title": {
-                    "type": "string"
-                  },
-                  "description": {
+                  "encryption": {
                     "type": "string",
-                    "default": null
-                  },
-                  "note": {
-                    "type": "string",
-                    "default": null
-                  },
-                  "currentJobSpecification": {
-                    "type": "string",
-                    "default": null,
                     "enum": [
-                      "keepCurrent",
-                      "deleteCurrent",
-                      "replaceCurrent"
+                      "none",
+                      "tls",
+                      "ssl"
                     ]
                   },
-                  "specification": {
-                    "$ref": "#/components/schemas/Base64AttachmentOrNull"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobTitleModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/job-titles": {
-      "get": {
-        "tags": [
-          "Admin/Job Title"
-        ],
-        "operationId": "b31392a2eff8fe9c7462b04b29ec477f",
-        "parameters": [
-          {
-            "name": "activeOnly",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "jt.jobTitleName",
-                "jt.jobDescription"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-JobTitleModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Job Title"
-        ],
-        "operationId": "9e1bc11321d2055f9d285e5e31c09803",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "title"
-                ],
-                "properties": {
-                  "title": {
-                    "type": "string"
-                  },
-                  "description": {
+                  "ldapImplementation": {
                     "type": "string",
-                    "default": null
+                    "enum": [
+                      "OpenLDAP",
+                      "ActiveDirectory"
+                    ]
                   },
-                  "note": {
+                  "bindAnonymously": {
+                    "type": "boolean"
+                  },
+                  "bindUserDN": {
                     "type": "string",
-                    "default": null
+                    "maxLength": 255
                   },
-                  "specification": {
-                    "$ref": "#/components/schemas/Base64AttachmentOrNull"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-JobTitleModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Job Title"
-        ],
-        "operationId": "e092d0eca8ce27e8e98fbae8821c9fff",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/languages/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Languages"
-        ],
-        "operationId": "efbc3a36f29394ce293400d227f3883c",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LanguageModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Languages"
-        ],
-        "operationId": "7d5eb8220959e25bd895346ed31068bf",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LanguageModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/languages": {
-      "get": {
-        "tags": [
-          "Admin/Languages"
-        ],
-        "operationId": "82915d82dc6a5aca2421cd7ad22bc60c",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "l.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-LanguageModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Languages"
-        ],
-        "operationId": "3e4731a11a28ec8532e199ad673f8e4e",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LanguageModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Languages"
-        ],
-        "operationId": "20aed869185a5db7ee735aa9e544d10e",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/licenses/{id}": {
-      "get": {
-        "tags": [
-          "Admin/License"
-        ],
-        "operationId": "3cc48a00e57d30d63d309c902079b64b",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LicenseModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/License"
-        ],
-        "operationId": "287bddda16b605109dca1e2659325d28",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LicenseModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/licenses": {
-      "get": {
-        "tags": [
-          "Admin/License"
-        ],
-        "operationId": "03a53a07a34349951de251029e6242b8",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "l.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-LicenseModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/License"
-        ],
-        "operationId": "ad27ef2269c3ac527b9f2f2494ecd546",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LicenseModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/License"
-        ],
-        "operationId": "8c350ac92f3881e427db011bf0dfffd4",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/localization}": {
-      "get": {
-        "tags": [
-          "Admin/Localization"
-        ],
-        "operationId": "ea6f5e958e45a9c47a0736b51decc17c",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "dateFormat": {
-                      "type": "string",
-                      "example": "Y-m-d"
-                    },
-                    "language": {
-                      "type": "string",
-                      "example": "en_US"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Localization"
-        ],
-        "operationId": "bc22ac38f8c49150e2451247110c6907",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "dateFormat",
-                  "language"
-                ],
-                "properties": {
-                  "dateFormat": {
+                  "bindUserPassword": {
                     "type": "string",
-                    "example": "en_US,nl"
+                    "maxLength": 255
                   },
-                  "language": {
+                  "userLookupSettings": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "baseDN": {
+                          "type": "string",
+                          "maxLength": 255
+                        },
+                        "searchScope": {
+                          "type": "string",
+                          "enum": [
+                            "one",
+                            "sub"
+                          ]
+                        },
+                        "userNameAttribute": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "userSearchFilter": {
+                          "type": "string",
+                          "maxLength": 255
+                        },
+                        "userUniqueIdAttribute": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "employeeSelectorMapping": {
+                          "type": "array",
+                          "items": {
+                            "properties": {
+                              "field": {
+                                "type": "string",
+                                "enum": [
+                                  [
+                                    "employeeId",
+                                    "workEmail",
+                                    "drivingLicenseNo",
+                                    "otherId",
+                                    "otherEmail",
+                                    "ssnNumber",
+                                    "sinNumber"
+                                  ]
+                                ]
+                              },
+                              "attributeName": {
+                                "type": "string",
+                                "maxLength": 100
+                              }
+                            },
+                            "type": "object"
+                          }
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "dataMapping": {
+                    "properties": {
+                      "firstName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "middleName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "userStatus": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "workEmail": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "employeeId": {
+                        "type": "string",
+                        "maxLength": 100
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "mergeLDAPUsersWithExistingSystemUsers": {
+                    "type": "boolean"
+                  },
+                  "syncInterval": {
                     "type": "string",
-                    "example": "m-d-Y,m-Y-d"
+                    "maximum": 23,
+                    "minimum": 1
                   }
                 },
                 "type": "object"
@@ -2280,7 +419,7 @@
                 "schema": {
                   "properties": {
                     "data": {
-                      "$ref": "#/components/schemas/Admin-MembershipModel"
+                      "$ref": "#/components/schemas/LDAP-LDAPConfigModel"
                     },
                     "meta": {
                       "type": "object"
@@ -2290,473 +429,114 @@
                 }
               }
             }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
           }
         }
       }
     },
-    "/api/v2/admin/locations/{id}": {
-      "get": {
+    "/api/v2/admin/ldap-test-connection": {
+      "post": {
         "tags": [
-          "Admin/Locations"
+          "Admin/LDAP Config"
         ],
-        "operationId": "05b1f68377fa7c71dcd6a9e28c297e80",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LocationModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Locations"
-        ],
-        "operationId": "2f81ff665f2d45318e1e3ed3b54d52d3",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
+        "operationId": "236815a841a93d3095092b2bd6dd53c0",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "name",
-                  "countryCode"
-                ],
                 "properties": {
-                  "name": {
-                    "type": "string"
+                  "hostname": {
+                    "type": "string",
+                    "maxLength": 255
                   },
-                  "countryCode": {
-                    "type": "string"
+                  "port": {
+                    "type": "integer"
                   },
-                  "province": {
-                    "type": "string"
+                  "encryption": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "tls",
+                      "ssl"
+                    ]
                   },
-                  "city": {
-                    "type": "string"
+                  "ldapImplementation": {
+                    "type": "string",
+                    "enum": [
+                      "OpenLDAP",
+                      "ActiveDirectory"
+                    ]
                   },
-                  "address": {
-                    "type": "string"
+                  "bindAnonymously": {
+                    "type": "boolean"
                   },
-                  "zipCode": {
-                    "type": "string"
+                  "bindUserDN": {
+                    "type": "string",
+                    "maxLength": 255
                   },
-                  "phone": {
-                    "type": "string"
+                  "bindUserPassword": {
+                    "type": "string",
+                    "maxLength": 255
                   },
-                  "fax": {
-                    "type": "string"
-                  },
-                  "note": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LocationModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/locations": {
-      "get": {
-        "tags": [
-          "Admin/Locations"
-        ],
-        "operationId": "8343268f4bc99ff087c8e06a60f21802",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "city",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "countryCode",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "location.name",
-                "location.city",
-                "location.phone",
-                "country.countryCode",
-                "country.countryName",
-                "noOfEmployees"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-LocationModel"
-                      }
-                    },
-                    "meta": {
+                  "userLookupSettings": {
+                    "type": "array",
+                    "items": {
                       "properties": {
-                        "total": {
-                          "type": "integer"
+                        "baseDN": {
+                          "type": "string",
+                          "maxLength": 255
+                        },
+                        "searchScope": {
+                          "type": "string",
+                          "enum": [
+                            "one",
+                            "sub"
+                          ]
+                        },
+                        "userNameAttribute": {
+                          "type": "string"
+                        },
+                        "userSearchFilter": {
+                          "type": "string",
+                          "maxLength": 255
+                        },
+                        "userUniqueIdAttribute": {
+                          "type": "string"
+                        },
+                        "employeeSelectorMapping": {
+                          "type": "object"
                         }
                       },
                       "type": "object"
                     }
                   },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Locations"
-        ],
-        "operationId": "384fc8a42ecd062f71d593dd195d41e0",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "countryCode"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "countryCode": {
-                    "type": "string"
-                  },
-                  "province": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "address": {
-                    "type": "string"
-                  },
-                  "zipCode": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "fax": {
-                    "type": "string"
-                  },
-                  "note": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-LocationModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Locations"
-        ],
-        "operationId": "95f675fa221c6baa4bcf6f47817c9c5a",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/memberships/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Memberships"
-        ],
-        "operationId": "8fec1da1220b1a293fa1310beea0d71f",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-MembershipModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Memberships"
-        ],
-        "operationId": "6860412ce055b9a8a92b0ccd281272e6",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-MembershipModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/memberships": {
-      "get": {
-        "tags": [
-          "Admin/Memberships"
-        ],
-        "operationId": "a7967eeab860bbc0e18516d26bef99b8",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "m.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-MembershipModel"
+                  "dataMapping": {
+                    "properties": {
+                      "firstName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "middleName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "lastName": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "userStatus": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "workEmail": {
+                        "type": "string",
+                        "maxLength": 100
+                      },
+                      "employeeId": {
+                        "type": "string",
+                        "maxLength": 100
                       }
                     },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Memberships"
-        ],
-        "operationId": "c2d8f805a26e637ccda6af6897dff214",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
+                    "type": "object"
                   }
                 },
                 "type": "object"
@@ -2772,315 +552,57 @@
                 "schema": {
                   "properties": {
                     "data": {
-                      "$ref": "#/components/schemas/Admin-MembershipModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Memberships"
-        ],
-        "operationId": "b5c130f5d3cf67bb980f5e63d7d60b0b",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/modules": {
-      "get": {
-        "tags": [
-          "Admin/Modules"
-        ],
-        "operationId": "38d0d082395a6e77e8ffef58845b7110",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "description": "Module name and the boolean value to denote if it is enabled",
                       "type": "array",
                       "items": {
                         "properties": {
-                          "admin": {
-                            "type": "boolean"
+                          "category": {
+                            "type": "string",
+                            "example": "Login"
                           },
-                          "pim": {
-                            "type": "boolean"
-                          },
-                          "leave": {
-                            "type": "boolean"
-                          },
-                          "time": {
-                            "type": "boolean"
-                          },
-                          "recruitment": {
-                            "type": "boolean"
-                          },
-                          "performance": {
-                            "type": "boolean"
-                          },
-                          "maintenance": {
-                            "type": "boolean"
-                          },
-                          "mobile": {
-                            "type": "boolean"
-                          },
-                          "directory": {
-                            "type": "boolean"
-                          },
-                          "claim": {
-                            "type": "boolean"
+                          "checks": {
+                            "properties": {
+                              "label": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
                           }
                         },
                         "type": "object"
-                      },
-                      "example": "admin: true, pim: true, leave: false, time: true,..."
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Modules"
-        ],
-        "operationId": "23ce02051b453df978b66cd6389dd361",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "description": "Module name and the boolean value to denote if it is enabled",
-                "properties": {
-                  "admin": {
-                    "type": "boolean"
-                  },
-                  "pim": {
-                    "type": "boolean"
-                  },
-                  "leave": {
-                    "type": "boolean"
-                  },
-                  "time": {
-                    "type": "boolean"
-                  },
-                  "recruitment": {
-                    "type": "boolean"
-                  },
-                  "performance": {
-                    "type": "boolean"
-                  },
-                  "maintenance": {
-                    "type": "boolean"
-                  },
-                  "mobile": {
-                    "type": "boolean"
-                  },
-                  "directory": {
-                    "type": "boolean"
-                  },
-                  "claim": {
-                    "type": "boolean"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "description": "Module name and the boolean value to denote if it is enabled",
-                      "type": "array",
-                      "items": {
-                        "properties": {
-                          "module": {
-                            "type": "boolean"
-                          }
-                        },
-                        "type": "object"
-                      },
-                      "example": "admin: true, pim: true, leave: true, time: true,..."
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/nationalities/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Nationality"
-        ],
-        "operationId": "ab18b3af5d863a2258efc91eeaaa9aba",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-NationalityModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Nationality"
-        ],
-        "operationId": "616f50e3df42de2b20f2427a85d2de2a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-NationalityModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/nationalities": {
-      "get": {
-        "tags": [
-          "Admin/Nationality"
-        ],
-        "operationId": "2cac0a9d8cb989886ceaec815295aabb",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "n.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-NationalityModel"
                       }
                     },
                     "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/admin/ldap/user-sync": {
+      "get": {
+        "tags": [
+          "Admin/LDAP Config"
+        ],
+        "operationId": "9bf585030745b9474d79370b3a651540",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/LDAP-LDAPSyncStatusModel"
+                    },
+                    "meta": {
                       "type": "object"
                     }
                   },
@@ -3093,29 +615,9 @@
       },
       "post": {
         "tags": [
-          "Admin/Nationality"
+          "Admin/LDAP Config"
         ],
-        "operationId": "5201e7b8b111fcd438add84606af38e7",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "id": {
-                    "type": "integer"
-                  },
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
+        "operationId": "e57e9c31b2d88151cf9b53519364544f",
         "responses": {
           "200": {
             "description": "Success",
@@ -3124,49 +626,7 @@
                 "schema": {
                   "properties": {
                     "data": {
-                      "$ref": "#/components/schemas/Admin-NationalityModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Nationality"
-        ],
-        "operationId": "4b43ff21d6c082714adaab2e3037bfb8",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/organization": {
-      "get": {
-        "tags": [
-          "Admin/Organization"
-        ],
-        "operationId": "bf1a12357bc78b091cc5d38c166811ff",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-OrganizationModel"
+                      "$ref": "#/components/schemas/LDAP-LDAPSyncStatusModel"
                     },
                     "meta": {
                       "type": "object"
@@ -3177,1741 +637,57 @@
               }
             }
           },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Organization"
-        ],
-        "operationId": "bcd6907fb598a41cc0dec22b8b4a65cf",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "registrationNumber": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  },
-                  "fax": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string"
-                  },
-                  "country": {
-                    "type": "string"
-                  },
-                  "province": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "zipCode": {
-                    "type": "string"
-                  },
-                  "street1": {
-                    "type": "string"
-                  },
-                  "street2": {
-                    "type": "string"
-                  },
-                  "note": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
+          "400": {
+            "description": "Bad Request",
             "content": {
               "application/json": {
                 "schema": {
                   "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-OrganizationModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/pay-grades": {
-      "get": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "9f59035e6709252faf9d4712d9cb4247",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "pg.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-PayGradeModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "810953d540747a0027f6ff91bd47b194",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "a4b3ad25e08dd8b085c22baaa0de5a28",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/pay-grades/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "170dbfdd60d49a054557ec042be38c4e",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "9e8817ae3271b79174e16c1a8f2cd156",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/pay-grades/{payGradeId}/currencies/allowed": {
-      "get": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "c93ff912dc0e9263048cc11e643a5f5d",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ct.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-CurrencyTypeModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/pay-grades/{payGradeId}/currencies/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "377952c5c93772527d760e3c47085e5d",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeCurrencyModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "013acf48c1b924527141c384b761167e",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "currencyId",
-                  "maxSalary",
-                  "minSalary"
-                ],
-                "properties": {
-                  "currencyId": {
-                    "type": "string"
-                  },
-                  "maxSalary": {
-                    "type": "integer"
-                  },
-                  "minSalary": {
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeCurrencyModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/pay-grades/{payGradeId}/currencies": {
-      "get": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "c54f78c918d1cd1fb87c045a3673926b",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "ct.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-PayGradeCurrencyModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "c0a7f7732bd38fb7d722ba64dc1399d8",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "currencyId",
-                  "maxSalary",
-                  "minSalary"
-                ],
-                "properties": {
-                  "currencyId": {
-                    "type": "string"
-                  },
-                  "maxSalary": {
-                    "type": "integer"
-                  },
-                  "minSalary": {
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-PayGradeCurrencyModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Pay Grade"
-        ],
-        "operationId": "848b7d545f55f29a1ba74a8ac4fc62ca",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "payGradeId",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/skills/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Skills"
-        ],
-        "operationId": "83d6677eee6bfc686f9acb4872f5889c",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SkillModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Skills"
-        ],
-        "operationId": "564ed77b38de06b4d78c9c51f6516ba5",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SkillModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/skills": {
-      "get": {
-        "tags": [
-          "Admin/Skills"
-        ],
-        "operationId": "125defa22276818a6b3ea797e99cb7c5",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "s.name",
-                "s.description"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-SkillModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Skills"
-        ],
-        "operationId": "2918a048a7d51be1c718fe5dcb53a5a6",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SkillModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Skills"
-        ],
-        "operationId": "d27e8b09e607aa8751393f73669d137e",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/subunits/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Subunits"
-        ],
-        "operationId": "067b39fbf4833d3cb747d53bb16e438e",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SubunitModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Subunits"
-        ],
-        "operationId": "112597bf60c032f1b0107e1b057d3926",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name"
-                ],
-                "properties": {
-                  "name": {
-                    "description": "String should be unique",
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "unitId": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SubunitModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/subunits": {
-      "get": {
-        "tags": [
-          "Admin/Subunits"
-        ],
-        "operationId": "0e5bb485356998f6b247a258b6b4651e",
-        "parameters": [
-          {
-            "name": "depth",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "mode",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "default": "list"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "description": "if request paraneter 'mode' is tree SubunitTreeModel is used",
-                      "type": "array",
-                      "items": {
-                        "oneOf": [
-                          {
-                            "$ref": "#/components/schemas/Admin-SubunitModel"
+                    "error": {
+                      "oneOf": [
+                        {
+                          "property": "error",
+                          "properties": {
+                            "status": {
+                              "type": "string",
+                              "default": "400"
+                            },
+                            "message": {
+                              "type": "string",
+                              "default": "LDAP settings not configured"
+                            }
                           },
-                          {
-                            "$ref": "#/components/schemas/Admin-SubunitTreeModel"
-                          }
-                        ]
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
+                          "type": "object"
+                        },
+                        {
+                          "property": "error",
+                          "properties": {
+                            "status": {
+                              "type": "string",
+                              "default": "400"
+                            },
+                            "message": {
+                              "type": "string",
+                              "default": "LDAP sync not enabled"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        {
+                          "property": "error",
+                          "properties": {
+                            "status": {
+                              "type": "string",
+                              "default": "400"
+                            },
+                            "message": {
+                              "type": "string",
+                              "default": "Please check the settings for your LDAP configuration"
+                            }
+                          },
+                          "type": "object"
                         }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Subunits"
-        ],
-        "operationId": "a57fb2a76f4b226b1d87e1c5db65a6dc",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "parentId"
-                ],
-                "properties": {
-                  "name": {
-                    "description": "Should be unique",
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  },
-                  "parentId": {
-                    "description": "Should be the id of the parent node",
-                    "type": "integer",
-                    "example": "1"
-                  },
-                  "unitId": {
-                    "type": "string"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SubunitModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Subunits"
-        ],
-        "operationId": "6c85492f4ed7e1339b150cd7e2234e5e",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-SubunitModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/users/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "2432cc3f752543898c0c12d9ee64b1cc",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-UserModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "4f36fa0fdd47fd67ca3eb1d428898faa",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "username",
-                  "password",
-                  "status",
-                  "userRoleId",
-                  "empNumber"
-                ],
-                "properties": {
-                  "username": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "status": {
-                    "type": "boolean"
-                  },
-                  "userRoleId": {
-                    "type": "integer"
-                  },
-                  "empNumber": {
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-UserModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/users": {
-      "get": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "fd0464032fd7005532330d3c03a5bb6a",
-        "parameters": [
-          {
-            "name": "username",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "userRoleId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "empNumber",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "u.userName",
-                "u.status",
-                "r.name",
-                "e.firstName",
-                "e.lastName",
-                "r.displayName"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-UserModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "a1957bb7a442629afbcad22cbda16afe",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "username",
-                  "password",
-                  "status",
-                  "userRoleId",
-                  "empNumber"
-                ],
-                "properties": {
-                  "username": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  },
-                  "status": {
-                    "type": "boolean"
-                  },
-                  "userRoleId": {
-                    "type": "integer"
-                  },
-                  "empNumber": {
-                    "type": "integer"
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-UserModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "4d3220dc7c7e0f827f005851ea92a424",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/validation/user-name": {
-      "get": {
-        "tags": [
-          "Admin/Users"
-        ],
-        "operationId": "fc7310f41edc135e34680b25d1bcfda4",
-        "parameters": [
-          {
-            "name": "userName",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "userId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "properties": {
-                        "valid": {
-                          "type": "boolean"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/work-shifts": {
-      "get": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "3e7f3fff5888739f7336207f74eecff8",
-        "parameters": [
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "workShift.name"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Admin-WorkShiftModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "360d73130fdb3339fb45859619b4b093",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "hoursPerDay",
-                  "startTime",
-                  "endTime"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "hoursPerDay": {
-                    "type": "string"
-                  },
-                  "startTime": {
-                    "type": "string"
-                  },
-                  "endTime": {
-                    "type": "string"
-                  },
-                  "empNumbers": {
-                    "type": "array",
-                    "items": {
-                      "type": "integer"
-                    }
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-WorkShiftDetailedModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "ea4d9c8999e4f3838dcb3ab95085fad5",
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/admin/work-shifts/{id}": {
-      "get": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "ad2ede99f57470efc95ecf870dfbb090",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-WorkShiftDetailedModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          },
-          "404": {
-            "$ref": "#/components/responses/RecordNotFound"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "ea5a21109a895f90885efd2b9396a341",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "id",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "name",
-                  "hoursPerDay",
-                  "startTime",
-                  "endTime"
-                ],
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "hoursPerDay": {
-                    "type": "string"
-                  },
-                  "startTime": {
-                    "type": "string"
-                  },
-                  "endTime": {
-                    "type": "string"
-                  },
-                  "empNumbers": {
-                    "type": "array",
-                    "items": {
-                      "type": "integer"
-                    }
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Admin-WorkShiftDetailedModel"
-                    },
-                    "meta": {
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v2/admin/work-shifts/employees": {
-      "get": {
-        "tags": [
-          "Admin/Work Shift"
-        ],
-        "operationId": "9c6068119ef4da94926eb8a2eaa5e26b",
-        "parameters": [
-          {
-            "name": "nameOrId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "employee.lastName",
-                "employee.firstName",
-                "employee.middleName",
-                "employee.empNumber",
-                "employee.employeeId",
-                "jobTitle.jobTitleName",
-                "empStatus.name",
-                "subunit.name",
-                "supervisor.firstName"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Pim-EmployeeModel"
-                      }
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
+                      ]
                     }
                   },
                   "type": "object"
@@ -4925,20 +701,6 @@
   },
   "components": {
     "schemas": {
-      "Admin-CurrencyTypeModel": {
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "code": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
       "Admin-EducationModel": {
         "properties": {
           "id": {
@@ -4946,360 +708,6 @@
           },
           "name": {
             "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-EmailConfigurationModel": {
-        "properties": {
-          "mailType": {
-            "type": "string"
-          },
-          "sentAs": {
-            "type": "string"
-          },
-          "smtpHost": {
-            "type": "string"
-          },
-          "smtpPort": {
-            "type": "integer"
-          },
-          "smtpUsername": {
-            "type": "string"
-          },
-          "smtpAuthType": {
-            "type": "string"
-          },
-          "smtpSecurityType": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-EmailSubscriberModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-EmailSubscriptionModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "subscribers": {
-            "properties": {
-              "id": {
-                "type": "integer"
-              },
-              "name": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "isEnabled": {
-            "type": "boolean"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-EmploymentStatusModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-I18NGroupModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string",
-            "example": "admin,pim"
-          },
-          "title": {
-            "type": "string",
-            "example": "Admin,PIM"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-I18NLanguageModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string",
-            "example": "nl,fr"
-          },
-          "code": {
-            "type": "string",
-            "example": "Dutch - Nederlands, French - Français"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-JobCategoryModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-JobSpecificationModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "filename": {
-            "type": "string"
-          },
-          "fileType": {
-            "type": "string"
-          },
-          "fileSize": {
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-JobTitleModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "note": {
-            "type": "string"
-          },
-          "jobSpecification": {
-            "properties": {
-              "id": {
-                "type": "integer"
-              },
-              "filename": {
-                "type": "string"
-              },
-              "fileType": {
-                "type": "string"
-              },
-              "fileSize": {
-                "type": "integer"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-LanguageModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-LicenseModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-LocationModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "country": {
-            "properties": {
-              "countryCode": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "countryName": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          },
-          "province": {
-            "type": "string"
-          },
-          "city": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "zipCode": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "fax": {
-            "type": "string"
-          },
-          "note": {
-            "type": "string"
-          },
-          "noOfEmployees": {
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-MembershipModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-NationalityModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-OrganizationModel": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "registrationNumber": {
-            "type": "string"
-          },
-          "phone": {
-            "type": "string"
-          },
-          "fax": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "country": {
-            "type": "string"
-          },
-          "province": {
-            "type": "string"
-          },
-          "city": {
-            "type": "string"
-          },
-          "zipCode": {
-            "type": "string"
-          },
-          "street1": {
-            "type": "string"
-          },
-          "street2": {
-            "type": "string"
-          },
-          "note": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-PayGradeCurrencyModel": {
-        "properties": {
-          "minSalary": {
-            "type": "number"
-          },
-          "maxSalary": {
-            "type": "number"
-          },
-          "currencyType": {
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              }
-            },
-            "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-PayGradeModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "currencies": {
-            "type": "array",
-            "items": {
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "type": "object"
-            }
           }
         },
         "type": "object"
@@ -5318,220 +726,115 @@
         },
         "type": "object"
       },
-      "Admin-SubunitModel": {
+      "LDAP-LDAPConfigModel": {
         "properties": {
-          "id": {
-            "type": "integer"
+          "enable": {
+            "type": "boolean"
           },
-          "name": {
+          "hostname": {
             "type": "string"
           },
-          "unitId": {
+          "port": {
+            "type": "integer"
+          },
+          "encryption": {
             "type": "string"
           },
-          "description": {
+          "ldapImplementation": {
             "type": "string"
           },
-          "level": {
-            "type": "integer"
+          "bindAnonymously": {
+            "type": "boolean"
           },
-          "left": {
-            "type": "integer"
+          "bindUserDN": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
-          "right": {
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-SubunitTreeModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
+          "hasBindUserPassword": {
+            "type": "boolean"
           },
-          "unitId": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "level": {
-            "type": "integer"
-          },
-          "children": {
+          "userLookupSettings": {
             "type": "array",
             "items": {
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "unitId": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "integer"
-                }
-              },
-              "type": "object"
+              "type": "string"
             }
-          }
-        },
-        "type": "object"
-      },
-      "Admin-UserModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
           },
-          "userName": {
-            "type": "string"
-          },
-          "deleted": {
-            "type": "boolean"
-          },
-          "status": {
-            "type": "boolean"
-          },
-          "employee": {
+          "dataMapping": {
             "properties": {
-              "empNumber": {
-                "type": "integer"
-              },
-              "employeeId": {
-                "type": "string"
-              },
               "firstName": {
                 "type": "string"
+              },
+              "middleName": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
               "lastName": {
                 "type": "string"
               },
-              "middleName": {
-                "type": "string"
+              "workEmail": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               },
-              "terminationId": {
-                "type": "integer"
+              "employeeId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "userStatus": {
+                "type": [
+                  "string",
+                  "null"
+                ]
               }
             },
             "type": "object"
           },
-          "userRole": {
+          "mergeLDAPUsersWithExistingSystemUsers": {
+            "type": "boolean"
+          },
+          "syncInterval": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "LDAP-LDAPSyncStatusModel": {
+        "properties": {
+          "syncStartedAt": {
             "properties": {
-              "id": {
-                "type": "integer"
+              "date": {
+                "type": "string",
+                "format": "date"
               },
-              "name": {
-                "type": "string"
-              },
-              "displayName": {
-                "type": "string"
+              "time": {
+                "type": "string",
+                "format": "time"
               }
             },
             "type": "object"
-          }
-        },
-        "type": "object"
-      },
-      "Admin-WorkShiftDetailedModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
           },
-          "name": {
+          "syncFinishedAt": {
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "time": {
+                "type": "string",
+                "format": "time"
+              }
+            },
+            "type": "object"
+          },
+          "syncStatus": {
             "type": "string"
-          },
-          "hoursPerDay": {
-            "type": "number"
-          },
-          "startTime": {
-            "type": "string"
-          },
-          "endTime": {
-            "type": "string"
-          },
-          "employees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Pim-EmployeeModel"
-            }
-          }
-        },
-        "type": "object"
-      },
-      "Admin-WorkShiftModel": {
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "hoursPerDay": {
-            "type": "number"
-          },
-          "startTime": {
-            "type": "string"
-          },
-          "endTime": {
-            "type": "string"
-          }
-        },
-        "type": "object"
-      },
-      "Base64Attachment": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "base64": {
-            "type": "string",
-            "format": "base64"
-          },
-          "size": {
-            "type": "integer"
-          }
-        },
-        "type": "object"
-      },
-      "Base64AttachmentOrNull": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/Base64Attachment"
-          },
-          {
-            "$ref": "#/components/schemas/Null"
-          }
-        ]
-      },
-      "Null": {
-        "type": "null"
-      },
-      "Pim-EmployeeModel": {
-        "properties": {
-          "empNumber": {
-            "type": "integer"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "middleName": {
-            "type": "string"
-          },
-          "employeeId": {
-            "type": "string"
-          },
-          "terminationId": {
-            "type": "integer"
           }
         },
         "type": "object"
