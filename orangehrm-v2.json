@@ -6093,7 +6093,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "operationId": "f2dffdcb7c087b0c53e6a63235585fee",
+        "summary": "Get One Buzz Comment",
+        "operationId": "get-one-buzz-comment",
         "parameters": [
           {
             "in": "path",
@@ -6157,7 +6158,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "operationId": "6a4d7ed688c3f750b9e9ec2627f0bb8b",
+        "summary": "Update Buzz Comment",
+        "operationId": "update-buzz-comment",
         "parameters": [
           {
             "in": "path",
@@ -6238,7 +6240,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "operationId": "5809765272f7ec06827f0e932793a08a",
+        "summary": "Delete Buzz Comments",
+        "operationId": "delete-buzz-comments",
         "parameters": [
           {
             "in": "path",
@@ -6292,7 +6295,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "operationId": "d7c4134c2f8bcaafef681140ed75988b",
+        "summary": "Get All Buzz Comments",
+        "operationId": "get-all-buzz-comments",
         "parameters": [
           {
             "in": "path",
@@ -6376,7 +6380,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "operationId": "a1044c6dede12d228dba2d2315915245",
+        "summary": "Create Buzz Comment",
+        "operationId": "create-buzz-comment",
         "parameters": [
           {
             "in": "path",
@@ -6451,7 +6456,8 @@
         "tags": [
           "Buzz/Feed"
         ],
-        "operationId": "c06a0bfc6e9d1c3c2ea059272c464cab",
+        "summary": "Get Buzz Feed",
+        "operationId": "get-buzz-feed",
         "parameters": [
           {
             "name": "sortField",
@@ -6511,7 +6517,8 @@
         "tags": [
           "Buzz/Like on Comments"
         ],
-        "operationId": "09061f68780f08e5aff952a8a8333cd6",
+        "summary": "Get Buzz Comment Likes",
+        "operationId": "get-buzz-comment-likes",
         "parameters": [
           {
             "in": "path",
@@ -6576,7 +6583,8 @@
         "tags": [
           "Buzz/Like on Comments"
         ],
-        "operationId": "2bffd0e473ac0a5fc0494391dcef9fdb",
+        "summary": "Like Buzz Comment",
+        "operationId": "like-buzz-comment",
         "parameters": [
           {
             "in": "path",
@@ -6642,7 +6650,8 @@
         "tags": [
           "Buzz/Like on Comments"
         ],
-        "operationId": "48e54f6735c2870a4bdb0713e357ef87",
+        "summary": "Remove Buzz Comment Like",
+        "operationId": "remove-buzz-comment-like",
         "parameters": [
           {
             "in": "path",
@@ -6707,7 +6716,8 @@
         "tags": [
           "Buzz/Like on Shares"
         ],
-        "operationId": "eadc93c4e262627efcfe2c0d4053f3e2",
+        "summary": "Get Buzz Post Likes",
+        "operationId": "get-buzz-post-likes",
         "parameters": [
           {
             "in": "path",
@@ -6772,7 +6782,8 @@
         "tags": [
           "Buzz/Like on Shares"
         ],
-        "operationId": "6910ac7fb5988651d12aa565f1469f70",
+        "summary": "Like Buzz Post",
+        "operationId": "like-buzz-post",
         "parameters": [
           {
             "in": "path",
@@ -6838,7 +6849,8 @@
         "tags": [
           "Buzz/Like on Shares"
         ],
-        "operationId": "66e5aad8547d6b9e792b59c33c5bc624",
+        "summary": "Remove Buzz Post Like",
+        "operationId": "remove-buzz-post-like",
         "parameters": [
           {
             "in": "path",
@@ -6903,7 +6915,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "82f7206bf94534c2016fe988536e2a25",
+        "summary": "Create Buzz Post",
+        "operationId": "create-buzz-post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6965,7 +6978,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "4a7db44d679437c86a3196664da2a974",
+        "summary": "Get Buzz Post",
+        "operationId": "get-buzz-post",
         "parameters": [
           {
             "in": "path",
@@ -7021,7 +7035,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "d16d3e08ac5294f8ede6fdf24619529f",
+        "summary": "Update Buzz Post",
+        "operationId": "update-buzz-post",
         "parameters": [
           {
             "in": "path",
@@ -7103,7 +7118,8 @@
         "tags": [
           "Buzz/Post Shares"
         ],
-        "operationId": "373c24ed1651d64501031e8bd952fbf2",
+        "summary": "Get Buzz Post Shares",
+        "operationId": "get-buzz-post-shares",
         "parameters": [
           {
             "in": "path",
@@ -7167,7 +7183,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "49c284bb13a8de84b2978b4a36c270fc",
+        "summary": "Share Buzz Post",
+        "operationId": "share-buzz-post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7272,7 +7289,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "52b088963706cdb5c045c5e5b4335dc9",
+        "summary": "Remove Buzz Post Share",
+        "operationId": "remove-buzz-post-share",
         "parameters": [
           {
             "in": "path",
@@ -7312,7 +7330,8 @@
         "tags": [
           "Buzz/Validation"
         ],
-        "operationId": "453ccc6adc2db17e6787e53c0e57eb5c",
+        "summary": "Validate Buzz Video Link",
+        "operationId": "validate-buzz-video-link",
         "parameters": [
           {
             "in": "query",
@@ -7358,7 +7377,8 @@
         "tags": [
           "Buzz/Employee Anniversary"
         ],
-        "operationId": "075238132d471eeb2d5399804025f541",
+        "summary": "Get Employees Anniversaries",
+        "operationId": "get-employees-anniversaries",
         "parameters": [
           {
             "$ref": "#/components/parameters/sortOrder"
