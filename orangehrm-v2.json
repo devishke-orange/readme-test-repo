@@ -7232,7 +7232,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "operationId": "849245a17bcb423a9d3399ee68fc59ac",
+        "summary": "Update Buzz Post Share",
+        "operationId": "update-buzz-post-share",
         "parameters": [
           {
             "in": "path",
