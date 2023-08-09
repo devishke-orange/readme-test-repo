@@ -20,8 +20,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Retrieve an education record",
-        "operationId": "getOneEducation",
+        "summary": "Get One Education",
+        "operationId": "get-one-education",
         "parameters": [
           {
             "in": "path",
@@ -60,8 +60,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Update an education record",
-        "operationId": "putEducation",
+        "summary": "Update Education",
+        "operationId": "update-education",
         "parameters": [
           {
             "in": "path",
@@ -119,8 +119,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Retrieve all education records",
-        "operationId": "getAllEducation",
+        "summary": "Get All Education",
+        "operationId": "get-all-education",
         "parameters": [
           {
             "name": "sortField",
@@ -176,8 +176,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Create an education record",
-        "operationId": "postEducation",
+        "summary": "Create Education",
+        "operationId": "post-education",
         "requestBody": {
           "content": {
             "application/json": {
@@ -220,8 +220,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Delete education records",
-        "operationId": "deleteEducation",
+        "summary": "Delete Education",
+        "operationId": "delete-education",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -237,8 +237,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Retrieve email configuration",
-        "operationId": "getEmailConfig",
+        "summary": "Get Email Configuration",
+        "operationId": "get-email-config",
         "responses": {
           "200": {
             "description": "Success",
@@ -267,8 +267,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Update email configuration",
-        "operationId": "putEmailConfig",
+        "summary": "Update Email Configuration",
+        "operationId": "put-email-config",
         "requestBody": {
           "content": {
             "application/json": {
@@ -734,7 +734,7 @@
           "Admin/Employment Status"
         ],
         "summary": "Retrieve an employment status record",
-        "operationId": "",
+        "operationId": "test",
         "parameters": [
           {
             "in": "path",
@@ -1247,7 +1247,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "operationId": "54776f7e3f429fb67e4508a6d3dbf45a",
+        "summary": "Bulk update I18N translations",
+        "operationId": "putI18NTranslationsBulk",
         "parameters": [
           {
             "in": "path",
@@ -1313,7 +1314,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "operationId": "92267b8fe6e6bc81d24464248c7766fc",
+        "summary": "Retrieve a job category",
+        "operationId": "getOneJobCategory",
         "parameters": [
           {
             "in": "path",
@@ -1352,7 +1354,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "operationId": "528e73f88e7f52d445a6adaeaaaea786",
+        "summary": "Update a job category",
+        "operationId": "putJobCategory",
         "parameters": [
           {
             "in": "path",
@@ -1410,7 +1413,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "operationId": "e011a05a39e71bc00a1d66280e9a8dd4",
+        "summary": "Retrieve all job categories",
+        "operationId": "getAllJobCateogry",
         "parameters": [
           {
             "name": "sortField",
@@ -1466,7 +1470,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "operationId": "d95ec4f8edafb4e0420e77a5e4a2a8ec",
+        "summary": "Create a job category",
+        "operationId": "postJobCategory",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1509,7 +1514,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "operationId": "d90359cf5c343f7b410adeeefcbd66a4",
+        "summary": "Delete job categories",
+        "operationId": "deleteJobCategory",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -1525,7 +1531,8 @@
         "tags": [
           "Admin/Job Specification"
         ],
-        "operationId": "8a8bc04de6565fb7376792cdfc59808a",
+        "summary": "Retrieve a job specification",
+        "operationId": "getOneJobSpecification",
         "parameters": [
           {
             "in": "path",
@@ -1566,7 +1573,8 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "operationId": "82901db4e3011d9b1dd042af9c32a69a",
+        "summary": "Retrieve a job title",
+        "operationId": "",
         "parameters": [
           {
             "in": "path",
