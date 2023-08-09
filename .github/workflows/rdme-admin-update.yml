@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  update-admin:
+  update-api:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo 📚
@@ -23,7 +23,7 @@ jobs:
 
       - name: Update APIs for Admin module
         run: |
-          cat tag-list.txt | grep Admin/ |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
+          cat tag-list.txt | grep Admin/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Admin/' reduced.json
@@ -31,7 +31,7 @@ jobs:
 
       - name: Update APIs for Attendance module
         run: |
-          cat tag-list.txt | grep Attendance/ |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
+          cat tag-list.txt | grep Attendance/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Attendance/' reduced.json
