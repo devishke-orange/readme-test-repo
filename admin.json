@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OrangeHRM Open Source : REST API v2 docs",
+    "title": "Admin",
     "version": "2.5.0"
   },
   "servers": [
