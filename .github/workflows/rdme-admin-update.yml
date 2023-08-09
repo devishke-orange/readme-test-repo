@@ -12,12 +12,11 @@ jobs:
       - name: Check out repo 📚
         uses: actions/checkout@v3
 
-      - name: Use rdme
-        uses: readmeio/rdme@v8
+      - name: Install dependencies
+        run: |
+          sudo apt install jq
+          npm install -g rdme
 
-      - name: Install jq
-        run: sudo apt install jq
-      
       - name: Reduce orangehrm-v2.json
         run: |
           cat orangehrm-v2.json | jq .paths[][]?.tags[] | sed 's/"/--tag "/' | grep Admin/ | uniq |tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out admin.json /' > admin-command.sh
@@ -25,6 +24,4 @@ jobs:
           ./admin-command.sh
 
       - name: Run `openapi` command 🚀
-        uses: readmeio/rdme@v8
-        with:
-          rdme: openapi admin.json --key=${{ secrets.README_API_KEY }} --id=64d0718293b2de000be27fec
+        run: rdme openapi admin.json --key=${{ secrets.README_API_KEY }} --id=64d0718293b2de000be27fec
