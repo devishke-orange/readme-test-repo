@@ -220,7 +220,7 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Delete Education",
+        "summary": "Delete Educations",
         "operationId": "delete-education",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -469,7 +469,7 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Delete Email Subscriber",
+        "summary": "Delete Email Subscribers",
         "operationId": "delete-email-subscriber",
         "parameters": [
           {
@@ -933,7 +933,7 @@
         "tags": [
           "Admin/Employment Status"
         ],
-        "summary": "Delete Employment Status",
+        "summary": "Delete Employment Statuses",
         "operationId": "delete-employment-status",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -1514,7 +1514,7 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Delete Job Category",
+        "summary": "Delete Job Categories",
         "operationId": "delete-job-category",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -1813,7 +1813,7 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "summary": "Delete Job Title",
+        "summary": "Delete Job Titles",
         "operationId": "delete-job-title",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -2030,7 +2030,7 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Delete Language",
+        "summary": "Delete Languages",
         "operationId": "delete-language",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -2247,7 +2247,7 @@
         "tags": [
           "Admin/License"
         ],
-        "summary": "Delete License",
+        "summary": "Delete Licenses",
         "operationId": "delete-license",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -2629,7 +2629,7 @@
         "tags": [
           "Admin/Locations"
         ],
-        "summary": "Delete Location",
+        "summary": "Delete Locations",
         "operationId": "delete-location",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -2846,7 +2846,7 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "summary": "Delete Membership",
+        "summary": "Delete Memberships",
         "operationId": "delete-membership",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -3205,7 +3205,7 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "summary": "Delete Nationality",
+        "summary": "Delete Nationalities",
         "operationId": "delete-nationality",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -3435,7 +3435,7 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Delete Pay Grade",
+        "summary": "Delete Pay Grades",
         "operationId": "delete-pay-grade",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -3862,7 +3862,7 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Delete Pay Grade Currency",
+        "summary": "Delete Pay Grade Currencies",
         "operationId": "delete-pay-grade-currency",
         "parameters": [
           {
@@ -4096,7 +4096,7 @@
         "tags": [
           "Admin/Skills"
         ],
-        "summary": "Delete Skill",
+        "summary": "Delete Skills",
         "operationId": "delete-skill",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -4335,7 +4335,7 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "summary": "Delete Subunit",
+        "summary": "Delete Subunits",
         "operationId": "delete-subunit",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -4636,7 +4636,7 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Delete User",
+        "summary": "Delete Users",
         "operationId": "delete-user",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -4821,7 +4821,7 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Delete Work Shift",
+        "summary": "Delete Work Shifts",
         "operationId": "delete-work-shift",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -5027,7 +5027,8 @@
         "tags": [
           "Attendance/Configuration"
         ],
-        "operationId": "a60d4b051a82baabe98269b54d907b34",
+        "summary": "Get Attendance Configuration",
+        "operationId": "get-attendance-configuration",
         "responses": {
           "200": {
             "description": "Success",
@@ -5053,7 +5054,8 @@
         "tags": [
           "Attendance/Configuration"
         ],
-        "operationId": "22e908f4369381292bebf10ac8ba4d7f",
+        "summary": "Update Attendance Configuration",
+        "operationId": "update-attendance-configuration",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5104,7 +5106,8 @@
         "tags": [
           "Attendance/Attendance Overlap Edit"
         ],
-        "operationId": "772483ebe1cbdf13317001d7cbf19609",
+        "summary": "Get Attendance Punch In Edit Overlap",
+        "operationId": "get-attendance-punch-in-edit-overlap",
         "parameters": [
           {
             "name": "recordId",
@@ -5197,7 +5200,8 @@
         "tags": [
           "Attendance/Attendance Overlap Edit"
         ],
-        "operationId": "5e556fcb9cb5b774e404512856ecae36",
+        "summary": "Get Attendance Punch Out Edit Overlap",
+        "operationId": "get-attendance-punch-out-edit-overlap",
         "parameters": [
           {
             "name": "recordId",
@@ -5290,7 +5294,8 @@
         "tags": [
           "Attendance/Attendance Overlap"
         ],
-        "operationId": "16935bfc6a4990b7fa707c69853b246b",
+        "summary": "Get Attendance Punch In Overlap",
+        "operationId": "get-attendance-punch-in-overlap",
         "parameters": [
           {
             "name": "empNumber",
@@ -5358,7 +5363,8 @@
         "tags": [
           "Attendance/Attendance Overlap"
         ],
-        "operationId": "5047b120ae7481ea66e209c268780d93",
+        "summary": "Get Attendance Punch Out Overlap",
+        "operationId": "get-attendance-punch-out-overlap",
         "parameters": [
           {
             "name": "empNumber",
@@ -5426,7 +5432,8 @@
         "tags": [
           "Attendance/Attendance Record"
         ],
-        "operationId": "cafd234b93cb0a1e498f8d1732b60945",
+        "summary": "Get Attendance Record",
+        "operationId": "get-attendance-record",
         "parameters": [
           {
             "name": "id",
@@ -5466,7 +5473,8 @@
         "tags": [
           "Attendance/Attendance Record"
         ],
-        "operationId": "fa2e34488493d3e97d445d402f292bb0",
+        "summary": "Update Attendance Record",
+        "operationId": "update-attendance-record",
         "parameters": [
           {
             "name": "id",
@@ -5599,7 +5607,8 @@
         "tags": [
           "Attendance/Current Date Time"
         ],
-        "operationId": "767cbc452d207f53513f0f4a87614491",
+        "summary": "Get Current Date Time",
+        "operationId": "get-current-date-time",
         "responses": {
           "200": {
             "description": "Success",
@@ -5627,7 +5636,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "operationId": "0363fc1c323544247cbc699705a3b7b6",
+        "summary": "Get Employee Attendance Records",
+        "operationId": "get-employee-attendance-records",
         "parameters": [
           {
             "in": "path",
@@ -5729,7 +5739,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "operationId": "8c918b15e19bf5ca04d52d10beb9e726",
+        "summary": "Update Employee Attendance Record",
+        "operationId": "update-employee-attendance-record",
         "parameters": [
           {
             "in": "path",
@@ -5799,7 +5810,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "operationId": "35be750d33bbea0e3bdcb509944c739e",
+        "summary": "Create Employee Attendance Record",
+        "operationId": "create-employee-attendance-record",
         "parameters": [
           {
             "in": "path",
@@ -5869,7 +5881,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "operationId": "97979931f9aaf8e91fffefbc0a2cd961",
+        "summary": "Delete Employee Attendance Records",
+        "operationId": "delete-employee-attendance-records",
         "parameters": [
           {
             "in": "path",
@@ -5893,9 +5906,10 @@
     "/api/v2/attendance/employees/summary": {
       "get": {
         "tags": [
-          "Attendance/ Employee Attendance Summery"
+          "Attendance/ Employee Attendance Summary"
         ],
-        "operationId": "4507cd49f52bca0e78512aff3e782c77",
+        "summary": "Get Employee Attendance Summary",
+        "operationId": "get-employee-attendance-summary",
         "parameters": [
           {
             "name": "date",
@@ -5977,7 +5991,8 @@
         "tags": [
           "Attendance/Attendance Record Latest"
         ],
-        "operationId": "126f04c98020cc49c19c82fc9b2bcbb0",
+        "summary": "Get Latest Attendance Record",
+        "operationId": "get-latest-attendance-record",
         "parameters": [
           {
             "name": "empNumber",
@@ -6019,7 +6034,8 @@
         "tags": [
           "Attendance/Timezones"
         ],
-        "operationId": "53e4bcf94660e96bf0630c570d0c9dd7",
+        "summary": "Get Timezones",
+        "operationId": "get-timezones",
         "parameters": [
           {
             "name": "timezoneName",
