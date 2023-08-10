@@ -21,7 +21,7 @@
           "Admin/Education"
         ],
         "summary": "Get an Education Record",
-        "description": "Provides information for an education record that has the numerical identifier provided.",
+        "description": "Provides an education record that has the given id.\\nOnly available to **Admin** users.",
         "operationId": "get-an-education-record",
         "parameters": [
           {
@@ -62,7 +62,7 @@
           "Admin/Education"
         ],
         "summary": "Update an Education Record",
-        "description": "Update an existing education record. All employees that have this record will receive the updated value as well.",
+        "description": "Updates an education record that matches the given id. The new value will be reflected on employees' profiles.\\nOnly available to **Admin** users",
         "operationId": "update-an-education-record",
         "parameters": [
           {
@@ -122,8 +122,8 @@
           "Admin/Education"
         ],
         "summary": "List All Education Records",
-        "description": "Provides a list of education records. The provided list can be filtered and sorted based on the parameters given below.",
-        "operationId": "list-all-educations-records",
+        "description": "Provides a sorted, filtered list of education records. These are the records that employees can choose from when editing their profile.\\nOnly available to **Admin** users.",
+        "operationId": "list-all-education-records",
         "parameters": [
           {
             "name": "sortField",
@@ -179,9 +179,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Create an Education Record",
-        "description": "Create a new education record that employees can select from when editing their profile.",
-        "operationId": "create-an-education-record",
+        "summary": "Add an Education Record",
+        "description": "Creates a new education record that will be available for selection by employees.\\nOnly available to **Admin** users.",
+        "operationId": "add-an-education-record",
         "requestBody": {
           "content": {
             "application/json": {
@@ -225,7 +225,7 @@
           "Admin/Education"
         ],
         "summary": "Delete Education Records",
-        "description": "Permanently deletes education records based on provided list of numerical identifiers. The deleted records will be removed from employees who may have them selected.",
+        "description": "Deletes education records that match ids in the given array.\\nOnly available to **Admin** users",
         "operationId": "delete-education-records",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
