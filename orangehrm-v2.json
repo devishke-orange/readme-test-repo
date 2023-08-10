@@ -21,7 +21,6 @@
           "Admin/Education"
         ],
         "summary": "Get an Education Record",
-        "description": "Provides an education record that has the given id.\\nOnly available to **Admin** users.",
         "operationId": "get-an-education-record",
         "parameters": [
           {
@@ -62,7 +61,6 @@
           "Admin/Education"
         ],
         "summary": "Update an Education Record",
-        "description": "Updates an education record that matches the given id. The new value will be reflected on employees' profiles.\\nOnly available to **Admin** users",
         "operationId": "update-an-education-record",
         "parameters": [
           {
@@ -122,7 +120,6 @@
           "Admin/Education"
         ],
         "summary": "List All Education Records",
-        "description": "Provides a sorted, filtered list of education records. These are the records that employees can choose from when editing their profile.\\nOnly available to **Admin** users.",
         "operationId": "list-all-education-records",
         "parameters": [
           {
@@ -179,9 +176,8 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Add an Education Record",
-        "description": "Creates a new education record that will be available for selection by employees.\\nOnly available to **Admin** users.",
-        "operationId": "add-an-education-record",
+        "summary": "Create an Education Record",
+        "operationId": "create-an-education-record",
         "requestBody": {
           "content": {
             "application/json": {
@@ -225,7 +221,6 @@
           "Admin/Education"
         ],
         "summary": "Delete Education Records",
-        "description": "Deletes education records that match ids in the given array.\\nOnly available to **Admin** users",
         "operationId": "delete-education-records",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
@@ -347,8 +342,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Get All Email Subscribers",
-        "operationId": "get-all-email-subscribers",
+        "summary": "List All Email Subscribers",
+        "operationId": "list-all-email-subscribers",
         "parameters": [
           {
             "in": "path",
@@ -416,8 +411,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Create Email Subscriber",
-        "operationId": "create-email-subscriber",
+        "summary": "Create an Email Subscriber",
+        "operationId": "create-an-email-subscriber",
         "parameters": [
           {
             "in": "path",
@@ -475,7 +470,7 @@
           "Admin/Email Configuration"
         ],
         "summary": "Delete Email Subscribers",
-        "operationId": "delete-email-subscriber",
+        "operationId": "delete-email-subscribers",
         "parameters": [
           {
             "in": "path",
@@ -501,8 +496,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Get One Email Subscriber",
-        "operationId": "get-one-email-subscriber",
+        "summary": "Get an Email Subscriber",
+        "operationId": "get-an-email-subscriber",
         "parameters": [
           {
             "in": "path",
@@ -549,8 +544,8 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Update Email Susbcriber",
-        "operationId": "update-email-subscriber",
+        "summary": "Update an Email Susbcriber",
+        "operationId": "update-an-email-subscriber",
         "parameters": [
           {
             "in": "path",
@@ -620,7 +615,7 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Get All Email Subscriptions",
+        "summary": "List All Email Subscriptions",
         "operationId": "get-all-email-subscriptions",
         "parameters": [
           {
@@ -679,7 +674,7 @@
         "tags": [
           "Admin/Email Configuration"
         ],
-        "summary": "Update Email Subscription",
+        "summary": "Update an Email Subscription",
         "operationId": "update-email-susbcription",
         "parameters": [
           {
@@ -738,7 +733,7 @@
         "tags": [
           "Admin/Employment Status"
         ],
-        "summary": "Get One Employment Status",
+        "summary": "Get an Employment Status",
         "operationId": "get-one-employment-status",
         "parameters": [
           {
@@ -778,8 +773,8 @@
         "tags": [
           "Admin/Employment Status"
         ],
-        "summary": "Update Employment Status",
-        "operationId": "update-employment-status",
+        "summary": "Update an Employment Status",
+        "operationId": "update-an-employment-status",
         "parameters": [
           {
             "in": "path",
@@ -837,8 +832,8 @@
         "tags": [
           "Admin/Employment Status"
         ],
-        "summary": "Get All Employment Statuses",
-        "operationId": "get-all-employment-statuses",
+        "summary": "List All Employment Statuses",
+        "operationId": "list-all-employment-statuses",
         "parameters": [
           {
             "name": "sortField",
@@ -894,8 +889,8 @@
         "tags": [
           "Admin/Employment Status"
         ],
-        "summary": "Create Employment Status",
-        "operationId": "create-employment-status",
+        "summary": "Create an Employment Status",
+        "operationId": "create-an-employment-status",
         "requestBody": {
           "content": {
             "application/json": {
@@ -939,7 +934,7 @@
           "Admin/Employment Status"
         ],
         "summary": "Delete Employment Statuses",
-        "operationId": "delete-employment-status",
+        "operationId": "delete-employment-statuses",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -955,8 +950,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Get I18N Groups",
-        "operationId": "get-i18n-groups",
+        "summary": "List All I18N Groups",
+        "operationId": "list-all-i18n-groups",
         "parameters": [
           {
             "name": "sortField",
@@ -1014,8 +1009,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Get I18N Languages",
-        "operationId": "get-i18n-languages",
+        "summary": "List All I18N Languages",
+        "operationId": "list-all-i18n-languages",
         "parameters": [
           {
             "name": "activeOnly",
@@ -1133,8 +1128,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Get I18N Translations",
-        "operationId": "get-i18n-translations",
+        "summary": "List All I18N Translations",
+        "operationId": "list-all-i18n-translations",
         "parameters": [
           {
             "in": "path",
@@ -1319,8 +1314,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Get One Job Category",
-        "operationId": "get-one-job-category",
+        "summary": "Get a Job Category",
+        "operationId": "get-a-job-category",
         "parameters": [
           {
             "in": "path",
@@ -1359,8 +1354,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Update Job Category",
-        "operationId": "update-job-category",
+        "summary": "Update a Job Category",
+        "operationId": "update-a-job-category",
         "parameters": [
           {
             "in": "path",
@@ -1418,8 +1413,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Get All Job Categorys",
-        "operationId": "get-all-job-categorys",
+        "summary": "List All Job Categories",
+        "operationId": "list-all-job-categories",
         "parameters": [
           {
             "name": "sortField",
@@ -1475,8 +1470,8 @@
         "tags": [
           "Admin/Job Category"
         ],
-        "summary": "Create Job Category",
-        "operationId": "create-job-category",
+        "summary": "Create a Job Category",
+        "operationId": "create-a-job-category",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1520,7 +1515,7 @@
           "Admin/Job Category"
         ],
         "summary": "Delete Job Categories",
-        "operationId": "delete-job-category",
+        "operationId": "delete-job-categories",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -1578,8 +1573,8 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "summary": "Get One Job Title",
-        "operationId": "get-one-job-title",
+        "summary": "Get a Job Title",
+        "operationId": "get-a-job-title",
         "parameters": [
           {
             "in": "path",
@@ -1618,8 +1613,8 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "summary": "Update Job Title",
-        "operationId": "update-job-title",
+        "summary": "Update a Job Title",
+        "operationId": "update-a-job-title",
         "parameters": [
           {
             "in": "path",
@@ -1697,8 +1692,8 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "summary": "Get All Job Titles",
-        "operationId": "get-all-job-titles",
+        "summary": "List All Job Titles",
+        "operationId": "list-all-job-titles",
         "parameters": [
           {
             "name": "activeOnly",
@@ -1763,8 +1758,8 @@
         "tags": [
           "Admin/Job Title"
         ],
-        "summary": "Create Job Title",
-        "operationId": "create-job-title",
+        "summary": "Create a Job Title",
+        "operationId": "create-a-job-title",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1819,7 +1814,7 @@
           "Admin/Job Title"
         ],
         "summary": "Delete Job Titles",
-        "operationId": "delete-job-title",
+        "operationId": "delete-job-titles",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -1835,8 +1830,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Get One Language",
-        "operationId": "get-one-language",
+        "summary": "Get a Language Record",
+        "operationId": "get-a-language-record",
         "parameters": [
           {
             "in": "path",
@@ -1875,8 +1870,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Update Language",
-        "operationId": "update-language",
+        "summary": "Update a Language Record",
+        "operationId": "update-a-language-record",
         "parameters": [
           {
             "in": "path",
@@ -1934,8 +1929,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Get All Languages",
-        "operationId": "get-all-languages",
+        "summary": "List All Languages Records",
+        "operationId": "list-all-language-records",
         "parameters": [
           {
             "name": "sortField",
@@ -1991,8 +1986,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Create Language",
-        "operationId": "create-language",
+        "summary": "Create a Language",
+        "operationId": "create-a-language",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2035,8 +2030,8 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Delete Languages",
-        "operationId": "delete-language",
+        "summary": "Delete Language Records",
+        "operationId": "delete-language-records",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2052,8 +2047,8 @@
         "tags": [
           "Admin/License"
         ],
-        "summary": "Get One License",
-        "operationId": "get-one-license",
+        "summary": "Get a License",
+        "operationId": "get-a-license",
         "parameters": [
           {
             "in": "path",
@@ -2092,8 +2087,8 @@
         "tags": [
           "Admin/License"
         ],
-        "summary": "Update License",
-        "operationId": "update-license",
+        "summary": "Update a License",
+        "operationId": "update-a-license",
         "parameters": [
           {
             "in": "path",
@@ -2151,8 +2146,8 @@
         "tags": [
           "Admin/License"
         ],
-        "summary": "Get All Licenses",
-        "operationId": "get-all-licenses",
+        "summary": "List All Licenses",
+        "operationId": "list-all-licenses",
         "parameters": [
           {
             "name": "sortField",
@@ -2208,8 +2203,8 @@
         "tags": [
           "Admin/License"
         ],
-        "summary": "Create License",
-        "operationId": "create-license",
+        "summary": "Create a License",
+        "operationId": "create-a-license",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2253,7 +2248,7 @@
           "Admin/License"
         ],
         "summary": "Delete Licenses",
-        "operationId": "delete-license",
+        "operationId": "delete-licenses",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2269,8 +2264,8 @@
         "tags": [
           "Admin/Localization"
         ],
-        "summary": "Get Localization",
-        "operationId": "get-localization",
+        "summary": "Get Localization Settings",
+        "operationId": "get-localization-settings",
         "responses": {
           "200": {
             "description": "Success",
@@ -2300,8 +2295,8 @@
         "tags": [
           "Admin/Localization"
         ],
-        "summary": "Update Localization",
-        "operationId": "update-localization",
+        "summary": "Update Localization Settings",
+        "operationId": "update-localization-settings",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2355,8 +2350,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "summary": "Get One Location",
-        "operationId": "get-one-location",
+        "summary": "Get a Location",
+        "operationId": "get-a-location",
         "parameters": [
           {
             "in": "path",
@@ -2395,8 +2390,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "summary": "Update Location",
-        "operationId": "update-location",
+        "summary": "Update a Location",
+        "operationId": "update-a-location",
         "parameters": [
           {
             "in": "path",
@@ -2479,8 +2474,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "summary": "Get All Locations",
-        "operationId": "get-all-locations",
+        "summary": "List All Locations",
+        "operationId": "list-all-locations",
         "parameters": [
           {
             "name": "name",
@@ -2565,8 +2560,8 @@
         "tags": [
           "Admin/Locations"
         ],
-        "summary": "Create Location",
-        "operationId": "create-location",
+        "summary": "Create a Location",
+        "operationId": "create-a-location",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2635,7 +2630,7 @@
           "Admin/Locations"
         ],
         "summary": "Delete Locations",
-        "operationId": "delete-location",
+        "operationId": "delete-locations",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2651,8 +2646,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "summary": "Get One Membership",
-        "operationId": "get-one-membership",
+        "summary": "Get a Membership",
+        "operationId": "get-a-membership",
         "parameters": [
           {
             "in": "path",
@@ -2691,8 +2686,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "summary": "Update Membership",
-        "operationId": "update-membership",
+        "summary": "Update a Membership",
+        "operationId": "update-a-membership",
         "parameters": [
           {
             "in": "path",
@@ -2750,8 +2745,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "summary": "Get All Memberships",
-        "operationId": "get-all-memberships",
+        "summary": "List All Memberships",
+        "operationId": "list-all-memberships",
         "parameters": [
           {
             "name": "sortField",
@@ -2807,8 +2802,8 @@
         "tags": [
           "Admin/Memberships"
         ],
-        "summary": "Create Membership",
-        "operationId": "create-membership",
+        "summary": "Create a Membership",
+        "operationId": "create-a-membership",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2852,7 +2847,7 @@
           "Admin/Memberships"
         ],
         "summary": "Delete Memberships",
-        "operationId": "delete-membership",
+        "operationId": "delete-memberships",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -2868,8 +2863,8 @@
         "tags": [
           "Admin/Modules"
         ],
-        "summary": "Get Modules",
-        "operationId": "get-modules",
+        "summary": "List All Modules",
+        "operationId": "list-all-modules",
         "responses": {
           "200": {
             "description": "Success",
@@ -2929,8 +2924,8 @@
         "tags": [
           "Admin/Modules"
         ],
-        "summary": "Update Modules",
-        "operationId": "update-modules",
+        "summary": "Update a Module",
+        "operationId": "update-a-module",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3007,8 +3002,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "summary": "Get One Nationality",
-        "operationId": "get-one-nationality",
+        "summary": "Get a Nationality",
+        "operationId": "get-a-nationality",
         "parameters": [
           {
             "in": "path",
@@ -3047,8 +3042,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "summary": "Update Nationality",
-        "operationId": "update-nationality",
+        "summary": "Update a Nationality",
+        "operationId": "update-a-nationality",
         "parameters": [
           {
             "in": "path",
@@ -3106,8 +3101,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "summary": "Get All Nationalities",
-        "operationId": "get-all-nationalities",
+        "summary": "List All Nationalities",
+        "operationId": "list-all-nationalities",
         "parameters": [
           {
             "name": "sortField",
@@ -3163,8 +3158,8 @@
         "tags": [
           "Admin/Nationality"
         ],
-        "summary": "Create Nationality",
-        "operationId": "create-natonality",
+        "summary": "Create a Nationality",
+        "operationId": "create-a-nationality",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3211,7 +3206,7 @@
           "Admin/Nationality"
         ],
         "summary": "Delete Nationalities",
-        "operationId": "delete-nationality",
+        "operationId": "delete-nationalities",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -3227,8 +3222,8 @@
         "tags": [
           "Admin/Organization"
         ],
-        "summary": "Get Organization",
-        "operationId": "get-organization",
+        "summary": "Get Organization Details",
+        "operationId": "get-organization-details",
         "responses": {
           "200": {
             "description": "Success",
@@ -3257,8 +3252,8 @@
         "tags": [
           "Admin/Organization"
         ],
-        "summary": "Update Organization",
-        "operationId": "update-organization",
+        "summary": "Update Organization Details",
+        "operationId": "update-organization-details",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3339,8 +3334,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Get All Pay Grades",
-        "operationId": "get-all-pay-grades",
+        "summary": "List All Pay Grades",
+        "operationId": "list-all-pay-grades",
         "parameters": [
           {
             "name": "sortField",
@@ -3396,8 +3391,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Create Pay Grade",
-        "operationId": "create-pay-group",
+        "summary": "Create a Pay Grade",
+        "operationId": "create-a-pay-grade",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3441,7 +3436,7 @@
           "Admin/Pay Grade"
         ],
         "summary": "Delete Pay Grades",
-        "operationId": "delete-pay-grade",
+        "operationId": "delete-pay-grades",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -3457,8 +3452,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Get One Pay Grade",
-        "operationId": "get-one-pay-grade",
+        "summary": "Get a Pay Grade",
+        "operationId": "get-a-pay-grade",
         "parameters": [
           {
             "in": "path",
@@ -3497,8 +3492,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Update Pay Grade",
-        "operationId": "update-pay-grade",
+        "summary": "Update a Pay Grade",
+        "operationId": "update-a-pay-grade",
         "parameters": [
           {
             "in": "path",
@@ -3553,8 +3548,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Get Pay Grade Allowed Currencies",
-        "operationId": "get-pay-grade-allowed-currencies",
+        "summary": "List Allowed Currencies for Pay Grade",
+        "operationId": "list-allowed-currencies-for-pay-grade",
         "parameters": [
           {
             "in": "path",
@@ -3620,8 +3615,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Get One Pay Grade Currency",
-        "operationId": "get-one-pay-grade-currency",
+        "summary": "Get a Pay Grade Currency",
+        "operationId": "get-a-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3668,8 +3663,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Update Pay Grade Currency",
-        "operationId": "update-pay-grade-currency",
+        "summary": "Update a Pay Grade Currency",
+        "operationId": "update-a-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3740,8 +3735,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Get All Pay Grade Currencies",
-        "operationId": "get-all-pay-grade-currencies",
+        "summary": "List All Pay Grade Currencies",
+        "operationId": "list-all-pay-grade-currencies",
         "parameters": [
           {
             "in": "path",
@@ -3805,8 +3800,8 @@
         "tags": [
           "Admin/Pay Grade"
         ],
-        "summary": "Create Pay Grade Currency",
-        "operationId": "create-pay-grade-currency",
+        "summary": "Create a Pay Grade Currency",
+        "operationId": "create-a-pay-grade-currency",
         "parameters": [
           {
             "in": "path",
@@ -3868,7 +3863,7 @@
           "Admin/Pay Grade"
         ],
         "summary": "Delete Pay Grade Currencies",
-        "operationId": "delete-pay-grade-currency",
+        "operationId": "delete-pay-grade-currencies",
         "parameters": [
           {
             "in": "path",
@@ -3894,8 +3889,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "summary": "Get One Skill",
-        "operationId": "get-one-skill",
+        "summary": "Get a Skill",
+        "operationId": "get-a-skill",
         "parameters": [
           {
             "in": "path",
@@ -3934,8 +3929,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "summary": "Update Skill",
-        "operationId": "update-skill",
+        "summary": "Update a Skill",
+        "operationId": "update-a-skill",
         "parameters": [
           {
             "in": "path",
@@ -3996,8 +3991,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "summary": "Get All Skills",
-        "operationId": "get-all-skills",
+        "summary": "List All Skills",
+        "operationId": "list-all-skills",
         "parameters": [
           {
             "name": "sortField",
@@ -4054,8 +4049,8 @@
         "tags": [
           "Admin/Skills"
         ],
-        "summary": "Create Skill",
-        "operationId": "create-skill",
+        "summary": "Create a Skill",
+        "operationId": "create-a-skill",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4102,7 +4097,7 @@
           "Admin/Skills"
         ],
         "summary": "Delete Skills",
-        "operationId": "delete-skill",
+        "operationId": "delete-skills",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4118,8 +4113,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "summary": "Get One Subunit",
-        "operationId": "get-one-subunit",
+        "summary": "Get a Subunit",
+        "operationId": "get-a-subunit",
         "parameters": [
           {
             "in": "path",
@@ -4158,8 +4153,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "summary": "Update Subunit",
-        "operationId": "update-subunit",
+        "summary": "Update a Subunit",
+        "operationId": "update-a-subunit",
         "parameters": [
           {
             "in": "path",
@@ -4221,8 +4216,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "summary": "Get All Subunits",
-        "operationId": "get-all-subunits",
+        "summary": "List All Subunits",
+        "operationId": "list-all-subunits",
         "parameters": [
           {
             "name": "depth",
@@ -4283,8 +4278,8 @@
         "tags": [
           "Admin/Subunits"
         ],
-        "summary": "Create Subunit",
-        "operationId": "create-subunit",
+        "summary": "Create a Subunit",
+        "operationId": "create-a-subunit",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4341,7 +4336,7 @@
           "Admin/Subunits"
         ],
         "summary": "Delete Subunits",
-        "operationId": "delete-subunit",
+        "operationId": "delete-subunits",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4372,8 +4367,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Get One User",
-        "operationId": "get-one-user",
+        "summary": "Get a User",
+        "operationId": "get-a-user",
         "parameters": [
           {
             "in": "path",
@@ -4412,8 +4407,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Update User",
-        "operationId": "update-user",
+        "summary": "Update a User",
+        "operationId": "update-a-user",
         "parameters": [
           {
             "in": "path",
@@ -4487,8 +4482,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Get All Users",
-        "operationId": "get-all-users",
+        "summary": "List All Users",
+        "operationId": "list-all-users",
         "parameters": [
           {
             "name": "username",
@@ -4581,8 +4576,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Create User",
-        "operationId": "create-user",
+        "summary": "Create a User",
+        "operationId": "create-a-user",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4642,7 +4637,7 @@
           "Admin/Users"
         ],
         "summary": "Delete Users",
-        "operationId": "delete-user",
+        "operationId": "delete-users",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4658,8 +4653,8 @@
         "tags": [
           "Admin/Users"
         ],
-        "summary": "Validate Username",
-        "operationId": "validate-username",
+        "summary": "Validate Username Uniqueness",
+        "operationId": "validate-username-uniqueness",
         "parameters": [
           {
             "name": "userName",
@@ -4707,8 +4702,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Get All WorkShifts",
-        "operationId": "get-all-workfshifts",
+        "summary": "List All Work Shifts",
+        "operationId": "list-all-workfshifts",
         "parameters": [
           {
             "name": "sortField",
@@ -4764,8 +4759,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Create Work Shift",
-        "operationId": "create-work-shift",
+        "summary": "Create a Work Shift",
+        "operationId": "create-a-work-shift",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4827,7 +4822,7 @@
           "Admin/Work Shift"
         ],
         "summary": "Delete Work Shifts",
-        "operationId": "delete-work-shift",
+        "operationId": "delete-work-shifts",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -4843,8 +4838,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Get One Work Shift",
-        "operationId": "get-one-work-shift",
+        "summary": "Get a Work Shift",
+        "operationId": "get-a-work-shift",
         "parameters": [
           {
             "in": "path",
@@ -4883,8 +4878,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Update Work Shift",
-        "operationId": "update-work-shift",
+        "summary": "Update a Work Shift",
+        "operationId": "update-a-work-shift",
         "parameters": [
           {
             "in": "path",
@@ -4957,8 +4952,8 @@
         "tags": [
           "Admin/Work Shift"
         ],
-        "summary": "Get All Work Shift Employees",
-        "operationId": "get-all-work-shift-employees",
+        "summary": "List Employees Unassigned to Work Shift",
+        "operationId": "list-employees-unassigned-to-work-shift",
         "parameters": [
           {
             "name": "nameOrId",
