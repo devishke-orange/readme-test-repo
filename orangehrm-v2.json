@@ -20,8 +20,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Get One Education",
-        "operationId": "get-one-education",
+        "summary": "Get an Education Record",
+        "description": "Provides information for an education record that has the numerical identifier provided.",
+        "operationId": "get-an-education-record",
         "parameters": [
           {
             "in": "path",
@@ -60,8 +61,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Update Education",
-        "operationId": "update-education",
+        "summary": "Update an Education Record",
+        "description": "Update an existing education record. All employees that have this record will receive the updated value as well.",
+        "operationId": "update-an-education-record",
         "parameters": [
           {
             "in": "path",
@@ -119,8 +121,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Get All Educations",
-        "operationId": "get-all-educations",
+        "summary": "List All Education Records",
+        "description": "Provides a list of education records. The provided list can be filtered and sorted based on the parameters given below.",
+        "operationId": "list-all-educations-records",
         "parameters": [
           {
             "name": "sortField",
@@ -176,8 +179,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Create Education",
-        "operationId": "create-education",
+        "summary": "Create an Education Record",
+        "description": "Create a new education record that employees can select from when editing their profile.",
+        "operationId": "create-an-education-record",
         "requestBody": {
           "content": {
             "application/json": {
@@ -220,8 +224,9 @@
         "tags": [
           "Admin/Education"
         ],
-        "summary": "Delete Educations",
-        "operationId": "delete-education",
+        "summary": "Delete Education Records",
+        "description": "Permanently deletes education records based on provided list of numerical identifiers. The deleted records will be removed from employees who may have them selected.",
+        "operationId": "delete-education-records",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
