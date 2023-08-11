@@ -340,7 +340,7 @@
     "/api/v2/admin/email-subscriptions/{emailSubscriptionId}/subscribers": {
       "get": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscriber"
         ],
         "summary": "List All Email Subscribers",
         "operationId": "list-all-email-subscribers",
@@ -409,7 +409,7 @@
       },
       "post": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscriber"
         ],
         "summary": "Create an Email Subscriber",
         "operationId": "create-an-email-subscriber",
@@ -467,7 +467,7 @@
       },
       "delete": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscriber"
         ],
         "summary": "Delete Email Subscribers",
         "operationId": "delete-email-subscribers",
@@ -494,7 +494,7 @@
     "/api/v2/admin/email-subscriptions/{emailSubscriptionId}/subscribers/{id}": {
       "get": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscriber"
         ],
         "summary": "Get an Email Subscriber",
         "operationId": "get-an-email-subscriber",
@@ -542,7 +542,7 @@
       },
       "put": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscriber"
         ],
         "summary": "Update an Email Susbcriber",
         "operationId": "update-an-email-subscriber",
@@ -613,7 +613,7 @@
     "/api/v2/admin/email-subscriptions": {
       "get": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscription"
         ],
         "summary": "List All Email Subscriptions",
         "operationId": "get-all-email-subscriptions",
@@ -672,7 +672,7 @@
     "/api/v2/admin/email-subscriptions/{id}": {
       "put": {
         "tags": [
-          "Admin/Email Configuration"
+          "Admin/Email Subscription"
         ],
         "summary": "Update an Email Subscription",
         "operationId": "update-email-susbcription",
@@ -1076,8 +1076,8 @@
         "tags": [
           "Admin/I18N"
         ],
-        "summary": "Update I18N Language",
-        "operationId": "update-i18n-language",
+        "summary": "Update an I18N Language",
+        "operationId": "update-an-i18n-language",
         "parameters": [
           {
             "in": "path",
@@ -1986,7 +1986,7 @@
         "tags": [
           "Admin/Languages"
         ],
-        "summary": "Create a Language",
+        "summary": "Create a Language Record",
         "operationId": "create-a-language",
         "requestBody": {
           "content": {
@@ -3546,7 +3546,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies/allowed": {
       "get": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "List Allowed Currencies for Pay Grade",
         "operationId": "list-allowed-currencies-for-pay-grade",
@@ -3613,7 +3613,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies/{id}": {
       "get": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "Get a Pay Grade Currency",
         "operationId": "get-a-pay-grade-currency",
@@ -3661,7 +3661,7 @@
       },
       "put": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "Update a Pay Grade Currency",
         "operationId": "update-a-pay-grade-currency",
@@ -3733,7 +3733,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies": {
       "get": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "List All Pay Grade Currencies",
         "operationId": "list-all-pay-grade-currencies",
@@ -3798,7 +3798,7 @@
       },
       "post": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "Create a Pay Grade Currency",
         "operationId": "create-a-pay-grade-currency",
@@ -3860,7 +3860,7 @@
       },
       "delete": {
         "tags": [
-          "Admin/Pay Grade"
+          "Admin/Pay Grade/Currency"
         ],
         "summary": "Delete Pay Grade Currencies",
         "operationId": "delete-pay-grade-currencies",
