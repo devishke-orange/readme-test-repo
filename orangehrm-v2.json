@@ -3546,7 +3546,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies/allowed": {
       "get": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "List Allowed Currencies for Pay Grade",
         "operationId": "list-allowed-currencies-for-pay-grade",
@@ -3613,7 +3613,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies/{id}": {
       "get": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "Get a Pay Grade Currency",
         "operationId": "get-a-pay-grade-currency",
@@ -3661,7 +3661,7 @@
       },
       "put": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "Update a Pay Grade Currency",
         "operationId": "update-a-pay-grade-currency",
@@ -3733,7 +3733,7 @@
     "/api/v2/admin/pay-grades/{payGradeId}/currencies": {
       "get": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "List All Pay Grade Currencies",
         "operationId": "list-all-pay-grade-currencies",
@@ -3798,7 +3798,7 @@
       },
       "post": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "Create a Pay Grade Currency",
         "operationId": "create-a-pay-grade-currency",
@@ -3860,7 +3860,7 @@
       },
       "delete": {
         "tags": [
-          "Admin/Pay Grade/Currency"
+          "Admin/Pay Grade Currency"
         ],
         "summary": "Delete Pay Grade Currencies",
         "operationId": "delete-pay-grade-currencies",

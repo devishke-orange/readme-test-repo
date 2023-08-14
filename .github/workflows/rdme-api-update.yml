@@ -26,6 +26,7 @@ jobs:
           cat tag-list.txt | grep Admin/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Admin\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Admin/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d0718293b2de000be27fec
           rm reduced.json reduce-command.sh
@@ -35,6 +36,7 @@ jobs:
           cat tag-list.txt | grep Attendance/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Attendance\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Attendance/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d071b7d9dad80042b406e2
           rm reduced.json reduce-command.sh
@@ -44,6 +46,7 @@ jobs:
           cat tag-list.txt | grep Buzz/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Buzz\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Buzz/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d37433e56ecd0044c50411
           rm reduced.json reduce-command.sh
@@ -53,6 +56,7 @@ jobs:
           cat tag-list.txt | grep Claim/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Claim\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Claim/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d34fac219add006fb85ddf
           rm reduced.json reduce-command.sh
@@ -62,6 +66,7 @@ jobs:
           cat tag-list.txt | grep Core/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Core\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Core/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d351a98ad34c0043486fc0
           rm reduced.json reduce-command.sh
@@ -71,6 +76,7 @@ jobs:
           cat tag-list.txt | grep Dashboard | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Dashboard//' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Dashboard/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d351524e3c8d000a411789
           rm reduced.json reduce-command.sh
@@ -80,6 +86,7 @@ jobs:
           cat tag-list.txt | grep Directory | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Directory//' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Directory/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d352152562d6000b83bd17
           rm reduced.json reduce-command.sh
@@ -89,6 +96,7 @@ jobs:
           cat tag-list.txt | grep Leave/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Leave\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Leave/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d3527e811982002554958d
           rm reduced.json reduce-command.sh
@@ -98,6 +106,7 @@ jobs:
           cat tag-list.txt | grep Maintenance/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Maintenance\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Maintenance/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d352e9c0f6af000d397d66
           rm reduced.json reduce-command.sh
@@ -107,6 +116,7 @@ jobs:
           cat tag-list.txt | grep Mobile/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/AdMobilemin\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Mobile/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d353262d555d00476044b1
           rm reduced.json reduce-command.sh
@@ -116,6 +126,7 @@ jobs:
           cat tag-list.txt | grep OAuth/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/OAuth\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/OAuth/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d3537a3f0374004964d7e3
           rm reduced.json reduce-command.sh
@@ -125,6 +136,7 @@ jobs:
           cat tag-list.txt | grep Performance/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Performance\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Performance/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d353c38119820025549f3b
           rm reduced.json reduce-command.sh
@@ -134,6 +146,7 @@ jobs:
           cat tag-list.txt | grep Pim/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Pim\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Pim/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d3541ae56ecd0044c30229
           rm reduced.json reduce-command.sh
@@ -143,6 +156,7 @@ jobs:
           cat tag-list.txt | grep Recruitment/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Recruitment\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Recruitment/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d3545ddbc9a60039f43351
           rm reduced.json reduce-command.sh
@@ -152,6 +166,7 @@ jobs:
           cat tag-list.txt | grep Time/ | sed 's/"/--tag "/' | tr '\n' ' ' | sed '1s/^/rdme openapi:reduce --out reduced.json /' > reduce-command.sh
           chmod +x reduce-command.sh
           ./reduce-command.sh
+          sed -i 's/Time\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Time/' reduced.json
           rdme openapi reduced.json --key=${{ secrets.README_API_KEY }} --id=64d3548a2949020023b81a39
           rm reduced.json reduce-command.sh
