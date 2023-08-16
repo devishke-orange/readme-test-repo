@@ -9,7 +9,7 @@
       "url": "{orangehrm-url}",
       "variables": {
         "orangehrm-url": {
-          "default": "https://opensource-demo.orangehrmlive.com/index.php"
+          "default": "opensource-demo.orangehrmlive.com/web/index.php"
         }
       }
     }
@@ -35889,16 +35889,15 @@
       }
     },
     "securitySchemes": {
-      "Cookie-HTTPS": {
-        "type": "apiKey",
-        "name": "orangehrm",
-        "in": "cookie"
-      },
-      "Cookie-HTTP": {
-        "type": "apiKey",
-        "name": "_orangehrm",
-        "in": "cookie"
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
       }
     }
-  }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
 }
