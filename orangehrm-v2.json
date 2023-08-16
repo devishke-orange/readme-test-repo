@@ -35889,15 +35889,21 @@
       }
     },
     "securitySchemes": {
-      "BearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/authorize",
+            "tokenUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/token",
+            "scopes": {}
+          }
+        }
       }
     }
   },
   "security": [
     {
-      "BearerAuth": []
+      "OAuth2": []
     }
   ]
 }
