@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "OrangeHRM Open Source : REST API v2 docs",
-    "version": "2.5.0"
+    "version": "2.6.0"
   },
   "servers": [
     {
@@ -5104,10 +5104,10 @@
     "/api/v2/attendance/records/punch-in-overlaps": {
       "get": {
         "tags": [
-          "Attendance/Attendance Overlap Edit"
+          "Attendance/Overlap"
         ],
-        "summary": "Get Attendance Punch In Edit Overlap",
-        "operationId": "get-attendance-punch-in-edit-overlap",
+        "summary": "Check Punch In Overlap (Editing)",
+        "operationId": "check-punch-in-overlap-editing",
         "parameters": [
           {
             "name": "recordId",
@@ -5198,10 +5198,10 @@
     "/api/v2/attendance/records/punch-out-overlaps": {
       "get": {
         "tags": [
-          "Attendance/Attendance Overlap Edit"
+          "Attendance/Overlap"
         ],
-        "summary": "Get Attendance Punch Out Edit Overlap",
-        "operationId": "get-attendance-punch-out-edit-overlap",
+        "summary": "Check Punch Out Overlap (Editing)",
+        "operationId": "check-punch-out-overlap-editing",
         "parameters": [
           {
             "name": "recordId",
@@ -5292,10 +5292,10 @@
     "/api/v2/attendance/punch-in/overlaps": {
       "get": {
         "tags": [
-          "Attendance/Attendance Overlap"
+          "Attendance/Overlap"
         ],
-        "summary": "Get Attendance Punch In Overlap",
-        "operationId": "get-attendance-punch-in-overlap",
+        "summary": "Check Punch In Overlap",
+        "operationId": "check-punch-in-overlap",
         "parameters": [
           {
             "name": "empNumber",
@@ -5361,10 +5361,10 @@
     "/api/v2/attendance/punch-out/overlaps": {
       "get": {
         "tags": [
-          "Attendance/Attendance Overlap"
+          "Attendance/Overlap"
         ],
-        "summary": "Get Attendance Punch Out Overlap",
-        "operationId": "get-attendance-punch-out-overlap",
+        "summary": "Check Punch Out Overlap",
+        "operationId": "check-punch-out-overlap",
         "parameters": [
           {
             "name": "empNumber",
@@ -5432,8 +5432,8 @@
         "tags": [
           "Attendance/Attendance Record"
         ],
-        "summary": "Get Attendance Record",
-        "operationId": "get-attendance-record",
+        "summary": "List an Attendance Record",
+        "operationId": "list-an-attendance-record",
         "parameters": [
           {
             "name": "id",
@@ -5473,8 +5473,8 @@
         "tags": [
           "Attendance/Attendance Record"
         ],
-        "summary": "Update Attendance Record",
-        "operationId": "update-attendance-record",
+        "summary": "Update an Attendance Record",
+        "operationId": "update-an-attendance-record",
         "parameters": [
           {
             "name": "id",
@@ -5607,8 +5607,8 @@
         "tags": [
           "Attendance/Current Date Time"
         ],
-        "summary": "Get Current Date Time",
-        "operationId": "get-current-date-time",
+        "summary": "Get the Current Date & Time",
+        "operationId": "get-the-current-date-and-time",
         "responses": {
           "200": {
             "description": "Success",
@@ -5636,8 +5636,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "summary": "Get Employee Attendance Records",
-        "operationId": "get-employee-attendance-records",
+        "summary": "List an Employee's Attendance Records",
+        "operationId": "list-an-employees-attendance-records",
         "parameters": [
           {
             "in": "path",
@@ -5739,8 +5739,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "summary": "Update Employee Attendance Record",
-        "operationId": "update-employee-attendance-record",
+        "summary": "Update an Employee's Attendance Record",
+        "operationId": "update-an-employees-attendance-record",
         "parameters": [
           {
             "in": "path",
@@ -5810,8 +5810,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "summary": "Create Employee Attendance Record",
-        "operationId": "create-employee-attendance-record",
+        "summary": "Create an Employee's Attendance Record",
+        "operationId": "create-an-employees-attendance-record",
         "parameters": [
           {
             "in": "path",
@@ -5881,8 +5881,8 @@
         "tags": [
           "Attendance/Employee Attendance"
         ],
-        "summary": "Delete Employee Attendance Records",
-        "operationId": "delete-employee-attendance-records",
+        "summary": "Delete an Employee's Attendance Records",
+        "operationId": "delete-an-employees-attendance-records",
         "parameters": [
           {
             "in": "path",
@@ -5906,10 +5906,10 @@
     "/api/v2/attendance/employees/summary": {
       "get": {
         "tags": [
-          "Attendance/ Employee Attendance Summary"
+          "Attendance/Employee Attendance Summary"
         ],
-        "summary": "Get Employee Attendance Summary",
-        "operationId": "get-employee-attendance-summary",
+        "summary": "Summarize Employee Attendance",
+        "operationId": "summarize-employee-attendance",
         "parameters": [
           {
             "name": "date",
@@ -5989,10 +5989,10 @@
     "/api/v2/attendance/records/latest": {
       "get": {
         "tags": [
-          "Attendance/Attendance Record Latest"
+          "Attendance/Attendance Record"
         ],
-        "summary": "Get Latest Attendance Record",
-        "operationId": "get-latest-attendance-record",
+        "summary": "Get the Latest Attendance Record",
+        "operationId": "get-the-latest-attendance-record",
         "parameters": [
           {
             "name": "empNumber",
@@ -6034,8 +6034,8 @@
         "tags": [
           "Attendance/Timezones"
         ],
-        "summary": "Get Timezones",
-        "operationId": "get-timezones",
+        "summary": "List Timezones",
+        "operationId": "list-timezones",
         "parameters": [
           {
             "name": "timezoneName",
@@ -6093,8 +6093,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "summary": "Get One Buzz Comment",
-        "operationId": "get-one-buzz-comment",
+        "summary": "Get a Comment on a Post",
+        "operationId": "get-a-comment-on-a-post",
         "parameters": [
           {
             "in": "path",
@@ -6158,8 +6158,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "summary": "Update Buzz Comment",
-        "operationId": "update-buzz-comment",
+        "summary": "Edit a Comment on a Post",
+        "operationId": "edit-a-comment-on-a-post",
         "parameters": [
           {
             "in": "path",
@@ -6240,8 +6240,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "summary": "Delete Buzz Comments",
-        "operationId": "delete-buzz-comments",
+        "summary": "Delete a Comment on a Post",
+        "operationId": "delete-a-comment-on-a-post",
         "parameters": [
           {
             "in": "path",
@@ -6295,8 +6295,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "summary": "Get All Buzz Comments",
-        "operationId": "get-all-buzz-comments",
+        "summary": "List All Comments on a Post",
+        "operationId": "list-all-comments-on-a-post",
         "parameters": [
           {
             "in": "path",
@@ -6380,8 +6380,8 @@
         "tags": [
           "Buzz/Comments"
         ],
-        "summary": "Create Buzz Comment",
-        "operationId": "create-buzz-comment",
+        "summary": "Comment on a Post",
+        "operationId": "comment-on-a-post",
         "parameters": [
           {
             "in": "path",
@@ -6456,8 +6456,8 @@
         "tags": [
           "Buzz/Feed"
         ],
-        "summary": "Get Buzz Feed",
-        "operationId": "get-buzz-feed",
+        "summary": "List the Buzz Feed",
+        "operationId": "list-the-buzz-feed",
         "parameters": [
           {
             "name": "sortField",
@@ -6515,10 +6515,10 @@
     "/api/v2/buzz/comments/{commentId}/likes": {
       "get": {
         "tags": [
-          "Buzz/Like on Comments"
+          "Buzz/Comment Likes"
         ],
-        "summary": "Get Buzz Comment Likes",
-        "operationId": "get-buzz-comment-likes",
+        "summary": "List Likes on a Comment",
+        "operationId": "List-likes-on-a-comment",
         "parameters": [
           {
             "in": "path",
@@ -6581,10 +6581,10 @@
       },
       "post": {
         "tags": [
-          "Buzz/Like on Comments"
+          "Buzz/Comment Likes"
         ],
-        "summary": "Like Buzz Comment",
-        "operationId": "like-buzz-comment",
+        "summary": "Like a Comment",
+        "operationId": "like-a-comment",
         "parameters": [
           {
             "in": "path",
@@ -6648,10 +6648,10 @@
       },
       "delete": {
         "tags": [
-          "Buzz/Like on Comments"
+          "Buzz/Comment Likes"
         ],
-        "summary": "Remove Buzz Comment Like",
-        "operationId": "remove-buzz-comment-like",
+        "summary": "Unlike a Liked Comment",
+        "operationId": "unlike-a-liked-comment",
         "parameters": [
           {
             "in": "path",
@@ -6714,10 +6714,10 @@
     "/api/v2/buzz/shares/{shareId}/likes": {
       "get": {
         "tags": [
-          "Buzz/Like on Shares"
+          "Buzz/Share Likes"
         ],
-        "summary": "Get Buzz Post Likes",
-        "operationId": "get-buzz-post-likes",
+        "summary": "List Likes on a Share/Post",
+        "operationId": "list-likes-on-a-share-post",
         "parameters": [
           {
             "in": "path",
@@ -6780,10 +6780,10 @@
       },
       "post": {
         "tags": [
-          "Buzz/Like on Shares"
+          "Buzz/Share Likes"
         ],
-        "summary": "Like Buzz Post",
-        "operationId": "like-buzz-post",
+        "summary": "Like a Share/Post",
+        "operationId": "like-a-share-post",
         "parameters": [
           {
             "in": "path",
@@ -6847,10 +6847,10 @@
       },
       "delete": {
         "tags": [
-          "Buzz/Like on Shares"
+          "Buzz/Share Likes"
         ],
-        "summary": "Remove Buzz Post Like",
-        "operationId": "remove-buzz-post-like",
+        "summary": "Unlike a Liked Share/Post",
+        "operationId": "unlike-a-liked-share-post",
         "parameters": [
           {
             "in": "path",
@@ -6913,10 +6913,10 @@
     "/api/v2/buzz/posts": {
       "post": {
         "tags": [
-          "Buzz/Shares"
+          "Buzz/Post"
         ],
-        "summary": "Create Buzz Post",
-        "operationId": "create-buzz-post",
+        "summary": "Post Text, Photos or Video",
+        "operationId": "post-text-photos-or-video",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6976,10 +6976,10 @@
     "/api/v2/buzz/posts/{id}": {
       "get": {
         "tags": [
-          "Buzz/Shares"
+          "Buzz/Post"
         ],
-        "summary": "Get Buzz Post",
-        "operationId": "get-buzz-post",
+        "summary": "Get a Post",
+        "operationId": "get-a-post",
         "parameters": [
           {
             "in": "path",
@@ -7033,10 +7033,10 @@
       },
       "put": {
         "tags": [
-          "Buzz/Shares"
+          "Buzz/Post"
         ],
-        "summary": "Update Buzz Post",
-        "operationId": "update-buzz-post",
+        "summary": "Edit a Post",
+        "operationId": "edit-a-post",
         "parameters": [
           {
             "in": "path",
@@ -7116,10 +7116,10 @@
     "/api/v2/buzz/posts/{id}/shares": {
       "get": {
         "tags": [
-          "Buzz/Post Shares"
+          "Buzz/Shares"
         ],
-        "summary": "Get Buzz Post Shares",
-        "operationId": "get-buzz-post-shares",
+        "summary": "List All Shares of a Post",
+        "operationId": "list-all-shares-of-a-post",
         "parameters": [
           {
             "in": "path",
@@ -7183,8 +7183,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "summary": "Share Buzz Post",
-        "operationId": "share-buzz-post",
+        "summary": "Share a Post",
+        "operationId": "share-a-post",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7232,8 +7232,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "summary": "Update Buzz Post Share",
-        "operationId": "update-buzz-post-share",
+        "summary": "Edit a Share",
+        "operationId": "edit-a-share",
         "parameters": [
           {
             "in": "path",
@@ -7290,8 +7290,8 @@
         "tags": [
           "Buzz/Shares"
         ],
-        "summary": "Remove Buzz Post Share",
-        "operationId": "remove-buzz-post-share",
+        "summary": "Delete a Share",
+        "operationId": "delete-a-share",
         "parameters": [
           {
             "in": "path",
@@ -7331,8 +7331,8 @@
         "tags": [
           "Buzz/Validation"
         ],
-        "summary": "Validate Buzz Video Link",
-        "operationId": "validate-buzz-video-link",
+        "summary": "Validate Video Link",
+        "operationId": "validate-video-link",
         "parameters": [
           {
             "in": "query",
@@ -7378,8 +7378,8 @@
         "tags": [
           "Buzz/Employee Anniversary"
         ],
-        "summary": "Get Employees Anniversaries",
-        "operationId": "get-employees-anniversaries",
+        "summary": "List Upcoming Employee Anniversaries",
+        "operationId": "list-upcoming-employees-anniversaries",
         "parameters": [
           {
             "$ref": "#/components/parameters/sortOrder"
@@ -7426,7 +7426,8 @@
         "tags": [
           "Claim/Attachments"
         ],
-        "operationId": "11647181edaaf86e0ed18d55058782f9",
+        "summary": "List Attachements on a Claim",
+        "operationId": "list-attachments-on-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -7488,7 +7489,8 @@
         "tags": [
           "Claim/Attachments"
         ],
-        "operationId": "7064e2c6311f0625ea0a6f38b194376c",
+        "summary": "Add Attachments to a Claim",
+        "operationId": "add-attachments-to-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -7544,7 +7546,8 @@
         "tags": [
           "Claim/Attachments"
         ],
-        "operationId": "b091708a74f1afcfb5951a1692ccdde9",
+        "summary": "Remove Attachments from a Claim",
+        "operationId": "remove-attachments-from-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -7602,7 +7605,8 @@
         "tags": [
           "Claim/Attachments"
         ],
-        "operationId": "c7500cfc34af7fc9a4e7ab86bd7395a5",
+        "summary": "View an Attachment on a Claim",
+        "operationId": "view-an-attachment-on-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -7649,7 +7653,8 @@
         "tags": [
           "Claim/Attachments"
         ],
-        "operationId": "401dd85c9b8e7aeace52f765a81ca185",
+        "summary": "Update an Attachment on a Claim",
+        "operationId": "update-an-attachment-on-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -7715,7 +7720,8 @@
         "tags": [
           "Claim/Events"
         ],
-        "operationId": "2e9ae52311ed89c4c21d50638ea5e599",
+        "summary": "List All Claim Events",
+        "operationId": "list-all-claim-events",
         "parameters": [
           {
             "name": "sortField",
@@ -7796,7 +7802,8 @@
         "tags": [
           "Claim/Events"
         ],
-        "operationId": "56cfefe15124edb26bafb4ec454c9a51",
+        "summary": "Create a Claim Event",
+        "operationId": "create-a-clam-event",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7845,7 +7852,8 @@
         "tags": [
           "Claim/Events"
         ],
-        "operationId": "1944e5913a6ca6671123791444459701",
+        "summary": "Delete Claim Events",
+        "operationId": "delete-claim-events",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -7861,7 +7869,8 @@
         "tags": [
           "Claim/Events"
         ],
-        "operationId": "3ed657bf5795d476f4561b580c51e393",
+        "summary": "Get a Claim Event",
+        "operationId": "get-a-claim-event",
         "parameters": [
           {
             "in": "path",
@@ -7905,7 +7914,8 @@
         "tags": [
           "Claim/Events"
         ],
-        "operationId": "5e72b9b9ed56c90d5adbafed225ce2a4",
+        "summary": "Update a Claim Event",
+        "operationId": "update-a-claim-event",
         "parameters": [
           {
             "in": "path",
@@ -7966,7 +7976,8 @@
         "tags": [
           "Claim/Expenses"
         ],
-        "operationId": "062a82e3332d6b67166955ca1824aa95",
+        "summary": "List All Expenses from a Claim",
+        "operationId": "list-all-expenses-from-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -8031,7 +8042,8 @@
         "tags": [
           "Claim/Expenses"
         ],
-        "operationId": "d8c0bcca33c54ba8b349af5eb30af20b",
+        "summary": "Add an Expense to a Claim",
+        "operationId": "add-an-expense-to-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -8105,7 +8117,8 @@
         "tags": [
           "Claim/Expenses"
         ],
-        "operationId": "fc3a1726f6c3b4c95f89e988159bf805",
+        "summary": "Remove an Expense from a Claim",
+        "operationId": "remove-an-expense-from-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -8131,7 +8144,8 @@
         "tags": [
           "Claim/Expenses"
         ],
-        "operationId": "da2800abe1c5a446cbe6048fab37c674",
+        "summary": "Get an Expense from a Claim",
+        "operationId": "get-an-expense-from-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -8178,7 +8192,8 @@
         "tags": [
           "Claim/Expenses"
         ],
-        "operationId": "d5ee595bc0d6444396ff5991bc176e6c",
+        "summary": "Update an Expense from a Claim",
+        "operationId": "update-an-expense-from-a-claim",
         "parameters": [
           {
             "in": "path",
@@ -8253,9 +8268,10 @@
     "/api/v2/claim/expenses/types": {
       "get": {
         "tags": [
-          "Claim/ExpenseTypes"
+          "Claim/Expense Types"
         ],
-        "operationId": "dffcaedc7f44ee86f0b1fc26c0c2a431",
+        "summary": "List All Expense Types",
+        "operationId": "list-all-expense-types",
         "parameters": [
           {
             "name": "sortField",
@@ -8334,9 +8350,10 @@
       },
       "post": {
         "tags": [
-          "Claim/ExpenseTypes"
+          "Claim/Expense Types"
         ],
-        "operationId": "7c887f0cd85979301d12baf46477ec9a",
+        "summary": "Create an Expense Type",
+        "operationId": "create-an-expense-type",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8383,9 +8400,10 @@
       },
       "delete": {
         "tags": [
-          "Claim/ExpenseTypes"
+          "Claim/Expense Types"
         ],
-        "operationId": "1bd0cf6628af30474a62760fb5823a1d",
+        "summary": "Delete Expense Types",
+        "operationId": "delete-expense-types",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -8399,9 +8417,10 @@
     "/api/v2/claim/expenses/types/{id}": {
       "get": {
         "tags": [
-          "Claim/ExpenseTypes"
+          "Claim/Expense Types"
         ],
-        "operationId": "cd37212d29521bf01ed1ce34a1645d3b",
+        "summary": "Get an Expense Type",
+        "operationId": "get-an-expense-type",
         "parameters": [
           {
             "in": "path",
@@ -8443,9 +8462,10 @@
       },
       "put": {
         "tags": [
-          "Claim/ExpenseTypes"
+          "Claim/Expense Types"
         ],
-        "operationId": "391476483c84419988a5b62c849d7689",
+        "summary": "Update an Expense Type",
+        "operationId": "update-an-expense-type",
         "parameters": [
           {
             "in": "path",
@@ -8506,7 +8526,8 @@
         "tags": [
           "Claim/Requests"
         ],
-        "operationId": "67d2d3e9491002718b96c1c10af5aa8f",
+        "summary": "Perform an Action on a Claim Request",
+        "operationId": "perform-an-action-on-a-claim-request",
         "parameters": [
           {
             "in": "path",
@@ -8561,7 +8582,8 @@
         "tags": [
           "Claim/Requests"
         ],
-        "operationId": "263b9d1fd932e25be87f765ae6b69e9b",
+        "summary": "List an Employee's Claim Requests",
+        "operationId": "list-an-employees-claim-requests",
         "parameters": [
           {
             "in": "path",
@@ -8623,7 +8645,8 @@
         "tags": [
           "Claim/Requests"
         ],
-        "operationId": "cf0c9da96eccc11c6f0359adafbc0153",
+        "summary": "List All Claim Requests",
+        "operationId": "list-all-claim-requests",
         "parameters": [
           {
             "name": "sortField",
@@ -8774,7 +8797,8 @@
         "tags": [
           "Claim/Requests"
         ],
-        "operationId": "4c9a7e01ff748f92bd703b997a4aa20b",
+        "summary": "Get an Employee's Claim Request",
+        "operationId": "get-an-employees-claim-request",
         "parameters": [
           {
             "in": "path",
@@ -8850,9 +8874,10 @@
     "/api/v2/claim/requests": {
       "get": {
         "tags": [
-          "Claim/Requests"
+          "Claim/My Requests"
         ],
-        "operationId": "8bedb8356ac4bcfbeacdb974ef224e79",
+        "summary": "List My Claim Requests",
+        "operationId": "list-my-claim-requests",
         "parameters": [
           {
             "name": "sortField",
@@ -8977,9 +9002,10 @@
       },
       "post": {
         "tags": [
-          "Claim/Requests"
+          "Claim/My Requests"
         ],
-        "operationId": "8edbeebeadfb46f5b4bebbdcec70d637",
+        "summary": "Create My Claim Request",
+        "operationId": "create-my-claim-request",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9029,9 +9055,10 @@
     "/api/v2/claim/requests/{id}": {
       "get": {
         "tags": [
-          "Claim/Requests"
+          "Claim/My Requests"
         ],
-        "operationId": "97cd30eb598b03796ee9d82f1d0e1ce3",
+        "summary": "Get My Claim Request",
+        "operationId": "get-my-claim-request",
         "parameters": [
           {
             "name": "id",
@@ -9101,7 +9128,8 @@
         "tags": [
           "OAuth/OAuth Clients"
         ],
-        "operationId": "204ee67d055ba19e6762d66d343d4075",
+        "summary": "List All OAuth Clients",
+        "operationId": "list-all-oauth-clients",
         "parameters": [
           {
             "name": "sortField",
@@ -9157,7 +9185,8 @@
         "tags": [
           "OAuth/OAuth Clients"
         ],
-        "operationId": "ffc3d1626a666a3d8adaf3a6f60fbd9d",
+        "summary": "Create an OAuth Client",
+        "operationId": "create-an-oauth-client",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9203,7 +9232,8 @@
         "tags": [
           "OAuth/OAuth Clients"
         ],
-        "operationId": "8f8df5c0435dcfc0b7258b17acd31943",
+        "summary": "Delete OAuth Clients",
+        "operationId": "delete-oauth-clients",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -9219,7 +9249,8 @@
         "tags": [
           "OAuth/OAuth Clients"
         ],
-        "operationId": "db7b9853616ff9865b2a6bb1426ef6e3",
+        "summary": "Get an OAuth Client",
+        "operationId": "get-an-oauth-client",
         "parameters": [
           {
             "in": "path",
@@ -9260,7 +9291,8 @@
         "tags": [
           "OAuth/OAuth Clients"
         ],
-        "operationId": "b2c0e0b18e086f94dd5ea4aa2c200ab3",
+        "summary": "Update an OAuth Client",
+        "operationId": "update-an-oauth-client",
         "parameters": [
           {
             "in": "path",
@@ -9318,7 +9350,8 @@
         "tags": [
           "Core/About Organization"
         ],
-        "operationId": "af942b68546064e79408a886bb5ca03e",
+        "summary": "Get Basic Organization Details",
+        "operationId": "get-basic-organization-details",
         "responses": {
           "200": {
             "description": "Success",
@@ -9330,6 +9363,144 @@
                       "$ref": "#/components/schemas/Core-AboutOrganizationModel"
                     },
                     "meta": {
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/core/validation/unique": {
+      "get": {
+        "tags": [
+          "Core/Unique Validation"
+        ],
+        "summary": "Validate Uniqueness",
+        "operationId": "validate-uniqueness",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entityName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "EmailSubscriber",
+                "EmploymentStatus",
+                "JobCategory",
+                "JobTitle",
+                "Location",
+                "Nationality",
+                "PayGrade",
+                "Education",
+                "Language",
+                "License",
+                "Membership",
+                "Skill",
+                "WorkShift",
+                "ExpenseType",
+                "ClaimEvent",
+                "LeaveType",
+                "Employee",
+                "User",
+                "TerminationReason",
+                "Vacancy"
+              ]
+            }
+          },
+          {
+            "name": "attributeName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "email",
+                "jobTitleName",
+                "name",
+                "userName"
+              ]
+            }
+          },
+          {
+            "name": "entityId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "matchByField",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "emailNotification",
+                "deleted"
+              ]
+            }
+          },
+          {
+            "name": "matchByValue",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "properties": {
+                        "valid": {
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid field name given",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "properties": {
+                        "status": {
+                          "type": "string",
+                          "default": "400"
+                        },
+                        "message": {
+                          "type": "string",
+                          "default": "Entity does not contain one or more of the given fields"
+                        }
+                      },
                       "type": "object"
                     }
                   },
@@ -9501,8 +9672,8 @@
         "tags": [
           "Admin/Theme"
         ],
-        "summary": "Get Theme",
-        "operationId": "get-one-theme",
+        "summary": "Get Theme Details",
+        "operationId": "get-theme-details",
         "responses": {
           "200": {
             "description": "Success",
@@ -9528,8 +9699,8 @@
         "tags": [
           "Admin/Theme"
         ],
-        "summary": "Update Theme",
-        "operationId": "update-theme",
+        "summary": "Edit Theme",
+        "operationId": "edit-theme",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9649,8 +9820,8 @@
         "tags": [
           "Admin/Theme"
         ],
-        "summary": "Delete Theme",
-        "operationId": "delete-theme",
+        "summary": "Reset Theme",
+        "operationId": "reset-theme",
         "parameters": [
           {
             "name": "userId",
@@ -9688,9 +9859,10 @@
     "/api/v2/directory/employees/{empNumber}": {
       "get": {
         "tags": [
-          "Directory"
+          "Directory/Employees"
         ],
-        "operationId": "a1d7004b55eed019486345e8e0c7a6bb",
+        "summary": "Get an Employee Directory Listing",
+        "operationId": "get-an-employee-directory-listing",
         "parameters": [
           {
             "in": "path",
@@ -9750,9 +9922,10 @@
     "/api/v2/directory/employees": {
       "get": {
         "tags": [
-          "Directory"
+          "Directory/Employees"
         ],
-        "operationId": "ad944e6fd1b80595acbe1e6cbf6af43c",
+        "summary": "Get the Employee Directory",
+        "operationId": "get-the-employee-directory",
         "parameters": [
           {
             "name": "empNumber",
@@ -9835,9 +10008,10 @@
     "/api/v2/dashboard/employees/action-summary": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "9a610da72f5b0e64ac958041871e4e51",
+        "summary": "Get My Action Summary",
+        "operationId": "get-my-action-summary",
         "responses": {
           "200": {
             "description": "Success",
@@ -9869,9 +10043,10 @@
     "/api/v2/dashboard/employees/locations": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "a8ff5ff5f6567a970cf75dd0586b8f26",
+        "summary": "Get Employee Distribution by Location",
+        "operationId": "get-employee-distribution-by-location",
         "responses": {
           "200": {
             "description": "Success",
@@ -9911,9 +10086,10 @@
     "/api/v2/dashboard/employees/subunit": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "760c96535620fd1a5e4d20b50ab7a21e",
+        "summary": "Get Employee Distribution by Sub Unit",
+        "operationId": "get-employee-distribution-by-subunit",
         "responses": {
           "200": {
             "description": "Success",
@@ -9953,9 +10129,10 @@
     "/api/v2/dashboard/employees/leaves": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "f0a7d6872b10a773626d7a75751014e1",
+        "summary": "Get Employees on Leave Today",
+        "operationId": "get-employees-on-leave-today",
         "parameters": [
           {
             "name": "sortField",
@@ -10015,9 +10192,10 @@
     "/api/v2/dashboard/config/employee-on-leave-today": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "1af47a94701212d2a90eb270ccf7a549",
+        "summary": "Get Employees on Leave Today Configuration",
+        "operationId": "get-employees-on-leave-today-configuration",
         "responses": {
           "200": {
             "description": "Success",
@@ -10039,9 +10217,10 @@
       },
       "put": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "fc4272ae079bc12d27559b3a06b35eda",
+        "summary": "Configure Employees on Leave Today",
+        "operationId": "configure-employees-on-leave-today",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10082,9 +10261,10 @@
     "/api/v2/dashboard/employees/time-at-work": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "73d75411b47c18ae873ceae185a1f045",
+        "summary": "Get My Time at Work",
+        "operationId": "get-my-time-at-work",
         "parameters": [
           {
             "name": "currentDate",
@@ -10292,9 +10472,10 @@
     "/api/v2/dashboard/shortcuts": {
       "get": {
         "tags": [
-          "Dashboard"
+          "Dashboard/Widgets"
         ],
-        "operationId": "d6cdb58712aa30c427b92bea35d038fa",
+        "summary": "Get Quick Launch Shortcuts",
+        "operationId": "get-quick-launch-shortcuts",
         "responses": {
           "200": {
             "description": "Success",
@@ -10343,10 +10524,10 @@
     "/api/v2/admin/ldap-config": {
       "get": {
         "tags": [
-          "Admin/LDAP Config"
+          "Admin/LDAP Configuration"
         ],
-        "summary": "Get LDAP Config",
-        "operationId": "get-one-ldap-config",
+        "summary": "Get LDAP Configuration",
+        "operationId": "get-ldap-configuration",
         "responses": {
           "200": {
             "description": "Success",
@@ -10370,10 +10551,10 @@
       },
       "put": {
         "tags": [
-          "Admin/LDAP Config"
+          "Admin/LDAP Configuration"
         ],
-        "summary": "Update LDAP Config",
-        "operationId": "update-ldap-config",
+        "summary": "Update LDAP Configuration",
+        "operationId": "update-ldap-configuration",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10546,7 +10727,7 @@
     "/api/v2/admin/ldap-test-connection": {
       "post": {
         "tags": [
-          "Admin/LDAP Config"
+          "Admin/LDAP Configuration"
         ],
         "summary": "Test LDAP Connection",
         "operationId": "test-ldap-connection",
@@ -10700,10 +10881,10 @@
     "/api/v2/admin/ldap/user-sync": {
       "get": {
         "tags": [
-          "Admin/LDAP Config"
+          "Admin/LDAP User Sync"
         ],
-        "summary": "Get LDAP User Sync Details",
-        "operationId": "get-one-ldap-user-sync",
+        "summary": "Get User Sync Details",
+        "operationId": "get-user-sync-details",
         "responses": {
           "200": {
             "description": "Success",
@@ -10727,7 +10908,7 @@
       },
       "post": {
         "tags": [
-          "Admin/LDAP Config"
+          "Admin/LDAP User Sync"
         ],
         "summary": "Sync LDAP User",
         "operationId": "sync-ldap-user",
@@ -10816,7 +10997,8 @@
         "tags": [
           "Leave/Employee Bulk Leave"
         ],
-        "operationId": "1d979e1e4c63782edc0d7461128e4f68",
+        "summary": "Bulk Approve/Cancel/Reject Leaves",
+        "operationId": "bulk-approve-cancel-reject-leaves",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10889,7 +11071,8 @@
         "tags": [
           "Leave/Eligible Leave"
         ],
-        "operationId": "736d5cc655131f0af7252063794f2468",
+        "summary": "Get My Eligible Leave Types",
+        "operationId": "get-my-eligible-leave-types",
         "parameters": [
           {
             "name": "empNumber",
@@ -10941,7 +11124,8 @@
         "tags": [
           "Leave/Employee Bulk Leave Request"
         ],
-        "operationId": "7707239da703a45c777255cf7a67a080",
+        "summary": "Bulk Approve/Cancel/Reject Leave Requests",
+        "operationId": "bulk-approve-cancel-reject-leave-requests",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11014,7 +11198,8 @@
         "tags": [
           "Leave/Employee Leave"
         ],
-        "operationId": "8958a2b4283fccdfb0f77b6a6bf8c67e",
+        "summary": "List All Employee Leaves",
+        "operationId": "list-all-employee-leaves",
         "parameters": [
           {
             "name": "empNumber",
@@ -11127,7 +11312,8 @@
         "tags": [
           "Leave/Leave Balance"
         ],
-        "operationId": "0a18a21f1ad3613c1faf362e0fc3ef1c",
+        "summary": "Get an Employee's Leave Balance",
+        "operationId": "get-an-employees-leave-balance",
         "parameters": [
           {
             "name": "empNumber",
@@ -11214,7 +11400,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "eef5dec09cd53f34d6ee73d7e90d9d74",
+        "summary": "Get an Employee's Leave Entitlement",
+        "operationId": "get-an-employees-leave-entitlement",
         "parameters": [
           {
             "in": "path",
@@ -11287,7 +11474,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "fa36006fb334e788a61ee6ec7de05895",
+        "summary": "List an Employee's Leave Entitlements",
+        "operationId": "list-an-employees-leave-entitlements",
         "parameters": [
           {
             "name": "leaveTypeId",
@@ -11401,7 +11589,8 @@
         "tags": [
           "Leave/Employee Leave Request"
         ],
-        "operationId": "b0e2437232a1773597cf307d055893bb",
+        "summary": "Get a Leave Request",
+        "operationId": "get-a-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -11457,7 +11646,8 @@
         "tags": [
           "Leave/Employee Leave Request"
         ],
-        "operationId": "2592cd1f664145a868e6fdca2da25028",
+        "summary": "Update a Leave Request",
+        "operationId": "update-a-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -11557,7 +11747,8 @@
         "tags": [
           "Leave/Employee Leave Request"
         ],
-        "operationId": "f1cb154d230fae56df9b619d95ece01f",
+        "summary": "List All Leave Requests",
+        "operationId": "list-all-leave-requests",
         "parameters": [
           {
             "name": "fromDate",
@@ -11673,7 +11864,8 @@
         "tags": [
           "Leave/Employee Leave Request"
         ],
-        "operationId": "4b318f1a0c9038b5383e59da4fb3d422",
+        "summary": "Create a Leave Request",
+        "operationId": "create-a-leave-request",
         "parameters": [
           {
             "name": "model",
@@ -11781,7 +11973,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "7f998de827612ca2768f0e283526211b",
+        "summary": "Get a Holiday",
+        "operationId": "get-a-holiday",
         "parameters": [
           {
             "in": "path",
@@ -11820,7 +12013,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "ba46d386f9436345bc052c208ecd4b31",
+        "summary": "Update a Holiday",
+        "operationId": "Update a Holiday",
         "parameters": [
           {
             "in": "path",
@@ -11890,7 +12084,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "09fa2c3cd5b6f4a1385e367c6d2a43d5",
+        "summary": "List All Holidays",
+        "operationId": "list-all-holidays",
         "parameters": [
           {
             "name": "toDate",
@@ -11962,7 +12157,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "f80ad7066d189cb061ef568135b85ecb",
+        "summary": "Create a Holiday",
+        "operationId": "create-a-holiday",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12017,7 +12213,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "a0c43f8be965e36e51e1869e1f9837e6",
+        "summary": "Delete Holidays",
+        "operationId": "delete-holidays",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -12033,7 +12230,8 @@
         "tags": [
           "Leave/Leaves"
         ],
-        "operationId": "896c5b1e0ee0a4b26c8737f992724735",
+        "summary": "List All Leaves in a Leave Request",
+        "operationId": "list-all-leaves-in-a-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -12116,7 +12314,8 @@
         "tags": [
           "Leave/Leaves"
         ],
-        "operationId": "92f89eb2e7690f83fdff0ff76ab9e48c",
+        "summary": "Update a Leave",
+        "operationId": "update-a-leave",
         "parameters": [
           {
             "in": "path",
@@ -12176,7 +12375,8 @@
         "tags": [
           "Leave/Leave Balance"
         ],
-        "operationId": "da8b7c411df3c7818362233fc5421744",
+        "summary": "Get Leave Balance for a Leave Type",
+        "operationId": "get-leave-balance-for-a-leave-type",
         "parameters": [
           {
             "in": "path",
@@ -12270,7 +12470,8 @@
         "tags": [
           "Leave/Leave Comment"
         ],
-        "operationId": "bd09f024b3ba2ba9155431d5d411b670",
+        "summary": "List All Comments for a Leave",
+        "operationId": "list-all-comments-for-a-leave",
         "parameters": [
           {
             "in": "path",
@@ -12323,7 +12524,8 @@
         "tags": [
           "Leave/Leave Comment"
         ],
-        "operationId": "4b086d33ef7eff0d9830c8f68278d694",
+        "summary": "Comment on a Leave",
+        "operationId": "comment-on-a-leave",
         "parameters": [
           {
             "in": "path",
@@ -12378,7 +12580,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "397e09f96fb29ef01b5c0bad6461a8eb",
+        "summary": "Get a Leave Entitlement",
+        "operationId": "get-a-leave-entitlement",
         "parameters": [
           {
             "in": "path",
@@ -12437,7 +12640,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "1b70f41994af4f4165ec5d4cd1b2d57e",
+        "summary": "Update a Leave Entitlement",
+        "operationId": "update-a-leave-entitlement",
         "parameters": [
           {
             "in": "path",
@@ -12498,7 +12702,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "a2aecda8e05109d6fdd00781927b30f2",
+        "summary": "List All Leave Entitlements",
+        "operationId": "list-all-leave-entitlements",
         "parameters": [
           {
             "name": "empNumber",
@@ -12630,7 +12835,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "a68ab28e984ab792df1bcbb04e5e8d06",
+        "summary": "Assign Leave Entitlements to Employees",
+        "operationId": "assign-leave-entitlements-to-employees",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12695,7 +12901,8 @@
         "tags": [
           "Leave/Entitlements"
         ],
-        "operationId": "cf47bdfc1a0b3ea8888d57972d535717",
+        "summary": "Delete Leave Entitlements",
+        "operationId": "delete-leave-entitlements",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -12711,7 +12918,8 @@
         "tags": [
           "Leave/Overlap Leave"
         ],
-        "operationId": "451dddf313cc1b819b2e61aaa7ab4661",
+        "summary": "Get Overlapping Leaves",
+        "operationId": "get-overlapping-leaves",
         "parameters": [
           {
             "name": "empNumber",
@@ -12849,7 +13057,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "a075eb9196d5ae3e669c5af34b0f2db6",
+        "summary": "Get Current Leave Period",
+        "operationId": "get-current-leave-period",
         "responses": {
           "200": {
             "description": "Success",
@@ -12886,7 +13095,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "31f1b5c62765fcb8b108b3416b8ed8d5",
+        "summary": "Update Leave Period",
+        "operationId": "update-leave-period",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12942,7 +13152,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "1bb9a9c5254add91bc6ec147c3b8c9ee",
+        "summary": "List All Leave Periods",
+        "operationId": "list-all-leave-periods",
         "responses": {
           "200": {
             "description": "Success",
@@ -12981,7 +13192,8 @@
         "tags": [
           "Leave/Leave Report"
         ],
-        "operationId": "9af1a8125c4cf1e96eaf87d506880f0c",
+        "summary": "Get Leave Report",
+        "operationId": "get-leave-report",
         "parameters": [
           {
             "name": "name",
@@ -13104,7 +13316,8 @@
         "tags": [
           "Leave/Leave Report"
         ],
-        "operationId": "6b70a61b47ecfed2c8e8387e37294971",
+        "summary": "Get Leave Report Data",
+        "operationId": "get-leave-report-data",
         "parameters": [
           {
             "name": "name",
@@ -13291,7 +13504,8 @@
         "tags": [
           "Leave/Leave Request Comment"
         ],
-        "operationId": "d818def30838b374fe828abe8f9c2bf1",
+        "summary": "List Comments for a Leave Request",
+        "operationId": "list-comments-for-a-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -13344,7 +13558,8 @@
         "tags": [
           "Leave/Leave Request Comment"
         ],
-        "operationId": "05415beac1ad6c59e2ec32530c537c51",
+        "summary": "Comment on a Leave Request",
+        "operationId": "comment-on-a-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -13400,7 +13615,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "5411b0f871f28f736ce608fc67ffc0d7",
+        "summary": "Get a Leave Type",
+        "operationId": "get-a-leave-type",
         "parameters": [
           {
             "in": "path",
@@ -13439,7 +13655,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "0d4526d2f5e0b5b0ccefa72817060ca6",
+        "summary": "Update a Leave Type",
+        "operationId": "update-a-leave-type",
         "parameters": [
           {
             "in": "path",
@@ -13497,7 +13714,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "be9c28a1bf195782b32d6b8393f1b80d",
+        "summary": "List All Leave Types",
+        "operationId": "list-all-leave-types",
         "parameters": [
           {
             "name": "sortField",
@@ -13550,7 +13768,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "98a6a6e60b48b74c9bede587408aa56f",
+        "summary": "Create a Leave Type",
+        "operationId": "create-a-leave-type",
         "requestBody": {
           "content": {
             "application/json": {
@@ -13594,7 +13813,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "607319bd2f4f7159e572a50f0a2501d7",
+        "summary": "Delete Leave Types",
+        "operationId": "delete-leave-types",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -13610,7 +13830,8 @@
         "tags": [
           "Leave/My Leave"
         ],
-        "operationId": "e112df8562a75a168ec80f0c1da9c69a",
+        "summary": "Get My Leave Request",
+        "operationId": "get-my-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -13665,7 +13886,8 @@
         "tags": [
           "Leave/My Leave"
         ],
-        "operationId": "f6392367b8cb1944817b89d50be11927",
+        "summary": "Update my Leave Request",
+        "operationId": "update-my-leave-request",
         "parameters": [
           {
             "in": "path",
@@ -13786,7 +14008,8 @@
         "tags": [
           "Leave/My Leave"
         ],
-        "operationId": "1ddc49d86dc0d86badbc3a2481989493",
+        "summary": "List My Leave Requests",
+        "operationId": "list-my-leave-requests",
         "parameters": [
           {
             "name": "leaveTypeId",
@@ -13895,7 +14118,8 @@
         "tags": [
           "Leave/My Leave"
         ],
-        "operationId": "913e9e8fda84d745ee0373a2f744f990",
+        "summary": "Apply for Leave",
+        "operationId": "apply-for-leave",
         "parameters": [
           {
             "name": "model",
@@ -14030,9 +14254,10 @@
     "/api/v2/leave/leave-entitlements/{id}/validation/entitlements": {
       "get": {
         "tags": [
-          "Leave/Validate Leave Entitlement"
+          "Leave/Validation"
         ],
-        "operationId": "7c98eb344d61c35acb85b9bafee4a9bb",
+        "summary": "Validate Leave Entitlement",
+        "operationId": "validate-leave-entitlement",
         "parameters": [
           {
             "in": "path",
@@ -14089,7 +14314,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "451e483d8519d2a0c2b78d175900bde6",
+        "summary": "Get Work Week",
+        "operationId": "get-work-week",
         "parameters": [
           {
             "name": "model",
@@ -14137,7 +14363,8 @@
         "tags": [
           "Leave/Configure"
         ],
-        "operationId": "6f21fa7c3600d42aa4d68b04492eeb7d",
+        "summary": "Update Work Week",
+        "operationId": "update-work-week",
         "parameters": [
           {
             "name": "model",
@@ -14232,7 +14459,8 @@
         "tags": [
           "Maintenance/Purge Candidate"
         ],
-        "operationId": "b338af8438b87c5d29272db21ddc6e1a",
+        "summary": "Purge Candidate",
+        "operationId": "purge-candidate",
         "requestBody": {
           "content": {
             "application/json": {
@@ -14277,7 +14505,8 @@
         "tags": [
           "Maintenance/Purge Candidate"
         ],
-        "operationId": "f90249d94194a80196609689175bdaf6",
+        "summary": "List Purgeable Candidates for a Vacancy",
+        "operationId": "list-purgeable-candidates-for-a-vacancy",
         "parameters": [
           {
             "name": "vacancyId",
@@ -14344,7 +14573,8 @@
         "tags": [
           "Maintenance/Purge Employee"
         ],
-        "operationId": "66e23e250be822cb11050cb8f39464a4",
+        "summary": "Purge Employee",
+        "operationId": "purge-employee",
         "requestBody": {
           "content": {
             "application/json": {
@@ -14389,7 +14619,8 @@
         "tags": [
           "Mobile/Menu Items"
         ],
-        "operationId": "11f1413dc70c1c339c517c2819961306",
+        "summary": "List Mobile Menu Items",
+        "operationId": "list-mobile-menu-items",
         "responses": {
           "200": {
             "description": "Success",
@@ -14443,9 +14674,10 @@
     "/api/v2/performance/reviews/{reviewId}/evaluation/employee": {
       "get": {
         "tags": [
-          "Performance/Review Evaluation"
+          "Performance/Review Evaluation by Employee"
         ],
-        "operationId": "d4cd55f1a2024a80748e11be21145b8f",
+        "summary": "Get the Employee's Evaluation in a Review",
+        "operationId": "get-the-employees-evaluation-in-a-review",
         "parameters": [
           {
             "in": "path",
@@ -14523,9 +14755,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Review Evaluation"
+          "Performance/Review Evaluation by Employee"
         ],
-        "operationId": "c195ed78087b2b9867ffae8cccbc58ad",
+        "summary": "Update the Employee's Evaluation in a Review",
+        "operationId": "update-the-employees-evaluation-in-a-review",
         "parameters": [
           {
             "in": "path",
@@ -14571,7 +14804,7 @@
                     "type": "string"
                   },
                   "complete": {
-                    "type": "string"
+                    "type": "boolean"
                   }
                 },
                 "type": "object"
@@ -14607,9 +14840,10 @@
     "/api/v2/performance/employees/trackers": {
       "get": {
         "tags": [
-          "Performance/Employee Trackers"
+          "Performance/Trackers"
         ],
-        "operationId": "5a19e6ef5d3279fb0d25324d2c501334",
+        "summary": "List All Employee Trackers",
+        "operationId": "list-all-employee-trackers",
         "parameters": [
           {
             "name": "empNumber",
@@ -14673,12 +14907,13 @@
         }
       }
     },
-    "/api/v2/performance/employees/trackers/{id}}": {
+    "/api/v2/performance/employees/trackers/{id}": {
       "get": {
         "tags": [
-          "Performance/Employee Trackers"
+          "Performance/Trackers"
         ],
-        "operationId": "e5e5000a9c1ce4e7674ef9e864704ea2",
+        "summary": "Get an Employee Tracker",
+        "operationId": "get-an-employee-tracker",
         "parameters": [
           {
             "in": "path",
@@ -14717,9 +14952,10 @@
     "/api/v2/performance/kpis/{id}": {
       "get": {
         "tags": [
-          "Performance/Configure Kpis"
+          "Performance/KPI Configuration"
         ],
-        "operationId": "8bd5a7737e792a5214a0daffa241b6b8",
+        "summary": "Get a KPI",
+        "operationId": "get-a-kpi",
         "parameters": [
           {
             "in": "path",
@@ -14756,9 +14992,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Configure Kpis"
+          "Performance/KPI Configuration"
         ],
-        "operationId": "440d54fe4bfa93bf93faf8e2d1fb0872",
+        "summary": "Update a KPI",
+        "operationId": "update-a-kpi",
         "parameters": [
           {
             "in": "path",
@@ -14830,9 +15067,10 @@
     "/api/v2/performance/kpis": {
       "get": {
         "tags": [
-          "Performance/Configure Kpis"
+          "Performance/KPI Configuration"
         ],
-        "operationId": "0e53bad8d2f2df38542db07e2b39e109",
+        "summary": "List All KPIs",
+        "operationId": "list-all-kpis",
         "parameters": [
           {
             "name": "jobTitleId",
@@ -14895,9 +15133,10 @@
       },
       "post": {
         "tags": [
-          "Performance/Configure Kpis"
+          "Performance/KPI Configuration"
         ],
-        "operationId": "c6fe6bccc4de0740fa416967bd72e4a8",
+        "summary": "Create a KPI",
+        "operationId": "create-a-kpi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -14954,9 +15193,10 @@
       },
       "delete": {
         "tags": [
-          "Performance/Configure Kpis"
+          "Performance/KPI Configuration"
         ],
-        "operationId": "2140cfcf1512da6e475b04dc4721cd9b",
+        "summary": "Delete KPIs",
+        "operationId": "delete-kpis",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -14972,7 +15212,8 @@
         "tags": [
           "Performance/Reviews"
         ],
-        "operationId": "505b9177a16d04fa34651221d97a0e28",
+        "summary": "List My Reviews",
+        "operationId": "list-my-reviews",
         "parameters": [
           {
             "name": "sortField",
@@ -15031,9 +15272,10 @@
     "/api/v2/performance/trackers}": {
       "get": {
         "tags": [
-          "Performance/My Tracker"
+          "Performance/Trackers"
         ],
-        "operationId": "ecb0491c0cf5aa14a5445a7a31cf6658",
+        "summary": "List My Performance Trackers",
+        "operationId": "list-my-performance-trackers",
         "parameters": [
           {
             "name": "sortField",
@@ -15093,9 +15335,10 @@
     "/api/v2/performance/manage/reviews": {
       "get": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "e341f8787109483ed1321ed1736b155a",
+        "summary": "List All Performance Reviews",
+        "operationId": "list-all-performance-reviews",
         "parameters": [
           {
             "name": "empNumber",
@@ -15215,9 +15458,10 @@
       },
       "post": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "48f79dcf48a767331025e7339a76ad78",
+        "summary": "Create a Performance Review",
+        "operationId": "create-a-performance-review",
         "requestBody": {
           "content": {
             "application/json": {
@@ -15277,9 +15521,10 @@
       },
       "delete": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "692caa635f457e7e5fe22083eae7c2d4",
+        "summary": "Delete Performance Reviews",
+        "operationId": "delete-performance-reviews",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -15293,9 +15538,10 @@
     "/api/v2/performance/manage/reviews/{id}": {
       "get": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "744513c9820bb48697618180dc557933",
+        "summary": "Get a Performance Review",
+        "operationId": "get-a-performance-review",
         "parameters": [
           {
             "in": "path",
@@ -15332,9 +15578,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "64d7f95a6fc752df24cbf317d5a95947",
+        "summary": "Update a Performance Review",
+        "operationId": "update-a-performance-review",
         "parameters": [
           {
             "in": "path",
@@ -15411,7 +15658,8 @@
         "tags": [
           "Performance/Reviews"
         ],
-        "operationId": "fee981d12bcf6dfc26717b173b65eaf7",
+        "summary": "Get Allowed Actions for Review",
+        "operationId": "get-allowed-actions-for-review",
         "parameters": [
           {
             "in": "path",
@@ -15466,7 +15714,8 @@
         "tags": [
           "Performance/Review Evaluation"
         ],
-        "operationId": "a446499e283d802a1c8207af4ab0033c",
+        "summary": "Get a Finalized Performance Review",
+        "operationId": "get-a-finalized-performance-revew",
         "parameters": [
           {
             "in": "path",
@@ -15505,7 +15754,8 @@
         "tags": [
           "Performance/Review Evaluation"
         ],
-        "operationId": "0f55e3861d5e15f24fb672d280db426a",
+        "summary": "Finalize Performance Review",
+        "operationId": "finalize-performance-review",
         "parameters": [
           {
             "in": "path",
@@ -15573,9 +15823,10 @@
     "/api/v2/performance/config/trackers": {
       "get": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "702a6be2768f3425aac22570d73c6834",
+        "summary": "List All Performance Trackers",
+        "operationId": "list-all-performance-trackers",
         "parameters": [
           {
             "name": "empNumber",
@@ -15641,9 +15892,10 @@
       },
       "post": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "bac71897da407d2aff12aa4d58d61da2",
+        "summary": "Create a Performance Tracker",
+        "operationId": "create-a-performance-tracker",
         "requestBody": {
           "content": {
             "application/json": {
@@ -15697,9 +15949,10 @@
       },
       "delete": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "cf61851bca358acb06cc2e5465844796",
+        "summary": "Delete Performance Trackers",
+        "operationId": "delete-performance-trackers",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -15713,9 +15966,10 @@
     "/api/v2/performance/config/trackers/{id}": {
       "get": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "2f377409fae23b43428f0e8ab583a0d6",
+        "summary": "Get a Performance Tracker",
+        "operationId": "get-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -15752,9 +16006,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "b817df295a998bc1ecc19bdb6cee939a",
+        "summary": "Update a Performance Tracker",
+        "operationId": "update-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -15823,9 +16078,10 @@
     "/api/v2/performance/trackers/{trackerId}/logs": {
       "get": {
         "tags": [
-          "Performance/Tracker logs"
+          "Performance/Tracker Logs"
         ],
-        "operationId": "1f2f1c5e79970a55afe03d1b95e38946",
+        "summary": "List Logs for a Performance Tracker",
+        "operationId": "list-logs-for-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -15893,9 +16149,10 @@
       },
       "post": {
         "tags": [
-          "Performance/Tracker logs"
+          "Performance/Tracker Logs"
         ],
-        "operationId": "bfc4574247f4ab97a91f0554294b2701",
+        "summary": "Create a Log for a Performance Tracker",
+        "operationId": "create-a-log-for-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -15956,9 +16213,10 @@
       },
       "delete": {
         "tags": [
-          "Performance/Tracker logs"
+          "Performance/Tracker Logs"
         ],
-        "operationId": "631810af1d41280916761c8cb5b5f8c3",
+        "summary": "Remove Logs from a Performance Tracker",
+        "operationId": "remove-logs-from-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -15979,12 +16237,13 @@
         }
       }
     },
-    "/api/v2/performance/trackers/{trackerId}/logs/{id}}": {
+    "/api/v2/performance/trackers/{trackerId}/logs/{id}": {
       "get": {
         "tags": [
-          "Performance/Tracker logs"
+          "Performance/Tracker Logs"
         ],
-        "operationId": "48d210b16330a15e57a188b337d54302",
+        "summary": "Get a Log from a Performance Tracker",
+        "operationId": "get-a-log-from-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -16029,9 +16288,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Tracker logs"
+          "Performance/Tracker Logs"
         ],
-        "operationId": "e93fbe726333c66d8d369b185154870d",
+        "summary": "Update a Log from a Performance Tracker",
+        "operationId": "update-a-log-from-a-performance-tracker",
         "parameters": [
           {
             "in": "path",
@@ -16105,9 +16365,10 @@
     "/api/v2/performance/trackers/reviewers": {
       "get": {
         "tags": [
-          "Performance/Configure Trackers"
+          "Performance/Tracker Configuration"
         ],
-        "operationId": "be7e5a99645c388664c67a740c822dd2",
+        "summary": "List All Available Tracker Reviewers",
+        "operationId": "list-all-available-employees",
         "parameters": [
           {
             "name": "empNumber",
@@ -16201,9 +16462,10 @@
     "/api/v2/performance/supervisors": {
       "get": {
         "tags": [
-          "Performance/Reviews"
+          "Performance/Review Configuration"
         ],
-        "operationId": "b35eb1691c5f5f6dceca0706831f04d9",
+        "summary": "List an Employee's Supervisors",
+        "operationId": "list-an-employees-supervisors",
         "parameters": [
           {
             "name": "empNumber",
@@ -16278,7 +16540,8 @@
         "tags": [
           "Performance/Review Evaluation"
         ],
-        "operationId": "7cd65bd6a57a26220879cf0f40c12ae7",
+        "summary": "List KPIs for a Review",
+        "operationId": "list-kpis-for-a-review",
         "parameters": [
           {
             "in": "path",
@@ -16344,7 +16607,8 @@
         "tags": [
           "Performance/Reviews"
         ],
-        "operationId": "d533d9020844373025a58a88f1be57e5",
+        "summary": "List All Reviews",
+        "operationId": "list-all-reviews",
         "parameters": [
           {
             "name": "empNumber",
@@ -16464,9 +16728,10 @@
     "/api/v2/performance/reviews/{reviewId}/evaluation/supervisor": {
       "get": {
         "tags": [
-          "Performance/Review Evaluation"
+          "Performance/Review Evaluation by Supervisor"
         ],
-        "operationId": "c260a8b900c0608ec94bf1818b7bcd46",
+        "summary": "Get the Supervisor's Evaluation in a Review",
+        "operationId": "get-the-supervisors-evaluation-in-a-review",
         "parameters": [
           {
             "in": "path",
@@ -16544,9 +16809,10 @@
       },
       "put": {
         "tags": [
-          "Performance/Review Evaluation"
+          "Performance/Review Evaluation by Supervisor"
         ],
-        "operationId": "d8d746c8b3d5a11adbd0234273ca7fac",
+        "summary": "Update the Supervisor's Evaluation in a Review",
+        "operationId": "update-the-supervisors-evaluation-in-a-review",
         "parameters": [
           {
             "in": "path",
@@ -16626,7 +16892,8 @@
         "tags": [
           "PIM/Custom Field"
         ],
-        "operationId": "a5459459dcd0db9ba61c0bce6245e16d",
+        "summary": "Get a Custom Field",
+        "operationId": "get-a-custom-field",
         "parameters": [
           {
             "in": "path",
@@ -16665,7 +16932,8 @@
         "tags": [
           "PIM/Custom Field"
         ],
-        "operationId": "25e0eddf1ce9afb5d2fe8daadf3693b1",
+        "summary": "Update a Custom Field",
+        "operationId": "update-a-custom-field",
         "parameters": [
           {
             "in": "path",
@@ -16775,7 +17043,8 @@
         "tags": [
           "PIM/Custom Field"
         ],
-        "operationId": "606dad728a41373dd5a27dc902eb6871",
+        "summary": "List All Custom Fields",
+        "operationId": "list-all-custom-fields",
         "parameters": [
           {
             "name": "toDate",
@@ -16851,7 +17120,8 @@
         "tags": [
           "PIM/Custom Field"
         ],
-        "operationId": "835f98d6d549e6598e9e957e42931bcb",
+        "summary": "Create a Custom Field",
+        "operationId": "create-a-custom-field",
         "requestBody": {
           "content": {
             "application/json": {
@@ -16945,7 +17215,8 @@
         "tags": [
           "PIM/Custom Field"
         ],
-        "operationId": "ace5340db01e4718f5deb4bed1112611",
+        "summary": "Delete Custom Fields",
+        "operationId": "delete-custom-fields",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -16959,9 +17230,10 @@
     "/api/v2/pim/employees/{empNumber}/emergency-contacts": {
       "get": {
         "tags": [
-          "Pim/Employee Emergency Contact"
+          "PIM/Employee Emergency Contact"
         ],
-        "operationId": "d45b8387fe44b91bd66b4eb8dac35a1b",
+        "summary": "List an Employee's Emergency Contacts",
+        "operationId": "list-an-employees-emergency-contacts",
         "parameters": [
           {
             "in": "path",
@@ -17035,9 +17307,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Emergency Contact"
+          "PIM/Employee Emergency Contact"
         ],
-        "operationId": "f5bcbb3f57e6824caa5915149daea65d",
+        "summary": "Add an Emergnency Contact to an Employee",
+        "operationId": "add-an-emergency-contact-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -17109,9 +17382,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Emergency Contact"
+          "PIM/Employee Emergency Contact"
         ],
-        "operationId": "f7047d6be8bb9c961a86f2ea4ed7eb94",
+        "summary": "Delete an Employee's Emergency Contacts",
+        "operationId": "delete-an-employees-emergency-contacts",
         "parameters": [
           {
             "in": "path",
@@ -17135,9 +17409,10 @@
     "/api/v2/pim/employees/{empNumber}/emergency-contacts/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Emergency Contact"
+          "PIM/Employee Emergency Contact"
         ],
-        "operationId": "075e3ffd8e87c4197b3d3856f6344032",
+        "summary": "Get an Employee's Emergency Contact",
+        "operationId": "get-an-employees-emergency-contact",
         "parameters": [
           {
             "in": "path",
@@ -17187,9 +17462,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Emergency Contact"
+          "PIM/Employee Emergency Contact"
         ],
-        "operationId": "576e688ed0cc278e08a60b3a42496c4c",
+        "summary": "Update an Employee's Emergency Contact",
+        "operationId": "update-an-employees-emergency-contact",
         "parameters": [
           {
             "in": "path",
@@ -17267,9 +17543,10 @@
     "/api/v2/pim/employees/{empNumber}/tax-exemption": {
       "get": {
         "tags": [
-          "Pim/Employee US Tax Exemption"
+          "PIM/Employee US Tax Exemption"
         ],
-        "operationId": "d4a83d72a8dca0e0ab8d8eafcba404fa",
+        "summary": "Get an Employee's US Tax Exemption Details",
+        "operationId": "get-an-employees-us-tax-expemption-details",
         "parameters": [
           {
             "in": "path",
@@ -17311,9 +17588,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee US Tax Exemption"
+          "PIM/Employee US Tax Exemption"
         ],
-        "operationId": "4f13079ce655f1c4d74bc46ad796ef7c",
+        "summary": "Update an Employee's US Tax Exemption Details",
+        "operationId": "update-an-employees-us-tax-exemption-details",
         "parameters": [
           {
             "in": "path",
@@ -17386,7 +17664,8 @@
         "tags": [
           "PIM/Employee"
         ],
-        "operationId": "89c5883e56c60851c1a65845c1549186",
+        "summary": "Get an Employee",
+        "operationId": "get-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -17447,7 +17726,8 @@
         "tags": [
           "PIM/Employee"
         ],
-        "operationId": "abd8370314dd6fc41767edaf6350d07a",
+        "summary": "List All Employees",
+        "operationId": "list-all-employees",
         "parameters": [
           {
             "name": "name",
@@ -17594,7 +17874,8 @@
         "tags": [
           "PIM/Employee"
         ],
-        "operationId": "f67b4c417dc589a240212b4ff4d73c3d",
+        "summary": "Create an Employee",
+        "operationId": "create-an-employee",
         "requestBody": {
           "content": {
             "application/json": {
@@ -17682,7 +17963,8 @@
         "tags": [
           "PIM/Employee"
         ],
-        "operationId": "72961cade4606a3b51951ef89bf1cba4",
+        "summary": "Delete Employees",
+        "operationId": "delete-employees",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -17721,9 +18003,10 @@
     "/api/v2/pim/employees/{empNumber}/languages/allowed": {
       "get": {
         "tags": [
-          "Pim/Employee Allowed Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "8dcc63410725e468af25944a60a51ca3",
+        "summary": "List Allowed Languages for an Employee",
+        "operationId": "list-allowed-languages-for-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -17787,9 +18070,10 @@
     "/api/v2/pim/employees/{empNumber}/licenses/allowed": {
       "get": {
         "tags": [
-          "Pim/Employee Allowed License"
+          "PIM/Employee License"
         ],
-        "operationId": "a74103df9bdb8379859f1a24b6bbfee1",
+        "summary": "List ALlowed Licenses for an Employee",
+        "operationId": "list-allowed-licenses-for-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -17839,9 +18123,10 @@
     "/api/v2/pim/employees/{empNumber}/report-to/allowed": {
       "get": {
         "tags": [
-          "PIM/Employee Allowed Report"
+          "PIM/Employee Report To"
         ],
-        "operationId": "f1abe528568232741af8d7deac918de3",
+        "summary": "List Available Employees",
+        "operationId": "list-available-employees",
         "parameters": [
           {
             "in": "path",
@@ -17919,9 +18204,10 @@
     "/api/v2/pim/employees/{empNumber}/skills/allowed": {
       "get": {
         "tags": [
-          "Pim/Employee Allowed Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "ae59b8795142fdc7cdaaeae24e423d2b",
+        "summary": "List Alowed Skills for an Employee",
+        "operationId": "list-allowed-skills-for-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -17990,9 +18276,10 @@
     "/api/v2/pim/employees/{empNumber}/screen/{screen}/attachments/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Attachment"
+          "PIM/Employee Attachment"
         ],
-        "operationId": "a8b959cc27c9f2347ac716c7b0afe1ab",
+        "summary": "Get an Employee's Attachment on a Screen",
+        "operationId": "get-an-employees-attachment-on-a-screen",
         "parameters": [
           {
             "in": "path",
@@ -18067,9 +18354,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Attachment"
+          "PIM/Employee Attachment"
         ],
-        "operationId": "8dbb28227807da5e853080a7923640fd",
+        "summary": "Update an Employee's Attachment on a Screen",
+        "operationId": "update-an-employees-attachment-on-a-screen",
         "parameters": [
           {
             "in": "path",
@@ -18155,9 +18443,10 @@
     "/api/v2/pim/employees/{empNumber}/screen/{screen}/attachments": {
       "get": {
         "tags": [
-          "Pim/Employee Attachment"
+          "PIM/Employee Attachment"
         ],
-        "operationId": "b6afeacbea9a9fbdd42ab88ec644e14d",
+        "summary": "List an Employee's Attachments on a Screen",
+        "operationId": "list-an-employees-attachments-on-a-screen",
         "parameters": [
           {
             "in": "path",
@@ -18230,9 +18519,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Attachment"
+          "PIM/Employee Attachment"
         ],
-        "operationId": "e58431eb8dcc785b034ab8ef00dc639c",
+        "summary": "Add an Attachment to an Employee on a Screen",
+        "operationId": "add-an-attachment-to-an-employee-on-a-screen",
         "parameters": [
           {
             "in": "path",
@@ -18326,9 +18616,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Attachment"
+          "PIM/Employee Attachment"
         ],
-        "operationId": "bee3f2019fd322a8ec95f77e9c746927",
+        "summary": "Delete an Employee's Attachments on a Screen",
+        "operationId": "delete-an-employees-attachments-on-a-screen",
         "parameters": [
           {
             "in": "path",
@@ -18373,9 +18664,10 @@
     "/api/v2/pim/csv-import": {
       "post": {
         "tags": [
-          "Pim/Employee CSV Import"
+          "PIM/Employee CSV Import"
         ],
-        "operationId": "84a97012f463d07528085bea79d4ee06",
+        "summary": "Import Employee Records",
+        "operationId": "import-employee-records",
         "requestBody": {
           "content": {
             "application/json": {
@@ -18432,9 +18724,10 @@
     "/api/v2/pim/employee/{empNumber}/contact-details": {
       "get": {
         "tags": [
-          "Pim/Employee Contact Details"
+          "PIM/Employee Contact Details"
         ],
-        "operationId": "a752c65ea38ebd8435cccab18fce501c",
+        "summary": "Get an Employee's Contact Details",
+        "operationId": "get-an-employees-contact-details",
         "parameters": [
           {
             "in": "path",
@@ -18471,9 +18764,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Contact Details"
+          "PIM/Employee Contact Details"
         ],
-        "operationId": "a4a4af151ddfb0b964d92ff0b4205eb1",
+        "summary": "Update an Employee's Contact Details",
+        "operationId": "update-an-employees-contact-details",
         "parameters": [
           {
             "in": "path",
@@ -18567,9 +18861,10 @@
     "/api/v2/pim/employees/count": {
       "get": {
         "tags": [
-          "Pim/Employee Count"
+          "PIM/Employee Count"
         ],
-        "operationId": "10f7a3fd8aa96f07a78ab92424c64592",
+        "summary": "Get the Number of Employees",
+        "operationId": "get-the-number-of-employees",
         "parameters": [
           {
             "name": "name",
@@ -18678,9 +18973,10 @@
     "/api/v2/pim/employees/{empNumber}/custom-fields": {
       "get": {
         "tags": [
-          "Pim/Employee Custom Field"
+          "PIM/Employee Custom Field"
         ],
-        "operationId": "f0a438da48d1dd3f0957d1f9169a4d2f",
+        "summary": "List an Employee's Custom Fields",
+        "operationId": "list-an-employees-custom-fields",
         "parameters": [
           {
             "in": "path",
@@ -18750,9 +19046,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Custom Field"
+          "PIM/Employee Custom Field"
         ],
-        "operationId": "6aba50de8d7daed723c54b69bc23fb9a",
+        "summary": "Update an Employee's Custom Fields",
+        "operationId": "update-an-employees-custom-fields",
         "parameters": [
           {
             "in": "path",
@@ -18817,9 +19114,10 @@
     "/api/v2/pim/employees/{empNumber}/dependents/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Dependent"
+          "PIM/Employee Dependent"
         ],
-        "operationId": "7e479890cb22ab78bb8f663cc275c251",
+        "summary": "Get an Employee's Dependent",
+        "operationId": "get-an-employees-dependent",
         "parameters": [
           {
             "in": "path",
@@ -18869,9 +19167,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Dependent"
+          "PIM/Employee Dependent"
         ],
-        "operationId": "51248ff60ec48fe17d5ceafa3d99510a",
+        "summary": "Update an Employee's Dependent",
+        "operationId": "update-an-employees-dependent",
         "parameters": [
           {
             "in": "path",
@@ -18944,9 +19243,10 @@
     "/api/v2/pim/employees/{empNumber}/dependents": {
       "get": {
         "tags": [
-          "Pim/Employee Dependent"
+          "PIM/Employee Dependent"
         ],
-        "operationId": "e330df7a086c304f3472dfee9955eb8c",
+        "summary": "List an Employee's Dependents",
+        "operationId": "list-an-employees-dependents",
         "parameters": [
           {
             "in": "path",
@@ -19028,9 +19328,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Dependent"
+          "PIM/Employee Dependent"
         ],
-        "operationId": "c7b62313f5fb236173da68a1e8657cc8",
+        "summary": "Add a Dependent to an Employee",
+        "operationId": "add-a-dependent-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -19094,9 +19395,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Dependent"
+          "PIM/Employee Dependent"
         ],
-        "operationId": "a3ea39076638458a6fea8ed020c4b468",
+        "summary": "Delete an Employee's Dependents",
+        "operationId": "delete-an-employees-dependents",
         "parameters": [
           {
             "in": "path",
@@ -19120,9 +19422,10 @@
     "/api/v2/pim/employees/{empNumber}/educations/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Education"
+          "PIM/Employee Education"
         ],
-        "operationId": "6465d66025a34a7a192a50a22b8f95b6",
+        "summary": "Get an Employee's Educational Qualification",
+        "operationId": "get-an-employees-educational-qualification",
         "parameters": [
           {
             "in": "path",
@@ -19172,9 +19475,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Education"
+          "PIM/Employee Education"
         ],
-        "operationId": "e8c2fd83877abc82404b5d23335ada85",
+        "summary": "Update an Employee's Educational Qualification",
+        "operationId": "update-an-employees-educational-qualification",
         "parameters": [
           {
             "in": "path",
@@ -19262,9 +19566,10 @@
     "/api/v2/pim/employees/{empNumber}/educations": {
       "get": {
         "tags": [
-          "Pim/Employee Education"
+          "PIM/Employee Education"
         ],
-        "operationId": "4d61c9620ca125e382486ee14e2dbe4e",
+        "summary": "List an Employee's Educational Qualifications",
+        "operationId": "list-an-employees-educational-qualifications",
         "parameters": [
           {
             "in": "path",
@@ -19326,9 +19631,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Education"
+          "PIM/Employee Education"
         ],
-        "operationId": "1f09a5410ae9c104c4d081f30cd82891",
+        "summary": "Add an Educational Qualification to an Employee",
+        "operationId": "add-an-educational-qualification-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -19401,9 +19707,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Education"
+          "PIM/Employee Education"
         ],
-        "operationId": "d57a7fb870f139af83d266bf469b06fe",
+        "summary": "Delete an Employee's Educational Qualifications",
+        "operationId": "delete-an-employees-educational-qualifications",
         "parameters": [
           {
             "in": "path",
@@ -19427,9 +19734,10 @@
     "/api/v2/pim/employees/{empNumber}/immigrations": {
       "get": {
         "tags": [
-          "Pim/Employee Immigration"
+          "PIM/Employee Immigration"
         ],
-        "operationId": "59a996a5d06c2a38a69e13e0467e8bef",
+        "summary": "List an Employee's Immigration Record",
+        "operationId": "list-an-employees-immigration-record",
         "parameters": [
           {
             "in": "path",
@@ -19499,9 +19807,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Immigration"
+          "PIM/Employee Immigration"
         ],
-        "operationId": "c2652542725de74367e72822b24327e6",
+        "summary": "Add an Immigration Record to an Employee",
+        "operationId": "add-an-immigration-record-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -19583,9 +19892,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Immigration"
+          "PIM/Employee Immigration"
         ],
-        "operationId": "5822abe23785114e9a91520b0bc94010",
+        "summary": "Delete an Employee's Immigration Records",
+        "operationId": "delete-an-employees-immigration-records",
         "parameters": [
           {
             "in": "path",
@@ -19609,9 +19919,10 @@
     "/api/v2/pim/employees/{empNumber}/immigrations/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Immigration"
+          "PIM/Employee Immigration"
         ],
-        "operationId": "9b512bd56709a6d17bd9b4cf9e37293f",
+        "summary": "Get an Employee's Immigration Record",
+        "operationId": "get-an-employees-immigration-record",
         "parameters": [
           {
             "in": "path",
@@ -19661,9 +19972,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Immigration"
+          "PIM/Employee Immigration"
         ],
-        "operationId": "f4b17b784616218e93bb6217be33b9de",
+        "summary": "Update an Employee's Immigration Record",
+        "operationId": "update-an-employees-immigration-record",
         "parameters": [
           {
             "in": "path",
@@ -19758,9 +20070,10 @@
     "/api/v2/pim/employees/{empNumber}/job-details": {
       "get": {
         "tags": [
-          "Pim/Employee Job Details"
+          "PIM/Employee Job Details"
         ],
-        "operationId": "41f8c2b731939af02138d9c1e9d31e55",
+        "summary": "Get an Employee's Job Details",
+        "operationId": "get-an-employees-job-details",
         "parameters": [
           {
             "in": "path",
@@ -19794,9 +20107,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Job Details"
+          "PIM/Employee Job Details"
         ],
-        "operationId": "1d293d4685b1328b6c4b33655eb3fd40",
+        "summary": "Update an Employee's Job Details",
+        "operationId": "update-an-employees-job-details",
         "parameters": [
           {
             "in": "path",
@@ -19862,9 +20176,10 @@
     "/api/v2/pim/employees/{empNumber}/languages/{languageId}/fluencies/{fluencyId}": {
       "get": {
         "tags": [
-          "Pim/Employee Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "cfc6adfb2f3e0dea1865a854bac0872e",
+        "summary": "Get an Employee's Language and Fluency",
+        "operationId": "get-an-employees-language-and-fluency",
         "parameters": [
           {
             "in": "path",
@@ -19922,9 +20237,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "dd950dee6d1a383cad4bbaebee523e19",
+        "summary": "Update an Employee's Language and Fluency",
+        "operationId": "update-an-employees-langauge-and-fluency",
         "parameters": [
           {
             "in": "path",
@@ -20016,9 +20332,10 @@
     "/api/v2/pim/employees/{empNumber}/languages": {
       "get": {
         "tags": [
-          "Pim/Employee Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "b4c7f83f8d65d1ce99bf118f888faef9",
+        "summary": "List an Employee's Languages",
+        "operationId": "list-an-employees-languages",
         "parameters": [
           {
             "in": "path",
@@ -20080,9 +20397,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "38053d08e68d0e780849a688f1cef4db",
+        "summary": "Add a Language to an Employee",
+        "operationId": "add-a-language-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -20181,9 +20499,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Language"
+          "PIM/Employee Language"
         ],
-        "operationId": "9db7a3564049989766c3115a6dee8cf7",
+        "summary": "Delete an Employee's Languages",
+        "operationId": "delete-an-employees-languages",
         "parameters": [
           {
             "in": "path",
@@ -20207,9 +20526,10 @@
     "/api/v2/pim/employees/{empNumber}/licenses/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Licenses"
+          "PIM/Employee Licenses"
         ],
-        "operationId": "0a6ee57bc3e9e8e9ed1d9393dbb2bb63",
+        "summary": "Get an Employee's License",
+        "operationId": "get-an-employees-license",
         "parameters": [
           {
             "in": "path",
@@ -20259,9 +20579,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Licenses"
+          "PIM/Employee Licenses"
         ],
-        "operationId": "3b329f621e2fff8cda3ca80b0bf7357a",
+        "summary": "Update an Employee's License",
+        "operationId": "update-an-employees-license",
         "parameters": [
           {
             "in": "path",
@@ -20337,9 +20658,10 @@
     "/api/v2/pim/employees/{empNumber}/licenses": {
       "get": {
         "tags": [
-          "Pim/Employee Licenses"
+          "PIM/Employee Licenses"
         ],
-        "operationId": "ce9572a7044a70d9f0c5d32a74356e2b",
+        "summary": "List an Employee's Licenses",
+        "operationId": "list-an-employees-licenses",
         "parameters": [
           {
             "in": "path",
@@ -20401,9 +20723,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Licenses"
+          "PIM/Employee Licenses"
         ],
-        "operationId": "259442f0b3cd691b39b6e8ba1d8c5d69",
+        "summary": "Add a License to an Employee",
+        "operationId": "add-a-license-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -20466,9 +20789,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Licenses"
+          "PIM/Employee Licenses"
         ],
-        "operationId": "9ebe0aef5461241d5e88cb9cf405a78d",
+        "summary": "Delete an Employee's Licenses",
+        "operationId": "delete-an-employees-licenses",
         "parameters": [
           {
             "in": "path",
@@ -20492,9 +20816,10 @@
     "/api/v2/pim/employees/{empNumber}/memberships/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Membership"
+          "PIM/Employee Membership"
         ],
-        "operationId": "81350bb3c6a43cf9c8aa88e3f1cb5f39",
+        "summary": "Get an Employee's Membership",
+        "operationId": "get-an-employees-membership",
         "parameters": [
           {
             "in": "path",
@@ -20539,9 +20864,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Membership"
+          "PIM/Employee Membership"
         ],
-        "operationId": "a580339e72740743a927d9838ba3c0b7",
+        "summary": "Update an Employee's Membership",
+        "operationId": "update-an-employees-membership",
         "parameters": [
           {
             "in": "path",
@@ -20622,9 +20948,10 @@
     "/api/v2/pim/employees/{empNumber}/memberships": {
       "get": {
         "tags": [
-          "Pim/Employee Membership"
+          "PIM/Employee Membership"
         ],
-        "operationId": "7c06263dbc201ad22819a1f831900a0a",
+        "summary": "List an Employee's Memberships",
+        "operationId": "list-an-employees-memberships",
         "parameters": [
           {
             "in": "path",
@@ -20686,9 +21013,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Membership"
+          "PIM/Employee Membership"
         ],
-        "operationId": "f838d2f804330dd136851d1b4760139c",
+        "summary": "Add a Membership to an Employee",
+        "operationId": "add-a-membership-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -20756,9 +21084,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Membership"
+          "PIM/Employee Membership"
         ],
-        "operationId": "2fe8f12167fad64dd8fba221840e5e22",
+        "summary": "Delete an Employee's Memberships",
+        "operationId": "delete-an-employees-memberships",
         "parameters": [
           {
             "in": "path",
@@ -20782,9 +21111,10 @@
     "/api/v2/pim/employees/{empNumber}/personal-details": {
       "get": {
         "tags": [
-          "Pim/Employee Personal Details"
+          "PIM/Employee Personal Details"
         ],
-        "operationId": "17609be1a994c2b0560b0be9cce86801",
+        "summary": "Get an Employee's Personal Details",
+        "operationId": "get-an-employees-personal-details",
         "parameters": [
           {
             "in": "path",
@@ -20821,9 +21151,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Personal Details"
+          "PIM/Employee Personal Details"
         ],
-        "operationId": "87c9a6faa31dd9b8c14058fbe3110a72",
+        "summary": "Update an Employee's Personal Details",
+        "operationId": "update-an-employees-personal-details",
         "parameters": [
           {
             "in": "path",
@@ -20938,9 +21269,10 @@
     "/api/v2/pim/employees/{empNumber}/picture": {
       "get": {
         "tags": [
-          "Pim/Employee Picture"
+          "PIM/Employee Picture"
         ],
-        "operationId": "4aba6185bd41f6d5fae8a87d9af36e61",
+        "summary": "Get an Employee's Picture",
+        "operationId": "get-an-employees-picture",
         "parameters": [
           {
             "in": "path",
@@ -20977,9 +21309,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Picture"
+          "PIM/Employee Picture"
         ],
-        "operationId": "e04fca7c03bcf07e308949290067204f",
+        "summary": "Update an Employee's Picture",
+        "operationId": "update-an-employees-picture",
         "parameters": [
           {
             "in": "path",
@@ -21029,9 +21362,10 @@
     "/api/v2/pim/employees/{empNumber}/salary-components/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Salary"
+          "PIM/Employee Salary"
         ],
-        "operationId": "579e3407c7cdf2034ef3ab8f55714ecd",
+        "summary": "Get an Employee's Salary Component",
+        "operationId": "get-an-employees-salary-component",
         "parameters": [
           {
             "in": "path",
@@ -21081,9 +21415,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Salary"
+          "PIM/Employee Salary"
         ],
-        "operationId": "e7b2b9006d7e4173eeea3f6bed8a0aba",
+        "summary": "Update an Employee's Salary Component",
+        "operationId": "update-an-employees-salary-component",
         "parameters": [
           {
             "in": "path",
@@ -21176,9 +21511,10 @@
     "/api/v2/pim/employees/{empNumber}/salary-components": {
       "get": {
         "tags": [
-          "Pim/Employee Salary"
+          "PIM/Employee Salary"
         ],
-        "operationId": "f2b686e7ddf0c44624fe80f03439a686",
+        "summary": "List an Employee's Salary Components",
+        "operationId": "list-an-employees-salary-components",
         "parameters": [
           {
             "in": "path",
@@ -21240,9 +21576,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Salary"
+          "PIM/Employee Salary"
         ],
-        "operationId": "10ec2d2b00bcb58205876c4e4a39d3f4",
+        "summary": "Add a Salary Component to an Employee",
+        "operationId": "add-a-salary-component-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -21354,9 +21691,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Salary"
+          "PIM/Employee Salary"
         ],
-        "operationId": "d2ae69e2a43e30775826ce46f87b4189",
+        "summary": "Delete an Employee's Salary Components",
+        "operationId": "delete-an-employees-salary-componenets",
         "parameters": [
           {
             "in": "path",
@@ -21380,9 +21718,10 @@
     "/api/v2/pim/employees/{empNumber}/skills/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "405c4faabc907cbeab0f96fb716b1ef4",
+        "summary": "Get an Employee's Skill",
+        "operationId": "get-an-employees-skill",
         "parameters": [
           {
             "in": "path",
@@ -21432,9 +21771,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "29893ab6a85b6b5774cd180b07f0e1cd",
+        "summary": "Update an Employee's Skill",
+        "operationId": "update-an-employees-skill",
         "parameters": [
           {
             "in": "path",
@@ -21500,9 +21840,10 @@
     "/api/v2/pim/employees/{empNumber}/skills": {
       "get": {
         "tags": [
-          "Pim/Employee Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "e28769fd5fdb48f7cc349a153f314f03",
+        "summary": "List an Employee's Skills",
+        "operationId": "list-an-employees-skills",
         "parameters": [
           {
             "in": "path",
@@ -21564,9 +21905,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "198901721441212f9aaba40f567ec0ec",
+        "summary": "Add a Skill to an Employee",
+        "operationId": "add-a-skill-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -21625,9 +21967,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Skill"
+          "PIM/Employee Skill"
         ],
-        "operationId": "fe105a7ba32d4dbc3cb6ae9ce677725d",
+        "summary": "Delete an Employee's Skills",
+        "operationId": "delete-an-employees-skills",
         "parameters": [
           {
             "in": "path",
@@ -21651,9 +21994,10 @@
     "/api/v2/pim/employees/{empNumber}/subordinates": {
       "get": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "a00d1114e6dad66fe0a42803e25498fc",
+        "summary": "List an Employee's Subordinates",
+        "operationId": "list-an-employees-subordinates",
         "parameters": [
           {
             "in": "path",
@@ -21715,9 +22059,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "3e6baf5ce29e11603c190f5f93e1566d",
+        "summary": "Add a Subordinate to an Employee",
+        "operationId": "add-a-subordinate-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -21772,9 +22117,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "e092d2002ae1ee065be59405a50e429c",
+        "summary": "Delete an Employee's Subordinates",
+        "operationId": "delete-an-employees-subordinates",
         "parameters": [
           {
             "in": "path",
@@ -21798,9 +22144,10 @@
     "/api/v2/pim/employees/{empNumber}/subordinates/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "c4652e59b81a5d27ad72965d90fb95ad",
+        "summary": "Get an Employee's Subordinate",
+        "operationId": "get-an-employees-subordinate",
         "parameters": [
           {
             "in": "path",
@@ -21850,9 +22197,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "1b30aaf8a94732b6523662153f54c930",
+        "summary": "Update an Employee's Subordinate",
+        "operationId": "update-an-employees-subordinate",
         "parameters": [
           {
             "in": "path",
@@ -21916,9 +22264,10 @@
     "/api/v2/pim/employees/{empNumber}/supervisors/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Supervisor"
+          "PIM/Employee Supervisor"
         ],
-        "operationId": "2a4fe0676208f4408fb8359561a3b9a7",
+        "summary": "Get an Employee's Supervisor",
+        "operationId": "get-an-employees-supervisor",
         "parameters": [
           {
             "in": "path",
@@ -21968,9 +22317,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Subordinates"
+          "PIM/Employee Subordinates"
         ],
-        "operationId": "ce35eefd07c67e1d9ae210c48daf2143",
+        "summary": "Update an Employee's Supervisor",
+        "operationId": "update-an-employees-supervisor",
         "parameters": [
           {
             "in": "path",
@@ -22034,9 +22384,10 @@
     "/api/v2/pim/employees/{empNumber}/supervisors": {
       "get": {
         "tags": [
-          "Pim/Employee Supervisor"
+          "PIM/Employee Supervisor"
         ],
-        "operationId": "6c32c2a3e848c022063cca874f729bfc",
+        "summary": "List an Employee's Supervisors",
+        "operationId": "list-an-employees-supervisors-pim",
         "parameters": [
           {
             "in": "path",
@@ -22098,9 +22449,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Employee Supervisor"
+          "PIM/Employee Supervisor"
         ],
-        "operationId": "7f6fe7036199c0d7f4cc995311740f0e",
+        "summary": "Add a Supervisor to an Employee",
+        "operationId": "add-a-supervisor-to-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -22155,9 +22507,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Supervisor"
+          "PIM/Employee Supervisor"
         ],
-        "operationId": "d707616f3efc687b841bb03af9b69f82",
+        "summary": "Delete an Employee's Supervisors",
+        "operationId": "delete-an-employees-supervisors",
         "parameters": [
           {
             "in": "path",
@@ -22181,9 +22534,10 @@
     "/api/v2/pim/employees/{empNumber}/terminations/{id}": {
       "get": {
         "tags": [
-          "Pim/Employee Termination"
+          "PIM/Employee Termination"
         ],
-        "operationId": "f93c95350f880d2e3dbdba03f2840106",
+        "summary": "Get an Employee's Termination Record",
+        "operationId": "get-an-employees-termination-record",
         "parameters": [
           {
             "in": "path",
@@ -22233,9 +22587,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employee Termination"
+          "PIM/Employee Termination"
         ],
-        "operationId": "c235763269e4f76a698d6f2e5ac4a41d",
+        "summary": "Update an Employee's Termination Record",
+        "operationId": "update-an-employees-termination-record",
         "parameters": [
           {
             "in": "path",
@@ -22307,9 +22662,10 @@
     "/api/v2/pim/employees/{empNumber}/terminations": {
       "post": {
         "tags": [
-          "Pim/Employee Termination"
+          "PIM/Employee Termination"
         ],
-        "operationId": "72fc9c041506ec4a03f4f76ea691328e",
+        "summary": "Terminate an Employee",
+        "operationId": "terminate-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -22369,171 +22725,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Employee Termination"
+          "PIM/Employee Termination"
         ],
-        "operationId": "0d152892bdf964a0016523e893cb765a",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "empNumber",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "$ref": "#/components/requestBodies/DeleteRequestBody"
-        },
-        "responses": {
-          "200": {
-            "$ref": "#/components/responses/DeleteResponse"
-          }
-        }
-      }
-    },
-    "/api/v2/pim/employees/{empNumber}/work-experiences": {
-      "get": {
-        "tags": [
-          "Pim/Employee Work Experience"
-        ],
-        "operationId": "09bbb589a5acc51278c2abd9d5ed8253",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "empNumber",
-            "schema": {
-              "type": "integer"
-            }
-          },
-          {
-            "name": "sortField",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "we.jobTitle",
-                "we.employer"
-              ]
-            }
-          },
-          {
-            "$ref": "#/components/parameters/sortOrder"
-          },
-          {
-            "$ref": "#/components/parameters/limit"
-          },
-          {
-            "$ref": "#/components/parameters/offset"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Pim-EmployeeWorkExperienceModel"
-                    },
-                    "meta": {
-                      "properties": {
-                        "total": {
-                          "type": "integer"
-                        },
-                        "empNumber": {
-                          "type": "integer"
-                        }
-                      },
-                      "type": "object"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Pim/Employee Work Experience"
-        ],
-        "operationId": "947e35c49ef478d5cba8cff714034752",
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "name": "empNumber",
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "required": [
-                  "jobTitle",
-                  "company"
-                ],
-                "properties": {
-                  "company": {
-                    "type": "string",
-                    "maxLength": 100
-                  },
-                  "jobTitle": {
-                    "type": "string",
-                    "maxLength": 120
-                  },
-                  "fromDate": {
-                    "type": "string",
-                    "format": "date"
-                  },
-                  "toDate": {
-                    "type": "string",
-                    "format": "date"
-                  },
-                  "comment": {
-                    "type": "string",
-                    "maxLength": 200
-                  }
-                },
-                "type": "object"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "data": {
-                      "$ref": "#/components/schemas/Pim-EmployeeWorkExperienceModel"
-                    },
-                    "empNumber": {
-                      "type": "integer"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Pim/Employee Work Experience"
-        ],
-        "operationId": "8fc950601568c0713a536f85cc987590",
+        "summary": "Delete an Employee's Termination Record",
+        "operationId": "delete-an-employees-termination-record",
         "parameters": [
           {
             "in": "path",
@@ -22555,11 +22750,62 @@
       }
     },
     "/api/v2/pim/employees/{empNumber}/work-experiences/{id}": {
+      "get": {
+        "tags": [
+          "PIM/Employee Work Experience"
+        ],
+        "summary": "Get an Employee's Work Experience Record",
+        "operationId": "get-an-employees-work-experience-record",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "empNumber",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "required": true,
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Pim-EmployeeWorkExperienceModel"
+                    },
+                    "meta": {
+                      "properties": {
+                        "empNumber": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
       "put": {
         "tags": [
-          "Pim/Employee Work Experience"
+          "PIM/Employee Work Experience"
         ],
-        "operationId": "e4f187cf377622e9ecd238d1876ad5f1",
+        "summary": "Update an Employee's Work Experiece Record",
+        "operationId": "update-an-employees-work-experience-record",
         "parameters": [
           {
             "in": "path",
@@ -22635,12 +22881,178 @@
         }
       }
     },
+    "/api/v2/pim/employees/{empNumber}/work-experiences": {
+      "get": {
+        "tags": [
+          "PIM/Employee Work Experience"
+        ],
+        "summary": "List Employee's Work Experience Records",
+        "operationId": "list-employees-work-experience-records",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "empNumber",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "sortField",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "we.jobTitle",
+                "we.employer"
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/sortOrder"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          },
+          {
+            "$ref": "#/components/parameters/offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Pim-EmployeeWorkExperienceModel"
+                    },
+                    "meta": {
+                      "properties": {
+                        "total": {
+                          "type": "integer"
+                        },
+                        "empNumber": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PIM/Employee Work Experience"
+        ],
+        "summary": "Add a Work Experience Record to an Employee",
+        "operationId": "add-a-work-experience-record-to-an-employee",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "empNumber",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "jobTitle",
+                  "company"
+                ],
+                "properties": {
+                  "company": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "jobTitle": {
+                    "type": "string",
+                    "maxLength": 120
+                  },
+                  "fromDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "toDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "comment": {
+                    "type": "string",
+                    "maxLength": 200
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/Pim-EmployeeWorkExperienceModel"
+                    },
+                    "empNumber": {
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PIM/Employee Work Experience"
+        ],
+        "summary": "Delete an Employee's Work Experience Records",
+        "operationId": "delete-an-employees-work-experience-records",
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "name": "empNumber",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/DeleteRequestBody"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/DeleteResponse"
+          }
+        }
+      }
+    },
     "/api/v2/pim/employees/{empNumber}/work-shift": {
       "get": {
         "tags": [
-          "Pim/Employee Work Shift"
+          "PIM/Employee Work Shift"
         ],
-        "operationId": "81ccd6e96a0c36097484332495ea1da1",
+        "summary": "Get an Employee's Work Shift",
+        "operationId": "get-an-employees-work-shift",
         "parameters": [
           {
             "in": "path",
@@ -22681,9 +23093,10 @@
     "/api/v2/pim/employees/{empNumber}/employment-contract": {
       "get": {
         "tags": [
-          "Pim/Employement Contract"
+          "PIM/Employement Contract"
         ],
-        "operationId": "bdddd8d4142cb61a8ea7362b928b087f",
+        "summary": "Get an Employee's Employment Contract",
+        "operationId": "get-an-employees-employment-contract",
         "parameters": [
           {
             "in": "path",
@@ -22722,9 +23135,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Employement Contract"
+          "PIM/Employement Contract"
         ],
-        "operationId": "ba4f8fe990b52cfe6e4902766e252283",
+        "summary": "Update an Employee's Employment Contract",
+        "operationId": "update-an-employees-employment-contract",
         "parameters": [
           {
             "in": "path",
@@ -22790,9 +23204,10 @@
     "/api/v2/pim/myself": {
       "get": {
         "tags": [
-          "Pim/My Self"
+          "PIM/My Self"
         ],
-        "operationId": "341aa3e1449f2579c8d9ed0890a0a60f",
+        "summary": "Get My Details",
+        "operationId": "get-my-details",
         "parameters": [
           {
             "name": "model",
@@ -22841,9 +23256,10 @@
     "/api/v2/pim/optional-field": {
       "get": {
         "tags": [
-          "Pim/Optional Field"
+          "PIM/Optional Field"
         ],
-        "operationId": "61e2af115fd525580c374a78109303a3",
+        "summary": "Get Optional Field Configuration",
+        "operationId": "get-optional-field-configuration",
         "responses": {
           "200": {
             "description": "Success",
@@ -22884,9 +23300,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Optional Field"
+          "PIM/Optional Field"
         ],
-        "operationId": "15af2ee70ba667b9efddd8e63bcccca4",
+        "summary": "Update Optional Field Configuration",
+        "operationId": "update-optional-field-configuration",
         "requestBody": {
           "content": {
             "application/json": {
@@ -22958,9 +23375,10 @@
     "/api/v2/pim/reports/defined": {
       "get": {
         "tags": [
-          "Pim/Defined Report"
+          "PIM/Defined Report"
         ],
-        "operationId": "f97d74ad5c07ce9de8fd5cb191d516b2",
+        "summary": "List All PIM Reports",
+        "operationId": "list-all-pim-reports",
         "parameters": [
           {
             "name": "name",
@@ -23030,9 +23448,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Defined Report"
+          "PIM/Defined Report"
         ],
-        "operationId": "ad5f2341b6a57406e78ee9d0d95b2724",
+        "summary": "Create a PIM Report",
+        "operationId": "create-a-pim-report",
         "requestBody": {
           "content": {
             "application/json": {
@@ -23127,9 +23546,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Defined Report"
+          "PIM/Defined Report"
         ],
-        "operationId": "32b394a033cad26999926b34a916b510",
+        "summary": "Delete PIM Reports",
+        "operationId": "delete-pim-reports",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -23143,9 +23563,10 @@
     "/api/v2/pim/reports/defined/{id}": {
       "put": {
         "tags": [
-          "Pim/Defined Report"
+          "PIM/Defined Report"
         ],
-        "operationId": "329df9458dbdf649558915f3511b2941",
+        "summary": "Update a PIM Report",
+        "operationId": "update-a-pim-report",
         "parameters": [
           {
             "in": "path",
@@ -23249,9 +23670,10 @@
     "/api/v2/pim/reporting-methods/{id}": {
       "get": {
         "tags": [
-          "Pim/Reporting Method Configuration"
+          "PIM/Reporting Method Configuration"
         ],
-        "operationId": "6437c71013aff3cc0a8ae14170c391dd",
+        "summary": "Get a Reporting Method",
+        "operationId": "get-a-reporting-method",
         "parameters": [
           {
             "in": "path",
@@ -23288,9 +23710,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Reporting Method Configuration"
+          "PIM/Reporting Method Configuration"
         ],
-        "operationId": "a0b99b3c3bfe1822334ecd49261fff69",
+        "summary": "Update a Reporting Method",
+        "operationId": "update-a-reporting-method",
         "parameters": [
           {
             "in": "path",
@@ -23347,9 +23770,10 @@
     "/api/v2/pim/reporting-methods": {
       "get": {
         "tags": [
-          "Pim/Reporting Method Configuration"
+          "PIM/Reporting Method Configuration"
         ],
-        "operationId": "5a9c1091833a875c42d8737eb6b25e75",
+        "summary": "List All Reporting Methods",
+        "operationId": "list-all-reporting-methods",
         "parameters": [
           {
             "name": "sortField",
@@ -23395,9 +23819,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Reporting Method Configuration"
+          "PIM/Reporting Method Configuration"
         ],
-        "operationId": "0e62c7f765013aed4e617576aee12f18",
+        "summary": "Create a Reporting Method",
+        "operationId": "create-a-reporting-method",
         "requestBody": {
           "content": {
             "application/json": {
@@ -23439,9 +23864,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Reporting Method Configuration"
+          "PIM/Reporting Method Configuration"
         ],
-        "operationId": "77dcc206fb9f3989bfd9f698bd0436a6",
+        "summary": "Delete Reporting Methods",
+        "operationId": "delete-reporting-methods",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -23455,9 +23881,10 @@
     "/api/v2/pim/termination-reasons": {
       "get": {
         "tags": [
-          "Pim/Termination Reason Configuration"
+          "PIM/Termination Reason Configuration"
         ],
-        "operationId": "a365cbba064a1f6b71a8954bb478bdef",
+        "summary": "List All Termination Reasons",
+        "operationId": "list-all-termination-reasons",
         "parameters": [
           {
             "name": "sortField",
@@ -23503,9 +23930,10 @@
       },
       "post": {
         "tags": [
-          "Pim/Termination Reason Configuration"
+          "PIM/Termination Reason Configuration"
         ],
-        "operationId": "c67edbaca9246eb407bb84c418ce02ee",
+        "summary": "Create a Termination Reason",
+        "operationId": "create-a-termination-reason",
         "requestBody": {
           "content": {
             "application/json": {
@@ -23547,9 +23975,10 @@
       },
       "delete": {
         "tags": [
-          "Pim/Termination Reason Configuration"
+          "PIM/Termination Reason Configuration"
         ],
-        "operationId": "dd446e4ef8b9ff65ebdb8d4d65ea9b71",
+        "summary": "Delete Termination Reasons",
+        "operationId": "delete-termination-reasons",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -23563,9 +23992,10 @@
     "/api/v2/pim/termination-reasons/{id}": {
       "get": {
         "tags": [
-          "Pim/Termination Reason Configuration"
+          "PIM/Termination Reason Configuration"
         ],
-        "operationId": "d4f148a7c7b19c123c4bd18cd45c3446",
+        "summary": "Get a Termination Reason",
+        "operationId": "get-a-termination-reason",
         "parameters": [
           {
             "in": "path",
@@ -23602,9 +24032,10 @@
       },
       "put": {
         "tags": [
-          "Pim/Termination Reason Configuration"
+          "PIM/Termination Reason Configuration"
         ],
-        "operationId": "8a7d836633da44ee4be4a3cd425d8824",
+        "summary": "Update a Termination Reason",
+        "operationId": "update-a-termination-reason",
         "parameters": [
           {
             "in": "path",
@@ -23658,9 +24089,10 @@
     "/api/v2/pim/update-password": {
       "put": {
         "tags": [
-          "Pim/Update Password"
+          "PIM/Update Password"
         ],
-        "operationId": "f5321236c8ee45c977490039aa2249eb",
+        "summary": "Update Password",
+        "operationId": "update-password",
         "requestBody": {
           "content": {
             "application/json": {
@@ -23706,9 +24138,10 @@
     "/api/v2/pim/employees/{empNumber}/contact-details/validation/work-emails": {
       "get": {
         "tags": [
-          "Pim/Employee Email Validation"
+          "PIM/Employee Email Validation"
         ],
-        "operationId": "f1445db6d13635047a430458b66f231c",
+        "summary": "Validate an Employee's Work Email",
+        "operationId": "validate-an-employees-work-email",
         "parameters": [
           {
             "in": "path",
@@ -23758,9 +24191,10 @@
     "/api/v2/pim/employees/{empNumber}/contact-details/validation/other-emails": {
       "get": {
         "tags": [
-          "Pim/Employee Email Validation"
+          "PIM/Employee Email Validation"
         ],
-        "operationId": "85a113639cdf27139b04c8ccf5197acb",
+        "summary": "Validate an Employee's Other Email",
+        "operationId": "validate-an-employee-other-email",
         "parameters": [
           {
             "in": "path",
@@ -23812,7 +24246,8 @@
         "tags": [
           "Recruitment/Candidates"
         ],
-        "operationId": "103481df497e7d7570a29e7026da9710",
+        "summary": "List All Candidates",
+        "operationId": "list-all-candidates",
         "parameters": [
           {
             "name": "sortField",
@@ -23990,7 +24425,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "f7afd03734c7bbc47d353449cf158bc6",
+        "summary": "Get Allowed Actions for Candidate",
+        "operationId": "get-allowed-actions-for-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24047,7 +24483,8 @@
         "tags": [
           "Recruitment/Candidate Attachments"
         ],
-        "operationId": "ef8da80e09c2eaee8674b01ed1d3ce8c",
+        "summary": "Add an Attachment to a Candidate",
+        "operationId": "add-an-attachment-to-a-candidate",
         "requestBody": {
           "content": {
             "application/json": {
@@ -24096,7 +24533,8 @@
         "tags": [
           "Recruitment/Candidate Attachments"
         ],
-        "operationId": "732dec986a6f35f54691125e0aa91940",
+        "summary": "Get a Candidate's Attachment",
+        "operationId": "get-a-candidates-attachment",
         "parameters": [
           {
             "in": "path",
@@ -24135,7 +24573,8 @@
         "tags": [
           "Recruitment/Candidate Attachments"
         ],
-        "operationId": "90adbb285553085cba9a1c993784e175",
+        "summary": "Update a Candidate's Attachment",
+        "operationId": "update-a-candidates-attachment",
         "parameters": [
           {
             "in": "path",
@@ -24194,7 +24633,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "c1bff43fa2be1fcb02ac2de4e540b2e7",
+        "summary": "Hire Candidate",
+        "operationId": "hire-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24249,7 +24689,8 @@
         "tags": [
           "Recruitment/Candidate History"
         ],
-        "operationId": "c0f7750df68d370ac037d28c5e28f9f5",
+        "summary": "List a Candidate's History",
+        "operationId": "list-a-candidates-history",
         "parameters": [
           {
             "in": "path",
@@ -24301,7 +24742,8 @@
         "tags": [
           "Recruitment/Candidate History"
         ],
-        "operationId": "734429715977af8ee2251ac01eadbf14",
+        "summary": "Get a Candidate's History Record",
+        "operationId": "get-a-candidates-history-record",
         "parameters": [
           {
             "in": "path",
@@ -24353,7 +24795,8 @@
         "tags": [
           "Recruitment/Candidate History"
         ],
-        "operationId": "c0375bff90e8902895d94b568e98cb3c",
+        "summary": "Update a Candidate's History Record",
+        "operationId": "update-a-candidates-history-record",
         "parameters": [
           {
             "in": "path",
@@ -24416,7 +24859,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "72ceb54a6bb0ac42fdeca46bf2cfb475",
+        "summary": "Schedule Interview for a Candidate",
+        "operationId": "schedule-interview-for-a-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24525,7 +24969,8 @@
         "tags": [
           "Recruitment/Candidate Interview"
         ],
-        "operationId": "2720ad7b3c318c383c52c5a0b5a278f9",
+        "summary": "Get a Candidate's Inteview",
+        "operationId": "get-a-candidates-interview",
         "parameters": [
           {
             "in": "path",
@@ -24574,7 +25019,8 @@
         "tags": [
           "Recruitment/Candidate Interview"
         ],
-        "operationId": "332570ff294feb2e5ed8c1588101006a",
+        "summary": "Update a Candidate's Interview",
+        "operationId": "update-a-candidates-interview",
         "parameters": [
           {
             "in": "path",
@@ -24661,7 +25107,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "9340d7fd6cb8909ead09c6f01ee6bc22",
+        "summary": "Offer Job to Candidate",
+        "operationId": "offer-job-to-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24716,7 +25163,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "e9b495c649d05017e84125f898411060",
+        "summary": "Mark Candidate Interview as Failed",
+        "operationId": "mark-candidate-interview-as-failed",
         "parameters": [
           {
             "in": "path",
@@ -24779,7 +25227,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "e7c5af5745a1a0c0cffe8945f75b35a7",
+        "summary": "Mark Candidate Interview as Passed",
+        "operationId": "mark-candidate-interview-as-passed",
         "parameters": [
           {
             "in": "path",
@@ -24842,7 +25291,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "9ab83fbddf15abebc2a75fa42efaf806",
+        "summary": "Decline Job Offer for Candidate",
+        "operationId": "decline-job-offer-for-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24897,7 +25347,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "b6883a23dc74cd3e7b8fe413308c86ae",
+        "summary": "Reject Candidate",
+        "operationId": "reject-candidate",
         "parameters": [
           {
             "in": "path",
@@ -24952,7 +25403,8 @@
         "tags": [
           "Recruitment/Candidate Workflow"
         ],
-        "operationId": "c117637e479a3845d94fe9c45f72a60c",
+        "summary": "Shortlist Candidate",
+        "operationId": "shortlist-candidate",
         "parameters": [
           {
             "in": "path",
@@ -25007,7 +25459,8 @@
         "tags": [
           "Recruitment/Candidates"
         ],
-        "operationId": "f1893f5965409cff7ed98c88462a30a6",
+        "summary": "List All Statuses",
+        "operationId": "list-all-statuses",
         "responses": {
           "200": {
             "description": "Success",
@@ -25040,7 +25493,8 @@
         "tags": [
           "Recruitment/Employee List"
         ],
-        "operationId": "49882c1294cf00f2a274be2da8881eec",
+        "summary": "List Employees Available for Interviewing",
+        "operationId": "list-employees-available-for-interviewing",
         "parameters": [
           {
             "name": "sortField",
@@ -25112,7 +25566,8 @@
         "tags": [
           "Recruitment/Hiring Managers"
         ],
-        "operationId": "9a834df5aada369e0fa68fbc72dcb9e4",
+        "summary": "List Available Employees for Hiring Manager",
+        "operationId": "list-available-employees-for-hiring-manager",
         "parameters": [
           {
             "name": "sortField",
@@ -25175,7 +25630,8 @@
         "tags": [
           "Recruitment/Interview Attachments"
         ],
-        "operationId": "920e1e302f55145ad65f15df2b0f35c6",
+        "summary": "List All Interview Attachments",
+        "operationId": "list-all-interview-attachments",
         "parameters": [
           {
             "in": "path",
@@ -25240,7 +25696,8 @@
         "tags": [
           "Recruitment/Interview Attachments"
         ],
-        "operationId": "d07fe7d47138b4e2b3ac6d49d5703457",
+        "summary": "Add an Attachment to an Interview",
+        "operationId": "add-an-attachment-to-an-interview",
         "parameters": [
           {
             "in": "path",
@@ -25300,7 +25757,8 @@
         "tags": [
           "Recruitment/Interview Attachments"
         ],
-        "operationId": "b516e06a6af667333abcec42893093a9",
+        "summary": "Delete Interview Attachments",
+        "operationId": "delete-interview-attachments",
         "parameters": [
           {
             "in": "path",
@@ -25326,7 +25784,8 @@
         "tags": [
           "Recruitment/Interview Attachments"
         ],
-        "operationId": "d30b41b910101ee86506d909825205ec",
+        "summary": "Get an Interview Attachment",
+        "operationId": "get-an-interview-attachment",
         "parameters": [
           {
             "in": "path",
@@ -25373,7 +25832,8 @@
         "tags": [
           "Recruitment/Interview Attachments"
         ],
-        "operationId": "4bf2fafa7d9f33d3c382bb3eac9ba706",
+        "summary": "Update an Interview Attachment",
+        "operationId": "update-an-interview-attachment",
         "parameters": [
           {
             "in": "path",
@@ -25444,7 +25904,8 @@
         "tags": [
           "Recruitment/Vacancy"
         ],
-        "operationId": "f60c1f6f7ca6356f63c5e6be613ddc92",
+        "summary": "Get a Vacancy",
+        "operationId": "get-a-vacancy",
         "parameters": [
           {
             "in": "path",
@@ -25483,7 +25944,8 @@
         "tags": [
           "Recruitment/Vacancy"
         ],
-        "operationId": "ff12c704a24bee654ea418dae139739c",
+        "summary": "Update a Vacancy",
+        "operationId": "update-a-vacancy",
         "parameters": [
           {
             "in": "path",
@@ -25564,7 +26026,8 @@
         "tags": [
           "Recruitment/Vacancy"
         ],
-        "operationId": "869f6714004dc197f2ee3e4d96db126c",
+        "summary": "List All Vacancies",
+        "operationId": "list-all-vacancies",
         "parameters": [
           {
             "name": "sortField",
@@ -25673,7 +26136,8 @@
         "tags": [
           "Recruitment/Vacancy"
         ],
-        "operationId": "901759ab3560b1434495770a9fb0f7f6",
+        "summary": "Create a Vacancy",
+        "operationId": "create-a-vacancy",
         "requestBody": {
           "content": {
             "application/json": {
@@ -25739,7 +26203,8 @@
         "tags": [
           "Recruitment/Vacancy"
         ],
-        "operationId": "9d1e3ff7f4d681615b9d692a38a64685",
+        "summary": "Delete Vacancies",
+        "operationId": "delete-vacancies",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -25755,7 +26220,8 @@
         "tags": [
           "Recruitment/Vacancy Attachments"
         ],
-        "operationId": "d5fd51f75aa658139fc79afce4ea7e7b",
+        "summary": "Add an Attachment to a Vacancy",
+        "operationId": "add-an-attachment-to-a-vacancy",
         "requestBody": {
           "content": {
             "application/json": {
@@ -25810,7 +26276,8 @@
         "tags": [
           "Recruitment/Vacancy Attachments"
         ],
-        "operationId": "583aaf9972dfb312905118a3e21a11f6",
+        "summary": "Delete Vacancy Attachments",
+        "operationId": "delete-vacancy-attachments",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -25826,7 +26293,8 @@
         "tags": [
           "Recruitment/Vacancy Attachments"
         ],
-        "operationId": "2daf49a11ad7d653b11578e56feac6e1",
+        "summary": "Get a Vacancy Attachment",
+        "operationId": "get-a-vacancy-attachment",
         "parameters": [
           {
             "in": "path",
@@ -25867,7 +26335,8 @@
         "tags": [
           "Recruitment/Vacancy Attachments"
         ],
-        "operationId": "d11159173e442b7b7ab9b2252c8fde8a",
+        "summary": "Update a Vacancy Attachment",
+        "operationId": "update-a-vacancy-attachment",
         "parameters": [
           {
             "in": "path",
@@ -25942,7 +26411,8 @@
         "tags": [
           "Time/Copy Project Activity"
         ],
-        "operationId": "3aa1feb7cd53e8a9804e76ea7429cf12",
+        "summary": "List Copyable Activities Between Two Projects",
+        "operationId": "list-copyable-activities-between-two-projects",
         "parameters": [
           {
             "in": "path",
@@ -26011,7 +26481,8 @@
         "tags": [
           "Time/Copy Project Activity"
         ],
-        "operationId": "f1b595e91d0dda75be0369e91846fadc",
+        "summary": "Copy Activities From One Project",
+        "operationId": "copy-activities-from-one-project",
         "parameters": [
           {
             "in": "path",
@@ -26105,7 +26576,8 @@
         "tags": [
           "Time/Customers"
         ],
-        "operationId": "cc334a909a4c86876d0e1aee16f94cf7",
+        "summary": "List All Customers",
+        "operationId": "list-all-customers",
         "parameters": [
           {
             "name": "name",
@@ -26166,7 +26638,8 @@
         "tags": [
           "Time/Customers"
         ],
-        "operationId": "dceb63bae236ce422d308b240b4f60a7",
+        "summary": "Create a Customer",
+        "operationId": "create-a-customer",
         "requestBody": {
           "content": {
             "application/json": {
@@ -26214,7 +26687,8 @@
         "tags": [
           "Time/Customers"
         ],
-        "operationId": "4996e5665c51e7193f2ce06d1a96779a",
+        "summary": "Delete Customers",
+        "operationId": "delete-customers",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -26255,7 +26729,8 @@
         "tags": [
           "Time/Customers"
         ],
-        "operationId": "3eeada0559c9a560ad9215ec68e18e1e",
+        "summary": "Get a Customer",
+        "operationId": "get-a-customer",
         "parameters": [
           {
             "in": "path",
@@ -26291,7 +26766,8 @@
         "tags": [
           "Time/Customers"
         ],
-        "operationId": "b01c31ab1e84acc29c3226568d4cb57d",
+        "summary": "Update a Customer",
+        "operationId": "update-a-customer",
         "parameters": [
           {
             "in": "path",
@@ -26354,7 +26830,8 @@
         "tags": [
           "Time/Default Timesheet"
         ],
-        "operationId": "ed361e71a776bd530ea106dd3dd2ca2d",
+        "summary": "Get Default Timesheet",
+        "operationId": "get-default-timesheet",
         "parameters": [
           {
             "name": "date",
@@ -26401,7 +26878,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "4d552ce045390552c4f7de059aa5d88d",
+        "summary": "List an Employee's Timesheets",
+        "operationId": "list-an-employees-timesheets",
         "parameters": [
           {
             "in": "path",
@@ -26497,7 +26975,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "8385660bf962a3e6b1aea088f33e9cef",
+        "summary": "Create a Timesheet for an Employee",
+        "operationId": "create-a-timesheet-for-an-employee",
         "parameters": [
           {
             "in": "path",
@@ -26553,7 +27032,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "ae298938ba40be9b57e3170518ab6774",
+        "summary": "Update an Employee's Timesheet",
+        "operationId": "update-an-employees-timesheet",
         "parameters": [
           {
             "in": "path",
@@ -26656,7 +27136,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "a839bb730357f7ffc2da6f148cbcec55",
+        "summary": "Get a Timesheet's Entries",
+        "operationId": "get-a-timesheets-entries",
         "parameters": [
           {
             "in": "path",
@@ -26801,7 +27282,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "da9da56decb540c99bb2ff91aebdcea3",
+        "summary": "Update a Timesheet's Entries",
+        "operationId": "update-a-timesheets-entries",
         "parameters": [
           {
             "in": "path",
@@ -26909,7 +27391,8 @@
         "tags": [
           "Time/Employee Timesheet"
         ],
-        "operationId": "644c02f279189de1d9ca66913a4a3768",
+        "summary": "List All Employee Timesheets",
+        "operationId": "list-all-employee-timesheets",
         "parameters": [
           {
             "name": "sortField",
@@ -26972,7 +27455,8 @@
         "tags": [
           "Time/My Timesheet"
         ],
-        "operationId": "b730f893aa768c625566f4bb90edf991",
+        "summary": "List My Timesheet Entries",
+        "operationId": "list-my-timesheet-entries",
         "parameters": [
           {
             "in": "path",
@@ -27117,7 +27601,8 @@
         "tags": [
           "Time/My Timesheet"
         ],
-        "operationId": "ab2b9cf98833398c4cc3f344b3a74e3b",
+        "summary": "Update My Timesheet Entries",
+        "operationId": "update-my-timesheet-entries",
         "parameters": [
           {
             "in": "path",
@@ -27195,7 +27680,8 @@
         "tags": [
           "Time/Project"
         ],
-        "operationId": "23f151271e11032c93b3b10c8b7e12f4",
+        "summary": "List All Projects",
+        "operationId": "list-all-projects",
         "parameters": [
           {
             "name": "projectId",
@@ -27318,7 +27804,8 @@
         "tags": [
           "Time/Project"
         ],
-        "operationId": "f9701bfa6b6f1cdb779410d7f8bd2fa4",
+        "summary": "Crete a Project",
+        "operationId": "create-a-project",
         "requestBody": {
           "content": {
             "application/json": {
@@ -27379,7 +27866,8 @@
         "tags": [
           "Time/Project"
         ],
-        "operationId": "894ab0d429b4481a60ef7491838005f5",
+        "summary": "Delete Projects",
+        "operationId": "delete-projects",
         "requestBody": {
           "$ref": "#/components/requestBodies/DeleteRequestBody"
         },
@@ -27395,7 +27883,8 @@
         "tags": [
           "Time/Project"
         ],
-        "operationId": "d117d0c5b3ef037bb90126a55d5c1dac",
+        "summary": "Get a Project",
+        "operationId": "get-a-project",
         "parameters": [
           {
             "in": "path",
@@ -27454,7 +27943,8 @@
         "tags": [
           "Time/Project"
         ],
-        "operationId": "17c72bacf5dce078c92b660671d4065c",
+        "summary": "Update a Project",
+        "operationId": "update-a-project",
         "parameters": [
           {
             "in": "path",
@@ -27527,7 +28017,8 @@
         "tags": [
           "Time/Project Activity"
         ],
-        "operationId": "eb8ff820a8f7355e9a8ef21408daf981",
+        "summary": "List a Project's Activities",
+        "operationId": "list-a-projects-activities",
         "parameters": [
           {
             "in": "path",
@@ -27586,7 +28077,8 @@
         "tags": [
           "Time/Project Activity"
         ],
-        "operationId": "229b9d88d43b2dc891d3699bf01a3c77",
+        "summary": "Add an Activity to a Project",
+        "operationId": "add-an-activity-to-a-project",
         "parameters": [
           {
             "in": "path",
@@ -27640,7 +28132,8 @@
         "tags": [
           "Time/Project Activity"
         ],
-        "operationId": "7592c57016b108c86377aac098e1fc72",
+        "summary": "Delete a Project's Activities",
+        "operationId": "delete-a-projects-activities",
         "parameters": [
           {
             "in": "path",
@@ -27691,7 +28184,8 @@
         "tags": [
           "Time/Project Activity"
         ],
-        "operationId": "37478439564d385a8772d6e99560440d",
+        "summary": "Get a Project's Activity",
+        "operationId": "get-a-projects-activity",
         "parameters": [
           {
             "in": "path",
@@ -27738,7 +28232,8 @@
         "tags": [
           "Time/Project Activity"
         ],
-        "operationId": "17dc8ef38b07170abfa441f5ef81d3c3",
+        "summary": "Update a Project's Activity",
+        "operationId": "update-a-projects-activity",
         "parameters": [
           {
             "in": "path",
@@ -27805,7 +28300,8 @@
         "tags": [
           "Time/Project Admins"
         ],
-        "operationId": "5da9ef86784e47cfd17e2c66126978fb",
+        "summary": "List Available Employees for Project Admin",
+        "operationId": "list-available-employees-for-project-admin",
         "parameters": [
           {
             "name": "includeEmployees",
@@ -27899,7 +28395,8 @@
         "tags": [
           "Time/Timesheet Period"
         ],
-        "operationId": "6beb60c75b0e63ea23f2335df9717431",
+        "summary": "Get the Timesheet Period",
+        "operationId": "get-the-timesheet-period",
         "responses": {
           "200": {
             "description": "Success",
@@ -27925,7 +28422,8 @@
         "tags": [
           "Time/Timesheet Period"
         ],
-        "operationId": "f38de0acac4f7d001a1f2453ce8713b7",
+        "summary": "Update the Timesheet Period",
+        "operationId": "update-the-timesheet-period",
         "requestBody": {
           "content": {
             "application/json": {
@@ -27997,7 +28495,8 @@
         "tags": [
           "Time/Timesheet Report"
         ],
-        "operationId": "361176e0e92b40719718b58cd302c426",
+        "summary": "Get Time Reports",
+        "operationId": "get-time-reports",
         "parameters": [
           {
             "name": "name",
@@ -28115,7 +28614,8 @@
         "tags": [
           "Time/Timesheet Report"
         ],
-        "operationId": "167c1968dea58bba960f3eb82499e68b",
+        "summary": "Get Time Report Data",
+        "operationId": "get-time-report-data",
         "parameters": [
           {
             "name": "name",
@@ -28281,7 +28781,8 @@
         "tags": [
           "Time/Timesheet Action Log"
         ],
-        "operationId": "6b98b7df2bffa36495a4f25ce08ce4a8",
+        "summary": "Get a Timesheet's Action Logs",
+        "operationId": "get-a-timesheets-action-logs",
         "parameters": [
           {
             "in": "path",
@@ -28344,7 +28845,8 @@
         "tags": [
           "Time/Timesheet Comment"
         ],
-        "operationId": "cffcc09c10b68e042325b777bd6520d4",
+        "summary": "Update a Timesheet Comment",
+        "operationId": "update-a-timesheet-comment",
         "parameters": [
           {
             "in": "path",
@@ -28415,7 +28917,8 @@
         "tags": [
           "Time/Timesheet Comment"
         ],
-        "operationId": "6350b294f564c4037fffd9397b238963",
+        "summary": "Get a Timesheet Comment",
+        "operationId": "get-a-timesheet-comment",
         "parameters": [
           {
             "in": "path",
@@ -28462,9 +28965,10 @@
     "/api/v2/time/validation/{timesheetId}/project-activity": {
       "get": {
         "tags": [
-          "Time/Timesheet Project Activity Unique Validation"
+          "Time/Validation"
         ],
-        "operationId": "f409d092c8bee187d9f31327033ba1d8",
+        "summary": "Validate Project Acitvity Uniqueness in Timesheet",
+        "operationId": "validate-project-activity-uniqueness-in-timesheet",
         "parameters": [
           {
             "in": "path",
@@ -28529,7 +29033,8 @@
         "tags": [
           "Time/Timesheet Time Format"
         ],
-        "operationId": "5c3e2cd4020995f900087b62a5e3dad1",
+        "summary": "Get Timesheet Time Format",
+        "operationId": "get-timesheet-time-format",
         "responses": {
           "200": {
             "description": "Success",
@@ -28555,9 +29060,10 @@
     "/api/v2/time/validation/project-name": {
       "get": {
         "tags": [
-          "Time/Validate Project Name"
+          "Time/Validation"
         ],
-        "operationId": "035ec895fbbb4e6f64c021ae9c4a1b98",
+        "summary": "Validate Project Name Uniqueness",
+        "operationId": "validate-project-name-uniqueness",
         "parameters": [
           {
             "name": "projectId",
@@ -28618,9 +29124,10 @@
     "/api/v2/time/validation/customer-name": {
       "get": {
         "tags": [
-          "Time/Validate Customer Name"
+          "Time/Validation"
         ],
-        "operationId": "3dfb6d0b7291f7fd5c03d000193e89bf",
+        "summary": "Validate Customer Name Uniqueness",
+        "operationId": "validate-customer-name-uniqueness",
         "parameters": [
           {
             "name": "customerId",
@@ -28673,9 +29180,10 @@
     "/api/v2/time/validation/activity-name/{id}": {
       "get": {
         "tags": [
-          "Time/Validate Project Activity Name"
+          "Time/Validation"
         ],
-        "operationId": "59b7acb6e9d67af9055190ed47fc2378",
+        "summary": "Validate Project Activity Name Uniqueness",
+        "operationId": "validate-project-activity-name-uniqueness",
         "parameters": [
           {
             "in": "path",
