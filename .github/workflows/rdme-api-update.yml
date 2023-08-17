@@ -106,7 +106,7 @@ jobs:
           sed -i 's/Leave\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/Leave/' reduced.json
           jq '.components+={"securitySchemes": {"OAuth2": {"type":"oauth2", "flows": {"authorizationCode":{"authorizationUrl":"https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/authorize", "tokenUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/token", "scopes":{}}}}}}' reduced.json > reduced-security.json
-          rdme openapi reduced-security.json --key=${{ secrets.README_API_KEY }} --id=64dbc01e06c0200043bc9b11
+          rdme openapi reduced-security.json --key=${{ secrets.README_API_KEY }} --id=64ddac30839b4a00660b365a
           rm reduce*
 
       - name: Update APIs for Maintenance module
@@ -161,7 +161,7 @@ jobs:
           sed -i 's/PIM\///' reduced.json
           sed -i 's/OrangeHRM Open Source : REST API v2 docs/PIM/' reduced.json
           jq '.components+={"securitySchemes": {"OAuth2": {"type":"oauth2", "flows": {"authorizationCode":{"authorizationUrl":"https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/authorize", "tokenUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/oauth2/token", "scopes":{}}}}}}' reduced.json > reduced-security.json
-          rdme openapi reduced-security.json --key=${{ secrets.README_API_KEY }} --id=64db583a2165e1004fbf7411
+          rdme openapi reduced-security.json --key=${{ secrets.README_API_KEY }} --id=64ddab7473eaac00420bcd63
           rm reduce*
 
       - name: Update APIs for Recruitment module

@@ -11069,7 +11069,7 @@
     "/api/v2/leave/leave-types/eligible": {
       "get": {
         "tags": [
-          "Leave/Eligible Leave"
+          "Leave/Leave Type"
         ],
         "summary": "Get My Eligible Leave Types",
         "operationId": "get-my-eligible-leave-types",
@@ -11971,7 +11971,7 @@
     "/api/v2/leave/holidays/{id}": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Holiday"
         ],
         "summary": "Get a Holiday",
         "operationId": "get-a-holiday",
@@ -12011,7 +12011,7 @@
       },
       "put": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Holiday"
         ],
         "summary": "Update a Holiday",
         "operationId": "Update a Holiday",
@@ -12082,7 +12082,7 @@
     "/api/v2/leave/holidays": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Holiday"
         ],
         "summary": "List All Holidays",
         "operationId": "list-all-holidays",
@@ -12155,7 +12155,7 @@
       },
       "post": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Holiday"
         ],
         "summary": "Create a Holiday",
         "operationId": "create-a-holiday",
@@ -12211,7 +12211,7 @@
       },
       "delete": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Holiday"
         ],
         "summary": "Delete Holidays",
         "operationId": "delete-holidays",
@@ -13055,7 +13055,7 @@
     "/api/v2/leave/leave-period": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Period"
         ],
         "summary": "Get Current Leave Period",
         "operationId": "get-current-leave-period",
@@ -13093,7 +13093,7 @@
       },
       "put": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Period"
         ],
         "summary": "Update Leave Period",
         "operationId": "update-leave-period",
@@ -13150,7 +13150,7 @@
     "/api/v2/leave/leave-periods": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Period"
         ],
         "summary": "List All Leave Periods",
         "operationId": "list-all-leave-periods",
@@ -13613,7 +13613,7 @@
     "/api/v2/leave/leave-types/{id}": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Type"
         ],
         "summary": "Get a Leave Type",
         "operationId": "get-a-leave-type",
@@ -13653,7 +13653,7 @@
       },
       "put": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Type"
         ],
         "summary": "Update a Leave Type",
         "operationId": "update-a-leave-type",
@@ -13712,7 +13712,7 @@
     "/api/v2/leave/leave-types": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Type"
         ],
         "summary": "List All Leave Types",
         "operationId": "list-all-leave-types",
@@ -13766,7 +13766,7 @@
       },
       "post": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Type"
         ],
         "summary": "Create a Leave Type",
         "operationId": "create-a-leave-type",
@@ -13811,7 +13811,7 @@
       },
       "delete": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Leave Type"
         ],
         "summary": "Delete Leave Types",
         "operationId": "delete-leave-types",
@@ -13828,7 +13828,7 @@
     "/api/v2/leave/leave-requests/{leaveRequestId}": {
       "get": {
         "tags": [
-          "Leave/My Leave"
+          "Leave/My Leave Request"
         ],
         "summary": "Get My Leave Request",
         "operationId": "get-my-leave-request",
@@ -13884,7 +13884,7 @@
       },
       "put": {
         "tags": [
-          "Leave/My Leave"
+          "Leave/My Leave Request"
         ],
         "summary": "Update my Leave Request",
         "operationId": "update-my-leave-request",
@@ -14006,7 +14006,7 @@
     "/api/v2/leave/leave-requests": {
       "get": {
         "tags": [
-          "Leave/My Leave"
+          "Leave/My Leave Request"
         ],
         "summary": "List My Leave Requests",
         "operationId": "list-my-leave-requests",
@@ -14116,7 +14116,7 @@
       },
       "post": {
         "tags": [
-          "Leave/My Leave"
+          "Leave/My Leave Request"
         ],
         "summary": "Apply for Leave",
         "operationId": "apply-for-leave",
@@ -14312,7 +14312,7 @@
     "/api/v2/leave/workweek": {
       "get": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Work Week"
         ],
         "summary": "Get Work Week",
         "operationId": "get-work-week",
@@ -14361,7 +14361,7 @@
       },
       "put": {
         "tags": [
-          "Leave/Configure"
+          "Leave/Work Week"
         ],
         "summary": "Update Work Week",
         "operationId": "update-work-week",
@@ -18070,9 +18070,9 @@
     "/api/v2/pim/employees/{empNumber}/licenses/allowed": {
       "get": {
         "tags": [
-          "PIM/Employee License"
+          "PIM/Employee Licenses"
         ],
-        "summary": "List ALlowed Licenses for an Employee",
+        "summary": "List Allowed Licenses for an Employee",
         "operationId": "list-allowed-licenses-for-an-employee",
         "parameters": [
           {
@@ -18206,7 +18206,7 @@
         "tags": [
           "PIM/Employee Skill"
         ],
-        "summary": "List Alowed Skills for an Employee",
+        "summary": "List Allowed Skills for an Employee",
         "operationId": "list-allowed-skills-for-an-employee",
         "parameters": [
           {
@@ -23093,7 +23093,7 @@
     "/api/v2/pim/employees/{empNumber}/employment-contract": {
       "get": {
         "tags": [
-          "PIM/Employement Contract"
+          "PIM/Employment Contract"
         ],
         "summary": "Get an Employee's Employment Contract",
         "operationId": "get-an-employees-employment-contract",
@@ -23135,7 +23135,7 @@
       },
       "put": {
         "tags": [
-          "PIM/Employement Contract"
+          "PIM/Employment Contract"
         ],
         "summary": "Update an Employee's Employment Contract",
         "operationId": "update-an-employees-employment-contract",
@@ -23204,7 +23204,7 @@
     "/api/v2/pim/myself": {
       "get": {
         "tags": [
-          "PIM/My Self"
+          "PIM/Employee"
         ],
         "summary": "Get My Details",
         "operationId": "get-my-details",
